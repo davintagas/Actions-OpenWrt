@@ -18,5 +18,5 @@ wget -O 109-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch https://r
 popd
 
 # Add a feed source
-echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+# echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
