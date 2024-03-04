@@ -35,6 +35,11 @@ rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
 cp -r kiddin/{luci-base,luci-mod-status} feeds/luci/modules/
 # Add autocore
 cp -r kiddin/autocore package/
+sed -i 's/utils/userland/g' package/autocore/Makefile
+# Add diskman
+cp -r kiddin/luci-app-diskman package/luci-app-diskman
+# Add ramfree
+cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
 # Delete
 rm -rf kiddin
 # Add mosdns
