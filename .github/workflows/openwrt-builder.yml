@@ -15,14 +15,21 @@ name: OpenWrt Builder
 on:
   repository_dispatch:
   workflow_dispatch:
+     inputs:
+      source_branch:
+        description: "Select the source branch"
+        required: false
+        default: "openwrt-main"
+        type: choice
+        options:
+          - openwrt-main
+          - immortalwrt-master
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
-  FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  FEEDS_CONF: config/${{ inputs.source_branch }}/feeds.conf.default
+  CONFIG_FILE: config/${{ inputs.source_branch }}/feeds.conf.default
+  DIY_P1_SH: config/${{ inputs.source_branch }}/diy-part1.sh
+  DIY_P2_SH: config/${{ inputs.source_branch }}/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -53,8 +60,20 @@ jobs:
     - name: Clone source code
       working-directory: /workdir
       run: |
+        # Set up compilation source code
+          if [[ "${{ inputs.source_branch }}" == *"openwrt"* ]]; then
+              REPO_URL="https://github.com/openwrt/openwrt"
+              REPO_BRANCH="openwrt-23.05"
+          elif [[ "${{ inputs.source_branch }}" == *"immortalwrt"* ]]; then
+              REPO_URL="https://github.com/immortalwrt/immortalwrt"
+              REPO_BRANCH="openwrt-23.05"
+          else
+              echo "Unknown source code repository."
+              exit 1
+          fi
+
         df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git clone -q --single-branch --depth=1 --branch=${REPO_BRANCH} ${REPO_URL} openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
