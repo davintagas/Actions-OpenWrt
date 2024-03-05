@@ -63,6 +63,7 @@ rm -rf package/openwrt-packages
 git clone -b master --depth 1 https://github.com/openwrt/luci.git package/luci-packages
 rm -rf feeds/luci/protocols/luci-proto-modemmanager
 cp -r package/luci-packages/protocols/luci-proto-modemmanager feeds/luci/protocols/
+rm -rf package/luci-packages
 # Add mosdns
 git clone --depth 1 https://github.com/sbwml/luci-app-mosdns.git mosdns
 mv mosdns/{luci-app-mosdns,mosdns,v2dat} package/
