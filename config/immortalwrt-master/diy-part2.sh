@@ -55,6 +55,14 @@ rm -rf package/network/config/firewall
 cp -r package/mortal-21.02/package/network/config/firewall package/network/config/
 rm -rf package/mortal-21.02
 # Change modemmanager
+git clone -b master --depth 1 https://github.com/openwrt/packages.git package/openwrt-packages
+rm -rf feeds/packages/net/modemmanager
+cp -r package/openwrt-packages/net/modemmanager feeds/packages/net/
+rm -rf package/openwrt-packages
+# Change luci-proto-modemmanager
+git clone -b master --depth 1 https://github.com/openwrt/luci.git package/luci-packages
+rm -rf feeds/luci/protocols/luci-proto-modemmanager
+cp -r package/luci-packages/protocols/luci-proto-modemmanager feeds/luci/protocols/
 # Add mosdns
 git clone --depth 1 https://github.com/sbwml/luci-app-mosdns.git mosdns
 mv mosdns/{luci-app-mosdns,mosdns,v2dat} package/
