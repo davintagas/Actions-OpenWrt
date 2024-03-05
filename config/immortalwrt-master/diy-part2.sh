@@ -43,13 +43,17 @@ cp -r kiddin/luci-app-diskman package/luci-app-diskman
 # Add ramfree
 cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
 # Add fullconenat
-rm -rf package/network/config/firewall
-cp -r kiddin/firewall package/network/config/
 cp -r kiddin/fullconenat package/fullconenat
 # Add turboacc
 cp -r kiddin/{shortcut-fe,dnsproxy,dnsforwarder,pdnsd-alt,luci-app-turboacc} package/
+cp -r kiddin/sms-tool package/
 # Delete
 rm -rf kiddin
+# change firewall
+git clone -b openwrt-21.02 --depth 1 https://github.com/immortalwrt/immortalwrt.git package/mortal-21.02
+rm -rf package/network/config/firewall
+cp -r package/mortal-21.02/package/network/config/firewall package/network/config/
+rm -rf package/mortal-21.02
 # Add mosdns
 git clone --depth 1 https://github.com/sbwml/luci-app-mosdns.git mosdns
 mv mosdns/{luci-app-mosdns,mosdns,v2dat} package/
