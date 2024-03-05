@@ -54,6 +54,7 @@ git clone -b openwrt-21.02 --depth 1 https://github.com/immortalwrt/immortalwrt.
 rm -rf package/network/config/firewall
 cp -r package/mortal-21.02/package/network/config/firewall package/network/config/
 rm -rf package/mortal-21.02
+# Change modemmanager
 # Add mosdns
 git clone --depth 1 https://github.com/sbwml/luci-app-mosdns.git mosdns
 mv mosdns/{luci-app-mosdns,mosdns,v2dat} package/
