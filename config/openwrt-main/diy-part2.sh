@@ -19,9 +19,9 @@ git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git 3ginfo
 mv 3ginfo/luci-app-3ginfo-lite package/
 rm -rf 3ginfo
 # Add sms
-git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool-js.git app-sms
-mv app-sms/luci-app-sms-tool-js package/
-rm -rf app-sms
+# git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool-js.git app-sms
+# mv app-sms/luci-app-sms-tool-js package/
+# rm -rf app-sms
 # Add internet-detector
 git clone --depth 1 https://github.com/gSpotx2f/luci-app-internet-detector.git internet-detector
 mv internet-detector/{luci-app-internet-detector,internet-detector,internet-detector-mod-modem-restart} package/
@@ -42,6 +42,14 @@ sed -i 's/utils/userland/g' package/autocore/Makefile
 cp -r kiddin/luci-app-diskman package/luci-app-diskman
 # Add ramfree
 cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
+# Add sms-tool
+cp -r kiddin/luci-app-sms-tool package/luci-app-sms-tool
+# Add modemband
+cp -r kiddin/{luci-app-modemband,modemband} package/
+# Add atinout
+cp -r kiddin/{luci-app-atinout,atinout} package/
+# Add cpufreq
+cp -r kiddin/luci-app-cpufreq package/luci-app-cpufreq
 # Delete
 rm -rf kiddin
 # Add mosdns
