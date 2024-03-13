@@ -66,7 +66,7 @@ jobs:
               REPO_BRANCH="main"
           elif [[ "${{ inputs.source_branch }}" == *"immortalwrt"* ]]; then
               REPO_URL="https://github.com/immortalwrt/immortalwrt"
-              REPO_BRANCH="openwrt-23.05"
+              REPO_BRANCH="master"
           else
               echo "Unknown source code repository."
               exit 1
