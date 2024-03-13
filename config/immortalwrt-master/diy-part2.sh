@@ -24,6 +24,9 @@ rm -rf internet-detector
 git clone -b js --depth 1 https://github.com/gngpp/luci-theme-design.git package/luci-theme-design
 git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
+# Add source
+git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
+
 # Add sms-tool
 cp -r kiddin/luci-app-sms-tool package/luci-app-sms-tool
 
