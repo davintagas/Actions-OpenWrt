@@ -33,6 +33,9 @@ cp -r kiddin/{luci-app-modemband,modemband} package/
 # Add atinout
 cp -r kiddin/{luci-app-atinout,atinout} package/
 
+# Add driver L860-GL
+cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
+
 # Delete
 rm -rf kiddin
 
