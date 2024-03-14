@@ -49,6 +49,7 @@ rm -rf mosdns
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 rm -rf feeds/packages/net/v2ray-geodata
+rm -rf feeds/packages/net/mosdns
 git clone --depth 1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # Add Default Setting
