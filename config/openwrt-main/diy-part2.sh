@@ -47,7 +47,7 @@ cp -r kiddin/luci-app-sms-tool package/luci-app-sms-tool
 # Add modemband
 cp -r kiddin/{luci-app-modemband,modemband} package/
 # Add atinout
-cp -r kiddin/{luci-app-atinout,atinout} package/
+# cp -r kiddin/{luci-app-atinout,atinout} package/
 # Add cpufreq
 cp -r kiddin/luci-app-cpufreq package/luci-app-cpufreq
 # Delete
