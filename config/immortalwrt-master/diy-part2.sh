@@ -24,24 +24,6 @@ rm -rf internet-detector
 git clone -b js --depth 1 https://github.com/gngpp/luci-theme-design.git package/luci-theme-design
 git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
-# Add source
-git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
-
-# Add sms-tool
-cp -r kiddin/luci-app-sms-tool package/luci-app-sms-tool
-
-# Add modemband
-cp -r kiddin/{luci-app-modemband,modemband} package/
-
-# Add atinout
-cp -r kiddin/{luci-app-atinout,atinout} package/
-
-# Add driver L860-GL
-cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
-
-# Delete
-rm -rf kiddin
-
 # Add mosdns
 git clone --depth 1 https://github.com/sbwml/luci-app-mosdns.git mosdns
 mv mosdns/{luci-app-mosdns,mosdns,v2dat} package/
