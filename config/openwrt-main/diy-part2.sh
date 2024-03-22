@@ -18,10 +18,6 @@ sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99
 git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git 3ginfo
 mv 3ginfo/luci-app-3ginfo-lite package/
 rm -rf 3ginfo
-# Add sms
-# git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool-js.git app-sms
-# mv app-sms/luci-app-sms-tool-js package/
-# rm -rf app-sms
 # Add internet-detector
 git clone --depth 1 https://github.com/gSpotx2f/luci-app-internet-detector.git internet-detector
 mv internet-detector/{luci-app-internet-detector,internet-detector,internet-detector-mod-modem-restart} package/
@@ -46,10 +42,10 @@ cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
 cp -r kiddin/luci-app-sms-tool package/luci-app-sms-tool
 # Add modemband
 cp -r kiddin/{luci-app-modemband,modemband} package/
-# Add atinout
-# cp -r kiddin/{luci-app-atinout,atinout} package/
 # Add cpufreq
 cp -r kiddin/luci-app-cpufreq package/luci-app-cpufreq
+# Add driver l860
+cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
 # Delete
 rm -rf kiddin
 # Add mosdns
