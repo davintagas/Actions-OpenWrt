@@ -43,7 +43,7 @@ cp -r kiddin/luci-app-sms-tool package/luci-app-sms-tool
 # Add modemband
 cp -r kiddin/{luci-app-modemband,modemband} package/
 # Add cpufreq
-cp -r kiddin/luci-app-cpufreq package/luci-app-cpufreq
+cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 # Add driver l860
 cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
 # Delete
