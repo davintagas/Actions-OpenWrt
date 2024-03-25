@@ -46,6 +46,8 @@ cp -r kiddin/{luci-app-modemband,modemband} package/
 cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 # Add driver l860
 cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
+# Add fancontrol
+cp -r kiddin/{luci-app-fancontrol,fancontrol} package/
 # Delete
 rm -rf kiddin
 # Add mosdns
