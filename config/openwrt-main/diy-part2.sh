@@ -39,15 +39,15 @@ cp -r kiddin/luci-app-diskman package/luci-app-diskman
 # Add ramfree
 cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
 # Add sms-tool
-cp -r kiddin/luci-app-sms-tool package/luci-app-sms-tool
+cp -r kiddin/luci-app-sms-tool-js package/luci-app-sms-tool-js
 # Add modemband
 cp -r kiddin/{luci-app-modemband,modemband} package/
 # Add cpufreq
 cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 # Add driver l860
 cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
-# Add fancontrol
-cp -r kiddin/{luci-app-fancontrol,fancontrol} package/
+# Add atinout
+cp -r kiddin/{luci-app-atinout,atinout} package/
 # Delete
 rm -rf kiddin
 # Add mosdns
