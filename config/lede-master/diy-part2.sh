@@ -49,16 +49,16 @@ cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
 rm -rf kiddin
 
 # Add mosdns
-rm -rf feeds/packages/utils/v2dat
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/luci/applications/luci-app-mosdns
-git clone --depth 1 https://github.com/sbwml/luci-app-mosdns.git mosdns
-mv mosdns/{luci-app-mosdns,mosdns,v2dat} package/
-rm -rf mosdns
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-rm -rf feeds/packages/net/v2ray-geodata
-git clone --depth 1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+# rm -rf feeds/packages/utils/v2dat
+# rm -rf feeds/packages/net/mosdns
+# rm -rf feeds/luci/applications/luci-app-mosdns
+# git clone --depth 1 https://github.com/sbwml/luci-app-mosdns.git mosdns
+# mv mosdns/{luci-app-mosdns,mosdns,v2dat} package/
+# rm -rf mosdns
+# rm -rf feeds/packages/lang/golang
+# git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+# rm -rf feeds/packages/net/v2ray-geodata
+# git clone --depth 1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # Add Default Setting
 sed -i 's/zh_cn/en/g' package/lean/default-settings/files/zzz-default-settings
