@@ -43,7 +43,7 @@ cp -r kiddin/{luci-app-atinout,atinout} package/
 # Add sms-tools
 cp -r kiddin/luci-app-sms-tool package/luci-app-sms-tool
 # Add modemband
-cp -r kiddin/{luci-app-modemband,modemband} package/
+# cp -r kiddin/{luci-app-modemband,modemband} package/
 
 rm -rf kiddin
 
