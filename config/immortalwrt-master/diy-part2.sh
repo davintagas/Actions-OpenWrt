@@ -34,6 +34,17 @@ rm -rf feeds/packages/net/v2ray-geodata
 rm -rf feeds/packages/net/mosdns
 git clone --depth 1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
+# Add Custom Package
+git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
+# Add driver l860-GL
+cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
+# Add Atinout
+cp -r kiddin/{luci-app-atinout,atinout} package/
+# Add sms-tools
+cp -r kiddin/luci-app-sms-tool package/luci-app-sms-tool
+# Add modemband
+cp -r kiddin/{luci-app-modemband,modemband} package/
+
 # Add Default Setting
 sed -i 's/auto/en/g' package/emortal/default-settings/files/99-default-settings
 sed -i 's/Shanghai/Jakarta/g' package/emortal/default-settings/files/99-default-settings-chinese
