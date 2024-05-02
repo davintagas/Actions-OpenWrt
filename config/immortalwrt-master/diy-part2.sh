@@ -45,6 +45,8 @@ cp -r kiddin/luci-app-sms-tool package/luci-app-sms-tool
 # Add modemband
 cp -r kiddin/{luci-app-modemband,modemband} package/
 
+rm -rf kiddin
+
 # Add Default Setting
 sed -i 's/auto/en/g' package/emortal/default-settings/files/99-default-settings
 sed -i 's/Shanghai/Jakarta/g' package/emortal/default-settings/files/99-default-settings-chinese
