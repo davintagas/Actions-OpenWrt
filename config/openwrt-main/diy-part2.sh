@@ -27,6 +27,17 @@ git clone -b js --depth 1 https://github.com/gngpp/luci-theme-design.git package
 git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
+# Change luci-base
+git clone -b openwrt-23.05 --depth 1 https://github.com/immortalwrt/luci.git luci-mortal
+rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
+cp -r luci-mortal/modules/{luci-base,luci-mod-status} feeds/luci/modules/
+rm -rf luci-mortal
+
+# Add autocore
+git clone -b openwrt-23.05 --depth 1 https://github.com/immortalwrt/immortalwrt.git mortal
+cp -r mortal/package/emortal/autocore package/autocore
+rm -rf mortal
+
 # Change Custom
 git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
 
