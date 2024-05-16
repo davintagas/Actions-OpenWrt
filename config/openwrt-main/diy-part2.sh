@@ -30,6 +30,10 @@ git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/
 # Change Custom
 git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
 
+rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
+cp -r kiddin/{luci-base,luci-mod-status} feeds/luci/modules/
+cp -r kiddin/autocore package/autocore
+
 # Add diskman
 cp -r kiddin/luci-app-diskman package/luci-app-diskman
 # Add ramfree
