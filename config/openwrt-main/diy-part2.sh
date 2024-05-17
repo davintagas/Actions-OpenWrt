@@ -33,6 +33,7 @@ git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
 rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
 cp -r kiddin/{luci-base,luci-mod-status} feeds/luci/modules/
 cp -r kiddin/autocore package/autocore
+sed -i 's|bcm27xx-utils|bcm27xx-userland|g' package/autocore/Makefile
 
 # Add diskman
 cp -r kiddin/luci-app-diskman package/luci-app-diskman
