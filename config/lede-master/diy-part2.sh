@@ -34,7 +34,7 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/l
 git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
 
 # Add sms-tool
-cp -r kiddin/luci-app-sms-tool package/luci-app-sms-tool
+cp -r kiddin/luci-app-sms-tool-js package/luci-app-sms-tool-js
 
 # Add modemband
 cp -r kiddin/{luci-app-modemband,modemband} package/
