@@ -68,9 +68,9 @@ rm -rf kiddin
 # git clone --depth 1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # Add Default Setting
-sed -i 's/zh_cn/en/g' package/lean/default-settings/files/zzz-default-settings
-sed -i 's/Shanghai/Jakarta/g' package/lean/default-settings/files/zzz-default-settings
-sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
+#sed -i 's/zh_cn/en/g' package/lean/default-settings/files/zzz-default-settings
+#sed -i 's/Shanghai/Jakarta/g' package/lean/default-settings/files/zzz-default-settings
+#sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
