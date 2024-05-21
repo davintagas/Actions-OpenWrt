@@ -20,7 +20,7 @@ sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99
 
 # Add modeminfo
 git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git package/luci-app-3ginfo-lite
-rm -rf package/luci-app-3ginfo-lite/sms-tool
+# rm -rf package/luci-app-3ginfo-lite/sms-tool
 
 # Add internet-detector
 git clone --depth 1 https://github.com/gSpotx2f/luci-app-internet-detector.git internet-detector
@@ -52,6 +52,12 @@ cp -r kiddin/{luci-app-atinout,atinout} package/
 # Add driver L860-GL
 cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
 
+# Add ramfree
+cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
+
+# Add turboacc
+cp -r kiddin/luci-app-turboacc package/luci-app-turboacc
+
 # Delete
 rm -rf kiddin
 
@@ -68,9 +74,9 @@ rm -rf kiddin
 # git clone --depth 1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # Add Default Setting
-#sed -i 's/zh_cn/en/g' package/lean/default-settings/files/zzz-default-settings
-#sed -i 's/Shanghai/Jakarta/g' package/lean/default-settings/files/zzz-default-settings
-#sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/zh_cn/en/g' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/Shanghai/Jakarta/g' package/lean/default-settings/files/zzz-default-settings
+sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
