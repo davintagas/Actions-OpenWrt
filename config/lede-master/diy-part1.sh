@@ -14,8 +14,8 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 #echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-sed -i 's|src-git luci https://github.com/coolsnowwolf/luci|#src-git luci https://github.com/coolsnowwolf/luci|g' feeds.conf.default
-sed -i 's|#src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|g' feeds.conf.default
+rm -rf feeds.conf.default
+wget https://raw.githubusercontent.com/davintagas/default/main/lede/feeds.conf.default
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
