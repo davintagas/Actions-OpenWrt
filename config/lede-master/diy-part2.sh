@@ -9,7 +9,7 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-./scripts/feeds update -a && ./scripts/feeds install -a -f
+# ./scripts/feeds update -a && ./scripts/feeds install -a -f
 rm -rf feeds/luci/applications/luci-app-v2raya
 # rm -rf package/lean/default-settings
 
