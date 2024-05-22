@@ -20,7 +20,7 @@
 sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
 
 # Add modeminfo
-# git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git package/luci-app-3ginfo-lite
+git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git package/luci-app-3ginfo-lite
 # rm -rf package/luci-app-3ginfo-lite/sms-tool
 
 # Add internet-detector
@@ -85,5 +85,5 @@ sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-setting
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git package/kiddin
-rm -rf package/kiddin/{.github,ntfs3-mount,nftables,shortcut-fe,fibocom-dial,libiptext,libiptext6,fullconenat,arptables-nft,ebtables-nft,xtables-nft,adbyby,dnsmasq,minisign,quectel_cm_5G,quectel_Gobinet,luci-app-gobinetmodem,firewall4,quectel_MHI,opkg,luci-app-pcimodem,ppp,ps3netsrv,quectel_SRPD_PCIE,luci-app-spdmodem,swanmon,vsftpd-alt,fast-classifier,simulated-driver,fibocom_QMI_WWAN,quectel_QMI_WWAN,luci-app-usbmodem,libnftnl,shellsync,ucl,firewall,luci-app-dnscrypt-proxy2,luci-app-strongswan-swanctl,my-default-settings}
+rm -rf package/kiddin/{.github,ntfs3-mount,nftables,shortcut-fe,fibocom-dial,libiptext,libiptext6,fullconenat,arptables-nft,ebtables-nft,xtables-nft,adbyby,dnsmasq,minisign,quectel_cm_5G,quectel_Gobinet,luci-app-gobinetmodem,firewall4,quectel_MHI,opkg,luci-app-pcimodem,ppp,ps3netsrv,quectel_SRPD_PCIE,luci-app-spdmodem,swanmon,vsftpd-alt,fast-classifier,simulated-driver,fibocom_QMI_WWAN,quectel_QMI_WWAN,luci-app-usbmodem,libnftnl,shellsync,ucl,firewall,luci-app-dnscrypt-proxy2,luci-app-strongswan-swanctl,my-default-settings,mmdvm,mmdvm-cal,mmdvm-host,mmdvm-luci}
 ./scripts/feeds install -a -f
