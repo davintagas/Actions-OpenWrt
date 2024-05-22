@@ -9,8 +9,8 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-echo 'src-git kiddin https://github.com/kiddin9/openwrt-packages.git' >>feeds.conf.default
-./scripts/feeds update -a && ./scripts/feeds install -a -f
+# echo 'src-git kiddin https://github.com/kiddin9/openwrt-packages.git' >>feeds.conf.default
+# ./scripts/feeds update -a && ./scripts/feeds install -a -f
 # rm -rf feeds/luci/applications/luci-app-v2raya
 # rm -rf package/lean/default-settings
 
@@ -84,4 +84,6 @@ sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-setting
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
-rm -rf feeds/kiddin/{ntfs3-mount,nftables,shortcut-fe,fibocom-dial,libiptext,libiptext6,fullconenat,arptables-nft,ebtables-nft,xtables-nft,adbyby,dnsmasq,minisign,quectel_cm_5G,quectel_Gobinet,luci-app-gobinetmodem,firewall4,quectel_MHI,opkg,luci-app-pcimodem,ppp,ps3netsrv,quectel_SRPD_PCIE,luci-app-spdmodem,swanmon,vsftpd-alt,fast-classifier,simulated-driver,fibocom_QMI_WWAN,quectel_QMI_WWAN,luci-app-usbmodem,libnftnl,shellsync,ucl,firewall,luci-app-dnscrypt-proxy2,luci-app-strongswan-swanctl,my-default-settings}
+git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git package/kiddin
+rm -rf package/kiddin/{.github,ntfs3-mount,nftables,shortcut-fe,fibocom-dial,libiptext,libiptext6,fullconenat,arptables-nft,ebtables-nft,xtables-nft,adbyby,dnsmasq,minisign,quectel_cm_5G,quectel_Gobinet,luci-app-gobinetmodem,firewall4,quectel_MHI,opkg,luci-app-pcimodem,ppp,ps3netsrv,quectel_SRPD_PCIE,luci-app-spdmodem,swanmon,vsftpd-alt,fast-classifier,simulated-driver,fibocom_QMI_WWAN,quectel_QMI_WWAN,luci-app-usbmodem,libnftnl,shellsync,ucl,firewall,luci-app-dnscrypt-proxy2,luci-app-strongswan-swanctl,my-default-settings}
+./scripts/feeds install -a -f
