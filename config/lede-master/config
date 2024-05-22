@@ -492,8 +492,6 @@ CONFIG_FEED_packages=y
 CONFIG_FEED_luci=y
 CONFIG_FEED_routing=y
 CONFIG_FEED_telephony=y
-CONFIG_FEED_kiddin=y
-# CONFIG_TARGET_DEFAULT_LAN_IP_FROM_PREINIT is not set
 
 #
 # Base system
@@ -1840,7 +1838,7 @@ CONFIG_PACKAGE_u-boot-orangepi-r1-plus-lts-rk3328=y
 # end of Web Servers/Proxies
 
 # CONFIG_PACKAGE_3proxy-sql is not set
-CONFIG_PACKAGE_autocore=y
+CONFIG_PACKAGE_autocore-arm=y
 CONFIG_PACKAGE_automount=y
 # CONFIG_PACKAGE_autosamba is not set
 # CONFIG_PACKAGE_autoshare-ksmbd is not set
@@ -4997,7 +4995,6 @@ CONFIG_PACKAGE_luci-app-internet-detector=y
 # CONFIG_PACKAGE_luci-app-minieap is not set
 # CONFIG_PACKAGE_luci-app-mjpg-streamer is not set
 # CONFIG_PACKAGE_luci-app-mmconfig is not set
-# CONFIG_PACKAGE_luci-app-mmdvm is not set
 # CONFIG_PACKAGE_luci-app-modem is not set
 CONFIG_PACKAGE_luci-app-modemband=y
 # CONFIG_PACKAGE_luci-app-modeminfo is not set
@@ -5235,7 +5232,6 @@ CONFIG_PACKAGE_luci-app-webd_INCLUDE_WEBD_BINARY=y
 #
 CONFIG_PACKAGE_luci-theme-argon=y
 CONFIG_PACKAGE_luci-theme-bootstrap=y
-# CONFIG_PACKAGE_luci-theme-bootstrap-mmdvm is not set
 CONFIG_PACKAGE_luci-theme-design=y
 # CONFIG_PACKAGE_luci-theme-edge is not set
 # CONFIG_PACKAGE_luci-theme-kucat is not set
@@ -5570,20 +5566,6 @@ CONFIG_PACKAGE_dapnet-gateway=y
 CONFIG_PACKAGE_ircddb-gateway=y
 CONFIG_PACKAGE_libmmdvm=y
 CONFIG_PACKAGE_libwxwidgets=y
-# CONFIG_PACKAGE_mmdvm is not set
-# CONFIG_PACKAGE_mmdvm-cal is not set
-CONFIG_PACKAGE_mmdvm-host=y
-CONFIG_PACKAGE_mmdvm-luci=y
-CONFIG_LUCI_APP_MMDVM=y
-CONFIG_LUCI_THEME_BOOTSTRAP_MMDVM=y
-
-#
-# Translations
-#
-CONFIG_LUCI_LANG_zh-cn=y
-# end of Translations
-
-CONFIG_PACKAGE_mmdvm-luci-i18n-zh-cn=y
 CONFIG_PACKAGE_nxdn-clients=y
 CONFIG_PACKAGE_p25-clients=y
 CONFIG_PACKAGE_ysf-clients=y
@@ -6558,7 +6540,7 @@ CONFIG_PACKAGE_uhttpd-mod-ubus=y
 # CONFIG_PACKAGE_3ginfo is not set
 # CONFIG_PACKAGE_3ginfo-lite is not set
 # CONFIG_PACKAGE_3ginfo-qmisignal is not set
-CONFIG_PACKAGE_3ginfo-text=y
+# CONFIG_PACKAGE_3ginfo-text is not set
 # CONFIG_PACKAGE_464xlat is not set
 # CONFIG_PACKAGE_6in4 is not set
 # CONFIG_PACKAGE_6rd is not set
