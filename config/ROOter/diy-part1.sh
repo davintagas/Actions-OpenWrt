@@ -14,12 +14,16 @@
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 # echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-git clone -b openwrt-23.05 --depth 1 https://github.com/openwrt/openwrt.git v23.05
-rm -rf package/boot/{arm-trusted-firmware-rockchip,uboot-rockchip}
-cp -r v23.05/package/boot/{arm-trusted-firmware-rockchip,uboot-rockchip} package/boot/
-cp -r target/linux/generic/pending-5.15/{900-driver2305.patch,900-option.patch,900-qcserial.patch} v23.05/target/linux/generic/pending-5.15/
-rm -rf target/linux/{generic,rockchip}
-cp -r v23.05/target/linux/{generic,rockchip} target/linux/
+pushd target/linux/generic/backport-5.15
+wget https://raw.githubusercontent.com/openwrt/openwrt/80ef582deebd13e3a46718f4012947e4b56f31cf/target/linux/generic/backport-5.15/791-v6.6-11-net-phy-motorcomm-Add-pad-drive-strength-cfg-support.patch
+popd
+
+pushd target/linux/rockchip/patches-5.15
+wget https://raw.githubusercontent.com/openwrt/openwrt/80ef582deebd13e3a46718f4012947e4b56f31cf/target/linux/rockchip/patches-5.15/009-v6.8-arm64-dts-rockchip-configure-eth-pad-driver-strength-for-.patch
+popd
+
+sed -i 's|swiotlb=1 ||g' target/linux/rockchip/image/mmc.bootscript
+sed -i 's|console=tty1 ||g' target/linux/rockchip/image/mmc.bootscript
 
 pushd target/linux/rockchip/patches-5.15
 wget -O 999-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-23.05/target/linux/rockchip/patches-5.15/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
