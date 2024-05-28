@@ -24,16 +24,6 @@ rm -rf internet-detector
 git clone -b js --depth 1 https://github.com/gngpp/luci-theme-design.git package/luci-theme-design
 git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
-# Add mosdns
-git clone --depth 1 https://github.com/sbwml/luci-app-mosdns.git mosdns
-mv mosdns/{luci-app-mosdns,mosdns,v2dat} package/
-rm -rf mosdns
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-rm -rf feeds/packages/net/v2ray-geodata
-rm -rf feeds/packages/net/mosdns
-git clone --depth 1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-
 # Add app
 git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
 # Add ramfree
