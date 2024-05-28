@@ -45,17 +45,6 @@ cp -r kiddin/{luci-app-smartdns,smartdns} package/
 
 rm -rf kiddin
 
-# Change ModemManager
-git clone -b openwrt-23.05 --depth 1 https://github.com/openwrt/luci.git 23.05-luci
-rm -rf feeds/luci/protocols/luci-proto-modemmanager
-cp -r 23.05-luci/protocols/luci-proto-modemmanager feeds/luci/protocols/
-rm -rf 23.05-luci
-git clone -b openwrt-23.05 --depth 1 https://github.com/openwrt/packages.git 23.05-packages
-rm -rf feeds/packages/net/modemmanager
-cp -rf 23.05-packages/net/modemmanager feeds/packages/net/
-rm -rf 23.05-packages
-sed -i 's|include $(INCLUDE_DIR)/meson.mk||g' feeds/packages/net/modemmanager/Makefile
-
 # Add Default Setting
 sed -i 's/auto/en/g' package/emortal/default-settings/files/99-default-settings
 sed -i 's/Shanghai/Jakarta/g' package/emortal/default-settings/files/99-default-settings-chinese
