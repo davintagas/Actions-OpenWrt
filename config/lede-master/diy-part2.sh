@@ -45,7 +45,7 @@ cp -r kiddin/{luci-base,luci-mod-network,luci-mod-status,luci-mod-system} feed/l
 cp -r kiddin/luci-app-sms-tool-js package/luci-app-sms-tool-js
 
 # Add modemband
-# cp -r kiddin/{luci-app-modemband,modemband} package/
+cp -r kiddin/{luci-app-modemband,modemband} package/
 
 # Add atinout
 cp -r kiddin/{luci-app-atinout,atinout} package/
@@ -57,7 +57,10 @@ cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
 # cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
 
 # Add turboacc
-# cp -r kiddin/luci-app-turboacc package/luci-app-turboacc
+cp -r kiddin/luci-app-turboacc package/luci-app-turboacc
+
+# Add theme
+cp -r kiddin/{luci-theme-*} package/
 
 # Delete
 rm -rf kiddin
