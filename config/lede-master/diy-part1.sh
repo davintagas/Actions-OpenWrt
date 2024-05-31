@@ -12,6 +12,8 @@
 sed -i '2d' feeds.conf.default
 sed -i 's|#src-git luci|src-git luci|g' feeds.conf.default
 
+rm -rf package/lean/csstidy
+
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 #echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
