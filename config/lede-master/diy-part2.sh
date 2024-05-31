@@ -56,7 +56,7 @@ cp -r kiddin/{luci-app-atinout,atinout} package/
 cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
 
 # Add ramfree
-# cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
+cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
 
 # Add turboacc
 cp -r kiddin/luci-app-turboacc package/luci-app-turboacc
