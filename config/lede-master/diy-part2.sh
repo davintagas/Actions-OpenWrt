@@ -21,7 +21,7 @@ sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99
 
 # Add modeminfo
 git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git package/luci-app-3ginfo-lite
-# rm -rf package/luci-app-3ginfo-lite/sms-tool
+rm -rf feeds/packages/utils/sms-tool
 
 # Add internet-detector
 git clone --depth 1 https://github.com/gSpotx2f/luci-app-internet-detector.git internet-detector
@@ -29,17 +29,17 @@ mv internet-detector/{luci-app-internet-detector,internet-detector,internet-dete
 rm -rf internet-detector
 
 # Add theme
-rm -rf feeds/luci/themes/{luci-theme-argon,luci-theme-argon-mod}
-git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-#rm -rf feeds/luci/applications/luci-app-argon-config
-#git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+# rm -rf feeds/luci/themes/{luci-theme-argon,luci-theme-argon-mod}
+# git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+# rm -rf feeds/luci/applications/luci-app-argon-config
+# git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # Add source
 git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
 
-# rm -rf feeds/packages/net/mosdns
-# cp -r kiddin/mosdns feeds/packages/net/mosdns
-# cp -r kiddin/luci-app-mosdns package/luci-app-mosdns
+# Change Base
+rm -rf feeds/luci/modules/{luci-base,luci-mod-network,luci-mod-status,luci-mod-system}
+cp -r kiddin/{luci-base,luci-mod-network,luci-mod-status,luci-mod-system} feed/luci/modules/
 
 # Add sms-tool
 cp -r kiddin/luci-app-sms-tool-js package/luci-app-sms-tool-js
