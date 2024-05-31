@@ -9,6 +9,8 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
+sed -i '2d' feeds.conf.default
+sed -i 's|#src-git luci|src-git luci|g' feeds.conf.default
 
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
