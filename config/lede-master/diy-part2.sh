@@ -19,6 +19,8 @@
 # Add the default password for the 'root' user（Change the empty password to 'password'）
 sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
 
+rm -rf feeds/luci/applications/luci-app-v2raya
+
 # Add modeminfo
 git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git package/luci-app-3ginfo-lite
 rm -rf feeds/packages/utils/sms-tool
@@ -39,7 +41,7 @@ git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
 
 # Change Base
 rm -rf feeds/luci/modules/{luci-base,luci-mod-network,luci-mod-status,luci-mod-system}
-cp -r kiddin/{luci-base,luci-mod-network,luci-mod-status,luci-mod-system} feed/luci/modules/
+cp -r kiddin/{luci-base,luci-mod-network,luci-mod-status,luci-mod-system} feeds/luci/modules/
 
 # Add sms-tool
 cp -r kiddin/luci-app-sms-tool-js package/luci-app-sms-tool-js
@@ -60,7 +62,7 @@ cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
 cp -r kiddin/luci-app-turboacc package/luci-app-turboacc
 
 # Add theme
-cp -r kiddin/{luci-theme-*} package/
+cp -r kiddin/{luci-theme-alpha,luci-theme-argon,luci-theme-design} package/
 
 # Delete
 rm -rf kiddin
@@ -81,6 +83,7 @@ rm -rf kiddin
 sed -i 's/zh_cn/en/g' package/lean/default-settings/files/zzz-default-settings
 sed -i 's/Shanghai/Jakarta/g' package/lean/default-settings/files/zzz-default-settings
 sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
+sed -i 's|lang=en|auto|g' package/lean/default-settings/files/zzz-default-settings
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
