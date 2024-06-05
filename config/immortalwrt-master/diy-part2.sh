@@ -28,7 +28,7 @@ cp -r kiddin/{luci-app-atinout,atinout} package/
 # Add internet-detector
 cp -r kiddin/luci-app-internet-detector package/luci-app-internet-detector
 # Add turboacc 
-cp -r kiddin/{luci-app-turboacc,shortcut-fe} package/
+# cp -r kiddin/{luci-app-turboacc,shortcut-fe} package/
 # Change luci-app-firewall
 rm -rf feeds/luci/applications/luci-app-firewall
 cp -r kiddin/luci-app-firewall feeds/luci/applications/
