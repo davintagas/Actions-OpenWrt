@@ -13,8 +13,8 @@ sed -i '2d' feeds.conf.default
 sed -i 's|#src-git luci|src-git luci|g' feeds.conf.default
 
 rm -rf package/lean/csstidy
-sed -i 's|KERNEL_PATCHVER:=6.1|KERNEL_PATCHVER:=6.6|g' target/linux/rockchip/Makefile
-sed -i 's|KERNEL_TESTING_PATCHVER:=6.6||g' target/linux/rockchip/Makefile
+# sed -i 's|KERNEL_PATCHVER:=6.1|KERNEL_PATCHVER:=6.6|g' target/linux/rockchip/Makefile
+# sed -i 's|KERNEL_TESTING_PATCHVER:=6.6||g' target/linux/rockchip/Makefile
 
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
