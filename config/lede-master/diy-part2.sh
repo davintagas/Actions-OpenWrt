@@ -71,8 +71,8 @@ rm -rf package/lean/autocore
 cp -r kiddin/autocore package/lean/
 
 # Change Adguardhome
-rm -rf feeds/packages/net/adguardhome
-cp -r kiddin/adguardhome feeds/packages/net/
+# rm -rf feeds/packages/net/adguardhome
+# cp -r kiddin/adguardhome feeds/packages/net/
 
 # Cpufreq
 cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
