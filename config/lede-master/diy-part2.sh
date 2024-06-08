@@ -74,6 +74,9 @@ cp -r kiddin/autocore package/lean/
 rm -rf feeds/packages/net/adguardhome
 cp -r kiddin/adguardhome feeds/packages/net/
 
+# Cpufreq
+cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
+
 # Delete
 rm -rf kiddin
 
