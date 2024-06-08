@@ -70,6 +70,10 @@ cp -r kiddin/{luci-theme-alpha,luci-theme-argon,luci-theme-design} package/
 rm -rf package/lean/autocore
 cp -r kiddin/autocore package/lean/
 
+# Change Adguardhome
+rm -rf feeds/packages/net/adguardhome
+cp -r kiddin/adguardhome feeds/packages/net/
+
 # Delete
 rm -rf kiddin
 
