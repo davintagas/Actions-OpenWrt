@@ -25,6 +25,8 @@ cp -r v23.05.3/package/boot/{arm-trusted-firmware-rockchip,uboot-rockchip} packa
 cp -r target/linux/generic/pending-5.15/{900-driver2305.patch,900-option.patch,900-qcserial.patch} v23.05.3/target/linux/generic/pending-5.15/
 rm -rf target/linux/generic
 cp -r v23.05.3/target/linux/generic target/linux/
+rm -rf toolchain/kernel-headers
+cp -r v23.05.3/toolchain/kernel-headers toolchain/
 rm -rf v23.05.3
 sed -i 's|+wireless-tools ||g' package/rooter/ext-rooter-basic/Makefile
 
