@@ -17,6 +17,3 @@
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 # echo 'src-git modemfeed https://github.com/koshev-msk/modemfeed' >>feeds.conf.default
-sed -i 's|firewall4|firewall|g' include/target.mk
-sed -i 's|nftables|iptables|g' include/target.mk
-sed -i 's|kmod-nft-offload|curl|g' include/target.mk
