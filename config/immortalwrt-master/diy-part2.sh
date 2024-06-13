@@ -30,6 +30,10 @@ cp -r kiddin/luci-app-internet-detector package/luci-app-internet-detector
 # Delete Source
 rm -rf kiddin
 
+# Smartdns
+rm -rf feeds/packages/net/smartdns/conf/custom.conf
+touch feeds/packages/net/smartdns/conf/custom.conf
+
 # Add Default Setting
 sed -i 's/auto/en/g' package/emortal/default-settings/files/99-default-settings
 sed -i 's/Shanghai/Jakarta/g' package/emortal/default-settings/files/99-default-settings-chinese
