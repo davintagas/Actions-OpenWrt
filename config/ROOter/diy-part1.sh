@@ -15,20 +15,9 @@
 # echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
-git clone -b v23.05.3 --depth 1 https://github.com/openwrt/openwrt.git v23.05.3
-rm -rf target/linux/rockchip
-cp -r v23.05.3/target/linux/rockchip target/linux/
-#rm -rf include/kernel-5.15
-#cp -r v23.05.3/include/kernel-5.15 include/
-rm -rf package/boot/{arm-trusted-firmware-rockchip,uboot-rockchip}
-cp -r v23.05.3/package/boot/{arm-trusted-firmware-rockchip,uboot-rockchip} package/boot/
-cp -r target/linux/generic/pending-5.15/{900-driver2305.patch,900-option.patch,900-qcserial.patch} v23.05.3/target/linux/generic/pending-5.15/
-rm -rf target/linux/generic
-cp -r v23.05.3/target/linux/generic target/linux/
-rm -rf toolchain/kernel-headers
-cp -r v23.05.3/toolchain/kernel-headers toolchain/
-rm -rf v23.05.3
-sed -i 's|+wireless-tools ||g' package/rooter/ext-rooter-basic/Makefile
+pushd target/linux/rockchip/patches-5.15/
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-23.05/target/linux/rockchip/patches-5.15/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
+popd
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
