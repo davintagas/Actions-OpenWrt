@@ -18,6 +18,7 @@ git clone -b v23.05.3 --depth 1 https://github.com/openwrt/openwrt.git v23.05.3
 cp -rf v23.05.3/target/linux/generic/backport-5.15/* target/linux/generic/backport-5.15/
 cp -rf v23.05.3/target/linux/generic/hack-5.15/* target/linux/generic/hack-5.15/
 cp -rf v23.05.3/target/linux/generic/pending-5.15/* target/linux/generic/pending-5.15/
+cp -rf v23.05.3/target/linux/generic/{config-5.15,config-filter} target/linux/generic/
 rm -rf v23.05.3
 
 pushd target/linux/rockchip/patches-5.15/
