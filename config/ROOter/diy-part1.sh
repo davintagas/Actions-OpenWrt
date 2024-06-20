@@ -19,6 +19,8 @@ cp -rf v23.05.3/target/linux/generic/backport-5.15/* target/linux/generic/backpo
 cp -rf v23.05.3/target/linux/generic/hack-5.15/* target/linux/generic/hack-5.15/
 cp -rf v23.05.3/target/linux/generic/pending-5.15/* target/linux/generic/pending-5.15/
 cp -rf v23.05.3/target/linux/generic/{config-5.15,config-filter} target/linux/generic/
+rm -rf toolchain/kernel-headers
+cp -r v23.05.3/toolchain/kernel-headers toolchain/
 rm -rf v23.05.3
 
 pushd target/linux/rockchip/patches-5.15/
