@@ -15,16 +15,11 @@
 # echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
-#pushd target/linux/rockchip/patches-5.15/
-#wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-23.05/target/linux/rockchip/patches-5.15/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
-#wget https://raw.githubusercontent.com/openwrt/openwrt/80ef582deebd13e3a46718f4012947e4b56f31cf/target/linux/rockchip/patches-5.15/009-v6.8-arm64-dts-rockchip-configure-eth-pad-driver-strength-for-.patch
-#popd
-
 #pushd target/linux/generic/backport-5.15/
 #wget https://raw.githubusercontent.com/openwrt/openwrt/80ef582deebd13e3a46718f4012947e4b56f31cf/target/linux/generic/backport-5.15/791-v6.6-11-net-phy-motorcomm-Add-pad-drive-strength-cfg-support.patch
 #popd
 
-git clone -b openwrt-23.05 --depth 1 https://github.com/immortalwrt/immortalwrt.git lede
+git clone -b v23.05.3 --depth 1 https://github.com/openwrt/openwrt.git lede
 cp -r target/linux/generic/pending-5.15/{900-driver2305.patch,900-option.patch,900-qcserial.patch} lede/target/linux/generic/pending-5.15
 rm -rf target/linux/generic
 cp -r lede/target/linux/generic target/linux/
@@ -39,6 +34,11 @@ rm -rf target/Makefile package/Makefile
 cp -r lede/target/Makefile target/
 cp -r lede/package/Makefile package/
 rm -rf lede
+
+pushd target/linux/rockchip/patches-5.15/
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-23.05/target/linux/rockchip/patches-5.15/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
+#wget https://raw.githubusercontent.com/openwrt/openwrt/80ef582deebd13e3a46718f4012947e4b56f31cf/target/linux/rockchip/patches-5.15/009-v6.8-arm64-dts-rockchip-configure-eth-pad-driver-strength-for-.patch
+popd
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
