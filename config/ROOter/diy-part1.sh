@@ -33,6 +33,8 @@ cp -r lede/target/linux/rockchip/{armv8,image,patches-5.15} target/linux/rockchi
 rm -rf package/boot/{uboot-rockchip,arm-trusted-firmware-rockchip}
 cp -r lede/package/boot/{arm-trusted-firmware-rockchip,uboot-rockchip} package/boot/
 cp -rf lede/include/kernel-5.15 include/
+rm -rf target/linux/Makefile
+cp -r lede/target/linux/Makefile target/linux/
 rm -rf lede
 
 # Add a feed source
