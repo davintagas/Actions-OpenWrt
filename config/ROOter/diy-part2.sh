@@ -30,6 +30,9 @@ git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
 cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
 # Add cpufreq
 cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
+# Adguardhome
+rm -rf feeds/packages/net/adguardhome
+cp -r kiddin/adguardhome feeds/packages/net/
 # Delete
 rm -rf kiddin
 
