@@ -27,7 +27,7 @@ rm -rf target/linux/rockchip
 cp -r lede/target/linux/rockchip target/linux/
 rm -rf package/boot/{uboot-rockchip,arm-trusted-firmware-rockchip}
 cp -r lede/package/boot/{arm-trusted-firmware-rockchip,uboot-rockchip} package/boot/
-cp -rf lede/include/kernel-5.15 include/
+cp -rf lede/include/{kernel-5.15,image.mk,kernel-build.mk,kernel-defaults.mk,image-commands.mk,version.mk} include/
 rm -rf target/linux/Makefile
 cp -r lede/target/linux/Makefile target/linux/
 rm -rf target/Makefile package/Makefile
