@@ -33,6 +33,7 @@ cp -r lede/target/linux/Makefile target/linux/
 rm -rf target/Makefile package/Makefile
 cp -r lede/target/Makefile target/
 cp -r lede/package/Makefile package/
+cp -rf lede/config/{Config-build.in,Config-kernel.in} config/
 rm -rf lede
 
 pushd target/linux/rockchip/patches-5.15/
