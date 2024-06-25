@@ -9,6 +9,8 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
+rm -rf target/linux/rockchip/patches-5.4/001-add-rk3328-dmc-driver.patch
+
 #pushd target/linux/generic/backport-5.15/
 #wget https://raw.githubusercontent.com/openwrt/openwrt/80ef582deebd13e3a46718f4012947e4b56f31cf/target/linux/generic/backport-5.15/791-v6.6-11-net-phy-motorcomm-Add-pad-drive-strength-cfg-support.patch
 #popd
