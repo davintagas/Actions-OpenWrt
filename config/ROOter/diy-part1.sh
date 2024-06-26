@@ -10,6 +10,7 @@
 # See /LICENSE for more information.
 #
 rm -rf tmp
+sed -i 's|timeout=7|timeout=4|g' package/rooter/ext-rooter-basic/files/usr/lib/rooter/connect/chkconn1.sh
 
 #pushd target/linux/generic/backport-5.15/
 #wget https://raw.githubusercontent.com/openwrt/openwrt/80ef582deebd13e3a46718f4012947e4b56f31cf/target/linux/generic/backport-5.15/791-v6.6-11-net-phy-motorcomm-Add-pad-drive-strength-cfg-support.patch
