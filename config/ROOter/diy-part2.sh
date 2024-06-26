@@ -30,6 +30,12 @@ git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
 cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
 # Add cpufreq
 cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
+# Change
+rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
+cp -r kiddin/{luci-base,luci-mod-status} feeds/luci/modules/
+cp -r kiddin/autocore package/
+sed -i 's|bcm27xx-utils|bcm27xx-userland|g' package/autocore/Makefile
+
 # Delete
 rm -rf kiddin
 
