@@ -28,8 +28,6 @@ git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/
 git clone -b openwrt-23.05 --depth 1 https://github.com/immortalwrt/luci.git mortal
 rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
 cp -r mortal/modules/{luci-base,luci-mod-status} feeds/luci/modules/
-rm -rf package/rooter/0themes/{luci-theme-material,luci-theme-argon}
-cp -rf mortal/themes/luci-theme-material package/rooter/0themes/
 rm -rf mortal
 
 # Add app
@@ -41,8 +39,6 @@ cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 # Change
 cp -r kiddin/autocore package/
 sed -i 's|bcm27xx-utils|bcm27xx-userland|g' package/autocore/Makefile
-# Theme
-cp -rf kiddin/luci-theme-argon package/rooter/0themes/
 # Atinout
 cp -r kiddin/atinout package/
 # Delete
