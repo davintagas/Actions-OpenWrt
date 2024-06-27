@@ -2331,7 +2331,7 @@ CONFIG_PACKAGE_kmod-ipt-ipopt=y
 # CONFIG_PACKAGE_kmod-ipt-ipp2p is not set
 # CONFIG_PACKAGE_kmod-ipt-iprange is not set
 # CONFIG_PACKAGE_kmod-ipt-ipsec is not set
-# CONFIG_PACKAGE_kmod-ipt-ipset is not set
+CONFIG_PACKAGE_kmod-ipt-ipset=y
 # CONFIG_PACKAGE_kmod-ipt-ipv4options is not set
 # CONFIG_PACKAGE_kmod-ipt-led is not set
 # CONFIG_PACKAGE_kmod-ipt-length2 is not set
@@ -3364,7 +3364,7 @@ CONFIG_ZSTD_OPTIMIZE_O3=y
 #
 # Filesystem
 #
-# CONFIG_PACKAGE_libacl is not set
+CONFIG_PACKAGE_libacl=y
 CONFIG_PACKAGE_libattr=y
 CONFIG_PACKAGE_libfuse=y
 # CONFIG_PACKAGE_libfuse3 is not set
@@ -5632,6 +5632,7 @@ CONFIG_PACKAGE_openssh-sftp-server=y
 # Telephony
 #
 # CONFIG_PACKAGE_asterisk is not set
+CONFIG_PACKAGE_atinout=y
 # CONFIG_PACKAGE_baresip is not set
 # CONFIG_PACKAGE_coturn is not set
 # CONFIG_PACKAGE_freeswitch is not set
@@ -5968,7 +5969,7 @@ CONFIG_PACKAGE_internet-detector=y
 # CONFIG_PACKAGE_iperf3 is not set
 # CONFIG_PACKAGE_iperf3-ssl is not set
 # CONFIG_PACKAGE_ipip is not set
-# CONFIG_PACKAGE_ipset is not set
+CONFIG_PACKAGE_ipset=y
 # CONFIG_PACKAGE_ipset-dns is not set
 # CONFIG_PACKAGE_iptraf-ng is not set
 # CONFIG_PACKAGE_iputils-arping is not set
@@ -5988,7 +5989,7 @@ CONFIG_PACKAGE_iw=y
 # CONFIG_PACKAGE_krb5-libs is not set
 # CONFIG_PACKAGE_krb5-server is not set
 # CONFIG_PACKAGE_krb5-server-extras is not set
-# CONFIG_PACKAGE_libipset is not set
+CONFIG_PACKAGE_libipset=y
 # CONFIG_PACKAGE_libndp is not set
 # CONFIG_PACKAGE_linknx is not set
 # CONFIG_PACKAGE_lynx is not set
@@ -6255,9 +6256,9 @@ CONFIG_PACKAGE_rqmi=y
 # CONFIG_PACKAGE_bwallocate is not set
 # CONFIG_PACKAGE_bwmon is not set
 # CONFIG_PACKAGE_ext-autoapn is not set
-# CONFIG_PACKAGE_ext-blacklist is not set
-# CONFIG_PACKAGE_ext-blockport is not set
-# CONFIG_PACKAGE_ext-domain is not set
+CONFIG_PACKAGE_ext-blacklist=y
+CONFIG_PACKAGE_ext-blockport=y
+CONFIG_PACKAGE_ext-domain=y
 CONFIG_PACKAGE_ext-logo=y
 # CONFIG_PACKAGE_ext-menu is not set
 # CONFIG_PACKAGE_ext-netselect is not set
@@ -7095,7 +7096,7 @@ CONFIG_PACKAGE_openssl-util=y
 # CONFIG_PACKAGE_sane-daemon is not set
 # CONFIG_PACKAGE_sane-frontends is not set
 # CONFIG_PACKAGE_secilc is not set
-# CONFIG_PACKAGE_sed is not set
+CONFIG_PACKAGE_sed=y
 # CONFIG_PACKAGE_sedutil is not set
 # CONFIG_PACKAGE_selinux-audit2allow is not set
 # CONFIG_PACKAGE_selinux-chcat is not set
@@ -7134,8 +7135,14 @@ CONFIG_STRACE_NONE=y
 # CONFIG_PACKAGE_sysrepo is not set
 # CONFIG_PACKAGE_sysrepocfg is not set
 # CONFIG_PACKAGE_sysrepoctl is not set
-# CONFIG_PACKAGE_sysstat is not set
-# CONFIG_PACKAGE_tar is not set
+CONFIG_PACKAGE_sysstat=y
+CONFIG_PACKAGE_tar=y
+CONFIG_PACKAGE_TAR_POSIX_ACL=y
+CONFIG_PACKAGE_TAR_XATTR=y
+CONFIG_PACKAGE_TAR_BZIP2=y
+CONFIG_PACKAGE_TAR_GZIP=y
+CONFIG_PACKAGE_TAR_XZ=y
+CONFIG_PACKAGE_TAR_ZSTD=y
 # CONFIG_PACKAGE_taskset is not set
 # CONFIG_PACKAGE_taskwarrior is not set
 # CONFIG_PACKAGE_telegraf is not set
