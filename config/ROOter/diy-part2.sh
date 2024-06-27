@@ -25,7 +25,7 @@ git clone -b js --depth 1 https://github.com/gngpp/luci-theme-design.git package
 git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
 # Add mortal
-git clone -b openwrt-23.05 --depth1 https://github.com/immortalwrt/luci.git mortal
+git clone -b openwrt-23.05 --depth 1 https://github.com/immortalwrt/luci.git mortal
 rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
 cp -r mortal/modules/{luci-base,luci-mod-status} feeds/luci/modules/
 rm -rf package/rooter/0themes/{luci-theme-material,luci-theme-argon}
