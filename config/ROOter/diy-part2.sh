@@ -24,6 +24,14 @@ rm -rf internet-detector
 git clone -b js --depth 1 https://github.com/gngpp/luci-theme-design.git package/luci-theme-design
 git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
+# Add mortal
+git clone -b openwrt-23.05 --depth1 https://github.com/immortalwrt/luci.git mortal
+rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
+cp -r mortal/modules/{luci-base,luci-mod-status} feeds/luci/modules/
+rm -rf package/rooter/0themes/{luci-theme-material,luci-theme-argon}
+cp -rf mortal/themes/luci-theme-material package/rooter/0themes/
+rm -rf mortal
+
 # Add app
 git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
 # Add ramfree
@@ -31,11 +39,12 @@ cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
 # Add cpufreq
 cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 # Change
-rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
-cp -r kiddin/{luci-base,luci-mod-status} feeds/luci/modules/
 cp -r kiddin/autocore package/
 sed -i 's|bcm27xx-utils|bcm27xx-userland|g' package/autocore/Makefile
-
+# Theme
+cp -rf kiddin/luci-theme-argon package/rooter/0themes/
+# Atinout
+cp -r kiddin/atinout package/
 # Delete
 rm -rf kiddin
 
