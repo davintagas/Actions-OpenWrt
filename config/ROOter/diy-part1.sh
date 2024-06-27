@@ -11,6 +11,7 @@
 #
 rm -rf tmp
 sed -i 's|timeout=7|timeout=4|g' package/rooter/ext-rooter-basic/files/usr/lib/rooter/connect/chkconn1.sh
+sed -i 's|eth0|eth2|g' target/linux/rockchip/armv8/base-files/etc/board.d/01_leds
 
 pushd target/linux/rockchip/image/
 rm -rf mmc.bootscript
