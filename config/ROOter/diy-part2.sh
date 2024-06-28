@@ -50,6 +50,11 @@ pushd files/etc/uci-defaults
 wget https://raw.githubusercontent.com/davintagas/default/main/rooter/99-init-settings.sh
 popd
 
+mkdir -p files/etc/profile.d/
+pushd files/etc/profile.d
+wget https://raw.githubusercontent.com/davintagas/default/main/30-sysinfo.sh
+popd
+
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
