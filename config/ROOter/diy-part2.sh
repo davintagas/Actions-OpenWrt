@@ -47,7 +47,7 @@ rm -rf kiddin
 # Add Default Setting
 mkdir -p files/etc/uci-defaults
 pushd files/etc/uci-defaults
-wget https://raw.githubusercontent.com/davintagas/default/main/official/99-init-settings.sh
+wget https://raw.githubusercontent.com/davintagas/default/main/rooter/99-init-settings.sh
 popd
 
 # Modify default theme
