@@ -50,6 +50,10 @@ pushd files/etc/uci-defaults
 wget https://raw.githubusercontent.com/davintagas/default/main/rooter/99-init-settings.sh
 popd
 
+pushd files/etc
+wget https://raw.githubusercontent.com/davintagas/default/main/bash.bashrc
+popd
+
 mkdir -p files/etc/profile.d/
 pushd files/etc/profile.d
 wget https://raw.githubusercontent.com/davintagas/default/main/30-sysinfo.sh
