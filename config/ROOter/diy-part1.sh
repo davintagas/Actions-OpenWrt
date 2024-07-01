@@ -27,12 +27,12 @@ sed -i 's|eth0|eth2|g' target/linux/rockchip/armv8/base-files/etc/board.d/01_led
 #wget https://raw.githubusercontent.com/openwrt/openwrt/80ef582deebd13e3a46718f4012947e4b56f31cf/target/linux/rockchip/patches-5.15/009-v6.8-arm64-dts-rockchip-configure-eth-pad-driver-strength-for-.patch
 #popd
 
-git clone --depth 1 https://github.com/davintagas/default.git package/custom
-mv package/custom/ROOter package/
-pushd package/ROOter
-cp -rf * ../../
-popd
-rm -rf package/{custom,ROOter}
+git clone -b v21.02.7-OrangePi-R1-Plus-LTS.1 --depth 1 https://github.com/ohabu/openwrt.git package/custom
+rm -rf target/linux/{generic,rockchip}
+cp -rf package/custom/target/linux/{generic,rockchip} target/linux/
+rm -rf package/boot/{arm-trusted-firmware-rockchip,uboot-rockchip}
+cp -rf package/custom/package/boot/{arm-trusted-firmware-rk3328,arm-trusted-firmware-rockchip,uboot-rockchip} package/boot/
+rm -rf package/custom
 
 #rm -rf target/linux/rockchip/image/mmc.bootscript
 #wget -O target/linux/rockchip/image/mmc.bootscript https://raw.githubusercontent.com/openwrt/openwrt/openwrt-23.05/target/linux/rockchip/image/mmc.bootscript
