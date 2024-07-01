@@ -13,19 +13,26 @@ rm -rf tmp
 sed -i 's|timeout=7|timeout=3|g' package/rooter/ext-rooter-basic/files/usr/lib/rooter/connect/chkconn1.sh
 sed -i 's|eth0|eth2|g' target/linux/rockchip/armv8/base-files/etc/board.d/01_leds
 
-pushd target/linux/rockchip/image/
-rm -rf mmc.bootscript
-wget https://raw.githubusercontent.com/openwrt/openwrt/openwrt-23.05/target/linux/rockchip/image/mmc.bootscript
-popd
+#pushd target/linux/rockchip/image/
+#rm -rf mmc.bootscript
+#wget https://raw.githubusercontent.com/openwrt/openwrt/openwrt-23.05/target/linux/rockchip/image/mmc.bootscript
+#popd
 
 #pushd target/linux/generic/backport-5.15/
 #wget https://raw.githubusercontent.com/openwrt/openwrt/80ef582deebd13e3a46718f4012947e4b56f31cf/target/linux/generic/backport-5.15/791-v6.6-11-net-phy-motorcomm-Add-pad-drive-strength-cfg-support.patch
 #popd
 
-pushd target/linux/rockchip/patches-5.15/
-wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-23.05/target/linux/rockchip/patches-5.15/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
+#pushd target/linux/rockchip/patches-5.15/
+#wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-23.05/target/linux/rockchip/patches-5.15/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 #wget https://raw.githubusercontent.com/openwrt/openwrt/80ef582deebd13e3a46718f4012947e4b56f31cf/target/linux/rockchip/patches-5.15/009-v6.8-arm64-dts-rockchip-configure-eth-pad-driver-strength-for-.patch
+#popd
+
+git clone --depth 1 https://github.com/davintagas/default.git package/custom
+mv package/custom/ROOter package/
+pushd package/ROOter
+cp -rf * ../../
 popd
+rm -rf package/{custom,ROOter}
 
 #rm -rf target/linux/rockchip/image/mmc.bootscript
 #wget -O target/linux/rockchip/image/mmc.bootscript https://raw.githubusercontent.com/openwrt/openwrt/openwrt-23.05/target/linux/rockchip/image/mmc.bootscript
