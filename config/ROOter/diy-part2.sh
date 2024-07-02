@@ -29,10 +29,6 @@ git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/
 git clone -b openwrt-23.05 --depth 1 https://github.com/immortalwrt/luci.git mortal
 rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
 cp -r mortal/modules/{luci-base,luci-mod-status} feeds/luci/modules/
-cp -r mortal/applications/luci-app-adblock-fast feeds/luci/applications/
-rm -rf mortal
-git clone -b openwrt-23.05 --depth 1 https://github.com/immortalwrt/packages.git mortal
-cp -r mortal/net/adblock-fast package/
 rm -rf mortal
 
 # Add app
