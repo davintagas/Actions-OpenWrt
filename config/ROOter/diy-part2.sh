@@ -13,8 +13,8 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 # Add the default password for the 'root' user（Change the empty password to 'password'）
-# sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
-sed -i 's/root::0:0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
+sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
+# sed -i 's/root::0:0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
 
 # Add internet-detector
 git clone --depth 1 https://github.com/gSpotx2f/luci-app-internet-detector.git internet-detector
@@ -26,10 +26,14 @@ git clone -b js --depth 1 https://github.com/gngpp/luci-theme-design.git package
 git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
 # Add mortal
-#git clone -b openwrt-23.05 --depth 1 https://github.com/immortalwrt/luci.git mortal
-#rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
-#cp -r mortal/modules/{luci-base,luci-mod-status} feeds/luci/modules/
-#rm -rf mortal
+git clone -b openwrt-23.05 --depth 1 https://github.com/immortalwrt/luci.git mortal
+rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
+cp -r mortal/modules/{luci-base,luci-mod-status} feeds/luci/modules/
+cp -r mortal/applications/luci-app-adblock-fast package/
+rm -rf mortal
+git clone -b openwrt-23.05 --depth 1 https://github.com/immortalwrt/packages.git mortal
+cp -r mortal/net/adblock-fast package/
+rm -rf mortal
 
 # Add app
 git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
