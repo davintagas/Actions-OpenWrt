@@ -16,6 +16,9 @@
 sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
 # sed -i 's/root::0:0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
 
+sed -i '/+uqmi/d' feeds/luci/protocols/luci-proto-qmi/Makefile
+sed -i '/+umbim/d' feeds/luci/protocols/luci-proto-mbim/Makefile
+
 # Add internet-detector
 git clone --depth 1 https://github.com/gSpotx2f/luci-app-internet-detector.git internet-detector
 mv internet-detector/{luci-app-internet-detector,internet-detector,internet-detector-mod-modem-restart} package/
