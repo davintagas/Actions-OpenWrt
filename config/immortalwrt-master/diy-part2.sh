@@ -51,6 +51,10 @@ pushd files/usr/bin
 wget https://raw.githubusercontent.com/ophub/amlogic-s9xxx-openwrt/main/make-openwrt/openwrt-files/common-files/usr/bin/cpustat
 popd
 
+pushd files/etc
+wget https://raw.githubusercontent.com/davintagas/default/main/bash.bashrc
+popd
+
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
