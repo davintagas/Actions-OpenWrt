@@ -47,8 +47,6 @@ cp -r kiddin/luci-app-at-socat package/
 cp -r kiddin/luci-app-dnsproxy package/
 # Add eqos
 cp -r kiddin/luci-app-eqosplus package/
-# Add einat
-cp -r kiddin/{luci-app-einat,openwrt-einat-ebpf} package/
 # Delete
 rm -rf kiddin
 
