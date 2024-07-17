@@ -53,6 +53,8 @@ pushd files/etc/uci-defaults
 wget https://raw.githubusercontent.com/davintagas/default/main/official/99-init-settings.sh
 popd
 
+sed -i 's|/bin/ash|/bin/bash|g' package/base-files/files/etc/shells
+
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
