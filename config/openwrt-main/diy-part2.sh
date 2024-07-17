@@ -53,6 +53,10 @@ pushd files/etc/uci-defaults
 wget https://raw.githubusercontent.com/davintagas/default/main/official/99-init-settings.sh
 popd
 
+pushd files/etc
+wget https://raw.githubusercontent.com/davintagas/default/main/bash.bashrc
+popd
+
 sed -i 's|/bin/ash|/bin/bash|g' package/base-files/files/etc/shells
 
 # Modify default theme
