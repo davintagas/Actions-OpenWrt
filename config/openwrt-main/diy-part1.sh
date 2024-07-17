@@ -16,7 +16,7 @@ echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-pa
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 echo 'src-git modemfeed https://github.com/koshev-msk/modemfeed.git' >>feeds.conf.default
 echo 'src-git 4icg https://github.com/4IceG/luci-app-3ginfo-lite.git' >>feeds.conf.default
-echo 'src-git internet-detector https://github.com/gSpotx2f/luci-app-internet-detector.git' >>feeds.conf.default
+echo 'src-git internet https://github.com/gSpotx2f/luci-app-internet-detector.git' >>feeds.conf.default
 
 pushd target/linux/rockchip/patches-5.15
 wget -O 999-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-23.05/target/linux/rockchip/patches-5.15/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
