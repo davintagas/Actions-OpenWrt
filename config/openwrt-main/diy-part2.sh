@@ -39,6 +39,8 @@ cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 # cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
 # Add atinout
 cp -r kiddin/{luci-app-atinout,atinout} package/
+# Add diskman
+cp -r kiddin/luci-app-diskman package/
 # Delete
 rm -rf kiddin
 
