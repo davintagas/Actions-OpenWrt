@@ -45,6 +45,8 @@ cp -r kiddin/luci-app-diskman package/
 cp -r kiddin/luci-app-at-socat package/
 # Add dnsproxy
 cp -r kiddin/luci-app-dnsproxy package/
+# Add eqos
+cp -r kiddin/luci-app-eqosplus package/
 # Delete
 rm -rf kiddin
 
