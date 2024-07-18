@@ -66,6 +66,16 @@ pushd files/etc
 wget https://raw.githubusercontent.com/davintagas/default/main/bash.bashrc
 popd
 
+mkdir -p files/etc/profile.d
+pushd files/etc/profile.d
+wget https://raw.githubusercontent.com/davintagas/default/main/30-sysinfo.sh
+popd
+
+mkdir -p files/usr/bin
+pushd files/usr/bin
+wget https://raw.githubusercontent.com/davintagas/openwrt-amlogic/main/make-openwrt/openwrt-files/common-files/usr/bin/cpustat
+popd
+
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
