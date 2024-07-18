@@ -42,7 +42,7 @@ cp -r kiddin/{luci-app-atinout,atinout} package/
 # Add diskman
 cp -r kiddin/luci-app-diskman package/
 # Add at-socat
-cp -r kiddin/luci-app-at-socat package/
+# cp -r kiddin/luci-app-at-socat package/
 # Add dnsproxy
 cp -r kiddin/luci-app-dnsproxy package/
 # Add eqos
