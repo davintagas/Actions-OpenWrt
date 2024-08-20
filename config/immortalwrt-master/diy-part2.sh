@@ -27,18 +27,25 @@ cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
 cp -r kiddin/{luci-app-atinout,atinout} package/
 # Add internet-detector
 cp -r kiddin/luci-app-internet-detector package/luci-app-internet-detector
+# DNSProxy
+cp -r kiddin/{luci-app-dnsproxy,dnsproxy} package/
 # Delete Source
 rm -rf kiddin
 
 # Add Default Setting
-sed -i 's/auto/en/g' package/emortal/default-settings/files/99-default-settings
-sed -i 's/Shanghai/Jakarta/g' package/emortal/default-settings/files/99-default-settings-chinese
-sed -i 's|https://mirrors.vsean.net/openwrt|https://immortalwrt.kyarucloud.moe|g' package/emortal/default-settings/files/99-default-settings-chinese
-sed -i '/exit 0/d' package/emortal/default-settings/files/99-default-settings
-echo 'chmod +x /etc/profile.d/30-sysinfo.sh' >> package/emortal/default-settings/files/99-default-settings
-echo 'chmod +x /usr/bin/cpustat' >> package/emortal/default-settings/files/99-default-settings
-echo 'sed -i 's|/bin/ash|/bin/bash|g' /etc/passwd' >> package/emortal/default-settings/files/99-default-settings
-echo 'exit 0' >> package/emortal/default-settings/files/99-default-settings
+#sed -i 's/auto/en/g' package/emortal/default-settings/files/99-default-settings
+#sed -i 's/Shanghai/Jakarta/g' package/emortal/default-settings/files/99-default-settings-chinese
+#sed -i 's|https://mirrors.vsean.net/openwrt|https://immortalwrt.kyarucloud.moe|g' package/emortal/default-settings/files/99-default-settings-chinese
+#sed -i '/exit 0/d' package/emortal/default-settings/files/99-default-settings
+#echo 'chmod +x /etc/profile.d/30-sysinfo.sh' >> package/emortal/default-settings/files/99-default-settings
+#echo 'chmod +x /usr/bin/cpustat' >> package/emortal/default-settings/files/99-default-settings
+#echo 'sed -i 's|/bin/ash|/bin/bash|g' /etc/passwd' >> package/emortal/default-settings/files/99-default-settings
+#echo 'exit 0' >> package/emortal/default-settings/files/99-default-settings
+pushd package/emortal/default-settings/files
+rm -rf *
+wget https://raw.githubusercontent.com/davintagas/default/main/mortal/99-default-settings
+wget https://raw.githubusercontent.com/davintagas/default/main/mortal/99-default-settings-chinese
+popd
 
 mkdir -p files/etc/profile.d
 mkdir -p files/usr/bin
