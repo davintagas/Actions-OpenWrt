@@ -16,7 +16,7 @@
 sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
 
 # Add theme
-git clone -b js --depth 1 https://github.com/gngpp/luci-theme-design.git package/luci-theme-design
+# git clone -b js --depth 1 https://github.com/gngpp/luci-theme-design.git package/luci-theme-design
 git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
 # Add Package From Kiddin
