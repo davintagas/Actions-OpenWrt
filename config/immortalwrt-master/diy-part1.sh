@@ -9,8 +9,8 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-#rm -rf feeds.conf.default
-#wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-23.05/feeds.conf.default
+rm -rf feeds.conf.default
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-23.05/feeds.conf.default
 
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
