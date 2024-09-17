@@ -16,14 +16,14 @@
 sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
 
 # Add theme
-git clone -b js --depth 1 https://github.com/gngpp/luci-theme-design.git package/luci-theme-design
+#git clone -b js --depth 1 https://github.com/gngpp/luci-theme-design.git package/luci-theme-design
 git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
 # Change Custom
 git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
-rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
-cp -r kiddin/{luci-base,luci-mod-status} feeds/luci/modules/
+#rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
+#cp -r kiddin/{luci-base,luci-mod-status} feeds/luci/modules/
 cp -r kiddin/autocore package/autocore
 sed -i 's|bcm27xx-utils|bcm27xx-userland|g' package/autocore/Makefile
 
@@ -46,7 +46,7 @@ cp -r kiddin/luci-app-diskman package/
 # Add dnsproxy
 cp -r kiddin/luci-app-dnsproxy package/
 # Add eqos
-cp -r kiddin/luci-app-eqosplus package/
+#cp -r kiddin/luci-app-eqosplus package/
 # Delete
 rm -rf kiddin
 
