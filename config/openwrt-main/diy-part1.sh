@@ -11,6 +11,8 @@
 #
 
 # Uncomment a feed source
+rm -rf feeds.conf.default
+wget https://raw.githubusercontent.com/openwrt/openwrt/openwrt-23.05/feeds.conf.default
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 #echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
