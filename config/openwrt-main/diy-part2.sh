@@ -76,6 +76,17 @@ pushd files/usr/bin
 wget https://raw.githubusercontent.com/davintagas/openwrt-amlogic/main/make-openwrt/openwrt-files/common-files/usr/bin/cpustat
 popd
 
+git clone -b master --depth 1 https://github.com/openwrt/packages.git master-packages
+rm -rf feeds/packages/net/modemmanager
+cp -r master-packages/net/modemmanager feeds/packages/net/
+rm -rf feeds/packages/libs/{libqmi,libmbim}
+cp -r master-packages/libs/{libqmi,libmbim} feeds/packages/libs/
+rm -rf master-packages
+git clone -b master --depth 1 https://github.com/openwrt/luci.git master-luci
+rm -rf feeds/luci/protocols/luci-proto-modemmanager
+cp -r master-luci/protocols/luci-proto-modemmanager feeds/luci/protocols/
+rm -rf master-luci
+
 #rm -rf feeds/packages/lang/golang
 #git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
