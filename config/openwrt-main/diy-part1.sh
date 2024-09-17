@@ -12,8 +12,8 @@
 
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
-echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+#echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 echo 'src-git modemfeed https://github.com/koshev-msk/modemfeed.git' >>feeds.conf.default
 echo 'src-git 4icg https://github.com/4IceG/luci-app-3ginfo-lite.git' >>feeds.conf.default
 echo 'src-git internet https://github.com/gSpotx2f/luci-app-internet-detector.git' >>feeds.conf.default
