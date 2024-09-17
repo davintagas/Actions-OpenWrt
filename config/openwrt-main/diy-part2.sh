@@ -76,8 +76,8 @@ pushd files/usr/bin
 wget https://raw.githubusercontent.com/davintagas/openwrt-amlogic/main/make-openwrt/openwrt-files/common-files/usr/bin/cpustat
 popd
 
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+#rm -rf feeds/packages/lang/golang
+#git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
