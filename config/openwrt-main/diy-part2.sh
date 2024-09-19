@@ -22,10 +22,10 @@ git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/
 
 # Change Custom
 git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
-#rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
-#cp -r kiddin/{luci-base,luci-mod-status} feeds/luci/modules/
-#cp -r kiddin/autocore package/autocore
-#sed -i 's|bcm27xx-utils|bcm27xx-userland|g' package/autocore/Makefile
+rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
+cp -r kiddin/{luci-base,luci-mod-status} feeds/luci/modules/
+cp -r kiddin/autocore package/autocore
+sed -i 's|bcm27xx-utils|bcm27xx-userland|g' package/autocore/Makefile
 
 # Add ramfree
 cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
@@ -75,17 +75,6 @@ mkdir -p files/usr/bin
 pushd files/usr/bin
 wget https://raw.githubusercontent.com/davintagas/openwrt-amlogic/main/make-openwrt/openwrt-files/common-files/usr/bin/cpustat
 popd
-
-git clone -b master --depth 1 https://github.com/openwrt/packages.git master-packages
-rm -rf feeds/packages/net/modemmanager
-cp -r master-packages/net/modemmanager feeds/packages/net/
-rm -rf feeds/packages/libs/{libqmi,libmbim}
-cp -r master-packages/libs/{libqmi,libmbim} feeds/packages/libs/
-rm -rf master-packages
-git clone -b master --depth 1 https://github.com/openwrt/luci.git master-luci
-rm -rf feeds/luci/protocols/luci-proto-modemmanager
-cp -r master-luci/protocols/luci-proto-modemmanager feeds/luci/protocols/
-rm -rf master-luci
 
 #rm -rf feeds/packages/lang/golang
 #git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
