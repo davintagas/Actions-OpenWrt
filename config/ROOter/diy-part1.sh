@@ -9,9 +9,7 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-git clone --depth 1 https://github.com/davintagas/default.git
-cp -rf default/ROOter/* ./
-rm -rf default
+
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
