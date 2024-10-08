@@ -21,7 +21,7 @@ git clone --depth 1 https://github.com/jerrykuku/luci-theme-argon.git package/lu
 git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha.git package/luci-theme-alpha
 
 # Change Custom
-git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
+git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git kiddin
 rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
 cp -r kiddin/{luci-base,luci-mod-status} feeds/luci/modules/
 cp -r kiddin/autocore package/autocore
