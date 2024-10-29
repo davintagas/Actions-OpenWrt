@@ -16,6 +16,7 @@ rm -rf routermaster.json
 rm -rf build
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/routermaster.json
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build
+chmod +x build
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
