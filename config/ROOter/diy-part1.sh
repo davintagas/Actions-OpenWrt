@@ -13,7 +13,9 @@
 #sed -i 's|+kmod-rt2800-usb +xxd +kmod-tcp-bbr|+kmod-rt2800-usb|g' package/rooter/ext-rooter-basic/Makefile
 wget -O configfiles/template/.config_r1plus https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/.config_r1plus
 rm -rf routermaster.json
+rm -rf build
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/routermaster.json
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
