@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/ofmodemsandmen/ROOterSource2305.git
+  REPO_URL: https://github.com/ofmodemsandmen/SourceMaster.git
   REPO_BRANCH: main
   FEEDS_CONF: config/ROOter/feeds.conf.default
   CONFIG_FILE: config/ROOter/config
