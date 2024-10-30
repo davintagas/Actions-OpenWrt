@@ -11,6 +11,14 @@
 #
 #sed -i 's|+iptables-nft +ip6tables-nft|+iptables-nft|g' package/rooter/ext-rooter-basic/Makefile
 #sed -i 's|+kmod-rt2800-usb +xxd +kmod-tcp-bbr|+kmod-rt2800-usb|g' package/rooter/ext-rooter-basic/Makefile
+# ROOter 23.05
+#wget -O configfiles/template/.config_r1+ https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/.config_r1%2B
+#rm -rf router2305.json
+#rm -rf build
+#wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/router2305.json
+#wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build
+#chmod +x build
+# ROOter Main
 wget -O configfiles/template/.config_r1+ https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/.config_r1%2B
 rm -rf router2305.json
 rm -rf build
