@@ -20,10 +20,10 @@
 #chmod +x build
 # ROOter Main
 wget -O configfiles/template/.config_r1+ https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/.config_r1%2B
-rm -rf router2305.json
+rm -rf routermaster.json
 rm -rf build
-wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/router2305.json
-wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/routermaster.json
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build-main/build
 chmod +x build
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
