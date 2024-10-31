@@ -32,18 +32,18 @@ rm -rf internet-detector
 #rm -rf mortal
 
 # Add app
-#git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
+git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git kiddin
 # Add ramfree
-#cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
+cp -r kiddin/luci-app-ramfree package/luci-app-ramfree
 # Add cpufreq
-#cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
+cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 # Change
 #cp -r kiddin/autocore package/
 #sed -i 's|bcm27xx-utils|bcm27xx-userland|g' package/autocore/Makefile
 # Atinout
 #cp -r kiddin/atinout package/
 # Delete
-#rm -rf kiddin
+rm -rf kiddin
 
 # Add Default Setting
 #mkdir -p files/etc/uci-defaults
