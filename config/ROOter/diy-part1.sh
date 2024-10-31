@@ -19,10 +19,10 @@
 #wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build
 #chmod +x build
 # ROOter Main
-wget -O configfiles/template/.config_r1+ https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/.config_r1%2B
+wget -O configfiles/template/.config_r1+lts https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build-main/.config_r1%2Blts
 rm -rf routermaster.json
 rm -rf build
-wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/routermaster.json
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build-main/routermaster.json
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build-main/build
 chmod +x build
 # Add a feed source
