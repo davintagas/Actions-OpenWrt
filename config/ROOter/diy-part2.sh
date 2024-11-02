@@ -42,6 +42,8 @@ cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 #sed -i 's|bcm27xx-utils|bcm27xx-userland|g' package/autocore/Makefile
 # Atinout
 #cp -r kiddin/atinout package/
+# Add Dnsproxy
+cp -r kiddin/luci-app-dnsproxy package/
 # Delete
 rm -rf kiddin
 
