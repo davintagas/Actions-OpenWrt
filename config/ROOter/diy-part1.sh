@@ -25,6 +25,11 @@ rm -rf build
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build-main/routermaster.json
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build-main/build
 chmod +x build
+
+pushd target/linux/rockchip/patches-6.6
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/master/target/linux/rockchip/patches-6.6/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
+popd
+
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
