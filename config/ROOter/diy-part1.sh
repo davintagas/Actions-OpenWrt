@@ -26,7 +26,7 @@
 #wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build-main/build
 #chmod +x build
 
-pushd target/linux/rockchip/patches-6.6
+pushd target/linux/rockchip/patches-5.15
 wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/master/target/linux/rockchip/patches-6.6/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 popd
 
