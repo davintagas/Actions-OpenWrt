@@ -48,6 +48,7 @@ cp -r kiddin/luci-app-dnsproxy package/
 rm -rf kiddin
 
 # Add passwall
+rm -rf feeds/packages/net/{v2ray-core,v2ray-geodata}
 git clone --depth 1 -b 4.78-4 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 -b main https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
 
