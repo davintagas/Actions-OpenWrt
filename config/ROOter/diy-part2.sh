@@ -47,6 +47,10 @@ cp -r kiddin/luci-app-dnsproxy package/
 # Delete
 rm -rf kiddin
 
+# Add passwall
+git clone --depth 1 -b 4.78-4 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
+git clone --depth 1 -b main https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
+
 # Add Default Setting
 #mkdir -p files/etc/uci-defaults
 #pushd files/etc/uci-defaults
