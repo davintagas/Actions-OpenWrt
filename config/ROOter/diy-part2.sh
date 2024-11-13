@@ -55,6 +55,12 @@ git clone --depth 1 -b main https://github.com/xiaorouji/openwrt-passwall-packag
 # Add openclash
 git clone --depth 1 https://github.com/vernesong/OpenClash.git package/luci-app-openclash
 
+# Change adblock
+rm -rf feeds/packages/net/adblock-fast
+rm -rf feeds/luci/applications/luci-app-adblock-fast
+git clone --depth 1 https://github.com/stangri/adblock-fast.git feeds/packages/net/adblock-fast
+git clone --depth 1 https://github.com/stangri/luci-app-adblock-fast.git feeds/luci/applications/luci-app-adblock-fast
+
 # Change Golang
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
