@@ -52,6 +52,9 @@ rm -rf feeds/packages/net/{v2ray-core,v2ray-geodata}
 git clone --depth 1 -b 4.78-4 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 -b main https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
 
+# Add openclash
+git clone --depth 1 https://github.com/vernesong/OpenClash.git package/luci-app-openclash
+
 # Change Golang
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
