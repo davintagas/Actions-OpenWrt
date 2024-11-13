@@ -65,6 +65,9 @@ git clone --depth 1 https://github.com/stangri/luci-app-adblock-fast.git feeds/l
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
+# ff
+rm -rf feeds/packages/net/{microsocks,sing-box,trojan-go,xray-core}
+
 # Add Default Setting
 #mkdir -p files/etc/uci-defaults
 #pushd files/etc/uci-defaults
