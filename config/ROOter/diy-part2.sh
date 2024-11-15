@@ -44,6 +44,8 @@ cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 #cp -r kiddin/atinout package/
 # Add Dnsproxy
 cp -r kiddin/luci-app-dnsproxy package/
+# Add thame
+cp -r kiddin/luci-theme-kucat package/
 # Delete
 rm -rf kiddin
 
