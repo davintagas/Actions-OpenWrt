@@ -54,6 +54,12 @@ git clone --depth 1 -b main https://github.com/xiaorouji/openwrt-passwall-packag
 
 # Add openclash
 git clone --depth 1 https://github.com/vernesong/OpenClash.git package/luci-app-openclash
+mkdir -p package/luci-app-openclash/luci-app-openclash/root/etc/openclash/core
+pushd package/luci-app-openclash/luci-app-openclash/root/etc/openclash/core/
+wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
+tar -xf clash-linux-arm64.tar.gz
+rm -rf clash-linux-arm64.tar.gz
+mv clash clash_meta
 
 # Change adblock
 rm -rf feeds/packages/net/adblock-fast
