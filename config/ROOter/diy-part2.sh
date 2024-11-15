@@ -60,6 +60,7 @@ wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clas
 tar -xf clash-linux-arm64.tar.gz
 rm -rf clash-linux-arm64.tar.gz
 mv clash clash_meta
+popd
 
 # Change adblock
 rm -rf feeds/packages/net/adblock-fast
