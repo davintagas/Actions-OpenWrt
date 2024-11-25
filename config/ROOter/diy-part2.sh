@@ -43,9 +43,9 @@ cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 # Atinout
 #cp -r kiddin/atinout package/
 # Add Dnsproxy
-cp -r kiddin/luci-app-dnsproxy package/
+#cp -r kiddin/luci-app-dnsproxy package/
 # Add thame
-cp -r kiddin/luci-theme-kucat package/
+#cp -r kiddin/luci-theme-kucat package/
 # Delete
 rm -rf kiddin
 
@@ -65,10 +65,10 @@ mv clash clash_meta
 popd
 
 # Change adblock
-rm -rf feeds/packages/net/adblock-fast
-rm -rf feeds/luci/applications/luci-app-adblock-fast
-git clone --depth 1 https://github.com/stangri/adblock-fast.git feeds/packages/net/adblock-fast
-git clone --depth 1 https://github.com/stangri/luci-app-adblock-fast.git feeds/luci/applications/luci-app-adblock-fast
+#rm -rf feeds/packages/net/adblock-fast
+#rm -rf feeds/luci/applications/luci-app-adblock-fast
+#git clone --depth 1 https://github.com/stangri/adblock-fast.git feeds/packages/net/adblock-fast
+#git clone --depth 1 https://github.com/stangri/luci-app-adblock-fast.git feeds/luci/applications/luci-app-adblock-fast
 
 # Change Golang
 rm -rf feeds/packages/lang/golang
