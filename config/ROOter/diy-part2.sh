@@ -81,6 +81,9 @@ git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/l
 # ff
 rm -rf feeds/packages/net/{microsocks,sing-box,trojan-go,xray-core}
 
+# Add partisi change
+git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
+
 # Add Default Setting
 #mkdir -p files/etc/uci-defaults
 #pushd files/etc/uci-defaults
