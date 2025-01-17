@@ -31,6 +31,7 @@
 #popd
 
 #git clone --depth 1 https://github.com/davintagas/davin.git configfiles/davin
+rm -rf tmp/
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
