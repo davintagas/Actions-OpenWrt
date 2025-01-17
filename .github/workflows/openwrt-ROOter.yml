@@ -17,10 +17,10 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/davintagas/ROOterSource2305.git
+  REPO_URL: https://github.com/davintagas/ROOterSource2203.git
   REPO_BRANCH: main
-  DIY_P1_SH: config/ROOter/diy-part1.sh
-  DIY_P2_SH: config/ROOter/diy-part2.sh
+  DIY_P1_SH: config/ROOter22/diy-part1.sh
+  DIY_P2_SH: config/ROOter22/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
