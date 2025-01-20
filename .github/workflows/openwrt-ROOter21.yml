@@ -50,7 +50,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        curl -O https://github.com/davintagas/default/releases/download/untagged-c8d8f126443e8fa9b6f1/source2102.zip && unzip source2102.zip && rm -rf source2102.zip
+        curl -o source2102.zip https://github.com/davintagas/default/releases/download/untagged-c8d8f126443e8fa9b6f1/source2102.zip && unzip source2102.zip && rm -rf source2102.zip
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
