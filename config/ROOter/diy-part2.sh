@@ -25,6 +25,8 @@ rm -rf internet-detector
 git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git kiddin
 # Add cpufreq
 cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
+# Atinout
+cp -r kiddin/{luci-app-atinout,atinout} package/
 # Adguardhome
 cp -r kiddin/luci-app-adguardhome package/
 rm -rf feeds/packages/net/adguardhome
