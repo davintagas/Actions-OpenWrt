@@ -19,10 +19,10 @@ on:
 env:
   REPO_URL: https://github.com/ericpaulbishop/gargoyle.git
   REPO_BRANCH: base_on_openwrt_2305
-  PROFILE_IMAGES: profile_images
-  CONFIG_FILE: .config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  PROFILE_IMAGES: config/gargoyle/profile_images
+  CONFIG_FILE: config/gargoyle/.config
+  DIY_P1_SH: config/gargoyle/diy-part1.sh
+  DIY_P2_SH: config/gargoyle/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
