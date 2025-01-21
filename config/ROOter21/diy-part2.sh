@@ -48,3 +48,5 @@ rm -rf kiddin
 
 # Add partisi change
 #git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
+
+rm -rf target/linux/rockchip/patches-5.4/001-add-rk3328-dmc-driver.patch
