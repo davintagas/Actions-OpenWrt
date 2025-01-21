@@ -19,7 +19,7 @@ on:
 env:
   REPO_URL: https://github.com/ericpaulbishop/gargoyle.git
   REPO_BRANCH: base_on_openwrt_2305
-  FEEDS_CONF: feeds.conf.default
+  PROFILE_IMAGES: profile_images
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
@@ -59,7 +59,7 @@ jobs:
 
     - name: Load custom feeds
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF gargoyle/feeds.conf.default
+        [ -e $PROFILE_IMAGES ] && mv $PROFILE_IMAGES gargoyle/targets/rockchip/profiles/default/profile_images
         chmod +x $DIY_P1_SH
         cd gargoyle
         $GITHUB_WORKSPACE/$DIY_P1_SH
