@@ -20,4 +20,7 @@ rm -rf Makefile
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/gargoyle/Makefile
 popd
 
+mkdir -p targets/rockchip/profiles/large
+cp -rf targets/rockchip/profiles/default/* targets/rockchip/profiles/large/
+
 sed -i 's/make $num_build_thread_str V=s/make $num_build_thread_str || make $num_build_thread_str || make $num_build_thread_str V=s/g' build.sh
