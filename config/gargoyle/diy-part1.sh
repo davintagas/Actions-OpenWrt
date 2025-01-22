@@ -15,4 +15,4 @@ wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/config
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/profile_images
 popd
 
-sed -i 's|make $num_build_thread_str V=s|make $num_build_thread_str|g' build.sh
+sed -i 's/make $num_build_thread_str V=s/make $num_build_thread_str || make $num_build_thread_str || make $num_build_thread_str V=s/g' build.sh
