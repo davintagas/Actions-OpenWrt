@@ -9,16 +9,16 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-pushd targets/rockchip/profiles/default
+pushd targets/custom/profiles/default
 rm -rf *
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/gargoyle/config
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/profile_images
 popd
 
-pushd package/gargoyle-profiles
-rm -rf Makefile
-wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/gargoyle/Makefile
-popd
+#pushd package/gargoyle-profiles
+#rm -rf Makefile
+#wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/gargoyle/Makefile
+#popd
 
 mkdir -p targets/rockchip/profiles/large
 cp -rf targets/rockchip/profiles/default/* targets/rockchip/profiles/large/
