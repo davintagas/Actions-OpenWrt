@@ -9,3 +9,10 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
+pushd targets/rockchip/profiles/default
+rm -rf *
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/config
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/profile_images
+popd
+
+sed -i 's|make $num_build_thread_str V=s|make $num_build_thread_str|g' build.sh
