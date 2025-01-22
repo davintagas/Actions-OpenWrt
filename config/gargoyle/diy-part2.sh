@@ -14,7 +14,7 @@ cp -r packages/net/xmm-modem package/
 rm -rf modemfeed
 
 git clone --depth https://github.com/obsy/packages.git obsy_packages
-cp -rf obsy_packages/{3ginfo,modemband,plugin-gargoyle-*} package/
+cp -rf obsy_packages/{3ginfo,modemband,plugin-gargoyle-3ginfo-extended,plugin-gargoyle-3ginfo,plugin-gargoyle-atcmd,plugin-gargoyle-modemband,plugin-gargoyle-smsbox} package/
 rm -rf obsy_packages
 
 mkdir -p package/sms-tool
