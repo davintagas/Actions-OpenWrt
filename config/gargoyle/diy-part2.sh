@@ -9,3 +9,7 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
+git clone --depth 1 https://github.com/koshev-msk/modemfeed.git modemfeed
+cp -r packages/net/xmm-modem package/
+rm -rf modemfeed
+
