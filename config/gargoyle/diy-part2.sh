@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 git clone --depth 1 https://github.com/koshev-msk/modemfeed.git modemfeed
-cp -r packages/net/xmm-modem package/gargoyle-xmm-modem
+cp -r packages/net/xmm-modem package/xmm-modem
 rm -rf modemfeed
 
 #git clone --depth https://github.com/obsy/packages.git obsy_packages
