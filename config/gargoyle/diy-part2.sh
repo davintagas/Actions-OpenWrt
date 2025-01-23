@@ -17,7 +17,8 @@ git clone --depth 1 https://github.com/obsy/packages.git obsy_packages
 cp -rf obsy_packages/{plugin-gargoyle-3ginfo,plugin-gargoyle-3ginfo-extended,3ginfo,plugin-gargoyle-atcmd,plugin-gargoyle-smsbox,plugin-gargoyle-modemband,modemband} package/
 rm -rf obsy_packages
 
-mkdir -p packages/sms-tool
+mkdir -p package/sms-tool
 pushd package/sms-tool
 wget https://raw.githubusercontent.com/openwrt/packages/refs/heads/openwrt-23.05/utils/sms-tool/Makefile
 popd
+
