@@ -9,7 +9,7 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-pushd targets/custom/profiles/default
+pushd targets/rockchip/profiles/default
 rm -rf *
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/gargoyle/config
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/profile_images
@@ -20,7 +20,7 @@ popd
 #wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/gargoyle/Makefile
 #popd
 
-mkdir -p targets/rockchip/profiles/large
-cp -rf targets/rockchip/profiles/default/* targets/rockchip/profiles/large/
+#mkdir -p targets/rockchip/profiles/large
+#cp -rf targets/rockchip/profiles/default/* targets/rockchip/profiles/large/
 
 sed -i 's/make $num_build_thread_str V=s/make $num_build_thread_str || make $num_build_thread_str || make $num_build_thread_str V=s/g' build.sh
