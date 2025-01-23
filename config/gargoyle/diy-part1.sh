@@ -9,6 +9,8 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
+sed -i 's|ath79|rockchip|g' Makefile
+
 pushd targets/rockchip/profiles/default
 rm -rf *
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/gargoyle/config
