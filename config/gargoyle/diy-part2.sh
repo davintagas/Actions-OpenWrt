@@ -11,7 +11,7 @@
 #
 git clone --depth 1 https://github.com/koshev-msk/modemfeed.git modemfeed
 mkdir packages
-cp -r packages/net/xmm-modem packages/xmm-modem
+cp -r modemfeed/packages/net/xmm-modem packages/xmm-modem
 rm -rf modemfeed
 
 git clone --depth https://github.com/obsy/packages.git obsy_packages
