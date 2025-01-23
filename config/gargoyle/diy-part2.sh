@@ -13,11 +13,11 @@ git clone --depth 1 https://github.com/koshev-msk/modemfeed.git modemfeed
 cp -r packages/net/xmm-modem package/
 rm -rf modemfeed
 
-git clone --depth https://github.com/obsy/packages.git obsy_packages
-cp -rf obsy_packages/{3ginfo,modemband,plugin-gargoyle-3ginfo-extended,plugin-gargoyle-3ginfo,plugin-gargoyle-atcmd,plugin-gargoyle-modemband,plugin-gargoyle-smsbox} package/
-rm -rf obsy_packages
+#git clone --depth https://github.com/obsy/packages.git obsy_packages
+#cp -rf obsy_packages/{3ginfo,modemband,plugin-gargoyle-3ginfo-extended,plugin-gargoyle-3ginfo,plugin-gargoyle-atcmd,plugin-gargoyle-modemband,plugin-gargoyle-smsbox} package/
+#rm -rf obsy_packages
 
-mkdir -p package/sms-tool
-pushd package/sms-tool
-wget https://raw.githubusercontent.com/openwrt/packages/refs/heads/openwrt-23.05/utils/sms-tool/Makefile
-popd
+#mkdir -p package/sms-tool
+#pushd package/sms-tool
+#wget https://raw.githubusercontent.com/openwrt/packages/refs/heads/openwrt-23.05/utils/sms-tool/Makefile
+#popd
