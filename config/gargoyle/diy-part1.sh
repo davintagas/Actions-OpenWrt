@@ -17,6 +17,8 @@ wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/gargoy
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/profile_images
 popd
 
+cp -rf targets/rockchip/profiles/default/* targets/custom/profiles/default/
+
 pushd package/gargoyle-profiles
 rm -rf Makefile
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/gargoyle/Makefile
