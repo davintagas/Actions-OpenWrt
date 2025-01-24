@@ -25,3 +25,18 @@ popd
 #cp -rf targets/rockchip/profiles/default/* targets/rockchip/profiles/large/
 
 sed -i 's/make $num_build_thread_str V=s/make $num_build_thread_str || make $num_build_thread_str || make $num_build_thread_str V=s/g' build.sh
+
+pushd package/gargoyle/files/www/js
+rm -rf basic.js
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/basic.js
+popd
+
+pushd package/gargoyle/files/www
+rm -rf basic.sh
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/basic.sh
+
+pushd package/plugin-gargoyle-i18n-English-EN/files/www/i18n/English-EN
+rm -rf basic.js
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/English-EN/basic.js
+popd
+
