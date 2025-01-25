@@ -29,8 +29,8 @@ cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 cp -r kiddin/{luci-app-atinout,atinout} package/
 # Adguardhome
 cp -r kiddin/luci-app-adguardhome package/
-rm -rf feeds/packages/net/adguardhome
-cp -r kiddin/adguardhome feeds/packages/net/
+#rm -rf feeds/packages/net/adguardhome
+#cp -r kiddin/adguardhome feeds/packages/net/
 # Delete
 rm -rf kiddin
 
