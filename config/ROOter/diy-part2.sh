@@ -35,16 +35,16 @@ cp -r kiddin/adguardhome feeds/packages/net/
 rm -rf kiddin
 
 # Add passwall
-rm -rf feeds/packages/net/{v2ray-core,v2ray-geodata}
-git clone --depth 1 -b 4.78-4 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
-git clone --depth 1 -b main https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
+#rm -rf feeds/packages/net/{v2ray-core,v2ray-geodata}
+#git clone --depth 1 -b 4.78-4 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
+#git clone --depth 1 -b main https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
 
 # Change Golang
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
+#rm -rf feeds/packages/lang/golang
+#git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # ff
-rm -rf feeds/packages/net/{microsocks,sing-box,trojan-go,xray-core}
+#rm -rf feeds/packages/net/{microsocks,sing-box,trojan-go,xray-core}
 
 # Add partisi change
 git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
