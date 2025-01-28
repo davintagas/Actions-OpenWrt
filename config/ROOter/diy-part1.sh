@@ -30,6 +30,11 @@ pushd target/linux/rockchip/patches-5.15
 wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/master/target/linux/rockchip/patches-6.6/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 popd
 
+mkdir -p package/rooter-custom-builds/ext-mk01k21
+pushd package/rooter-custom-builds/ext-mk01k21
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/Makefile
+popd
+
 #git clone --depth 1 https://github.com/davintagas/davin.git configfiles/davin
 
 # Add a feed source
