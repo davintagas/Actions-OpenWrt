@@ -15,3 +15,4 @@ cp -rf r1+/package/boot/{arm-trusted-firmware-rockchip,uboot-rockchip,arm-truste
 rm -rf target/linux/rockchip
 cp -rf r1+/target/linux/rockchip target/linux/
 rm -rf r1+
+rm -rf target/linux/rockchip/armv8/base-files/usr/bin/resize-rootfs.sh
