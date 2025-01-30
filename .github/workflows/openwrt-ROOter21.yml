@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/davintagas/ROOterSource2305.git
+  REPO_URL: https://github.com/davintagas/ROOterSource2102.git
   REPO_BRANCH: test
   DIY_P1_SH: config/ROOter21/diy-part1.sh
   DIY_P2_SH: config/ROOter21/diy-part2.sh
@@ -28,7 +28,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
 
     steps:
     - name: Checkout
