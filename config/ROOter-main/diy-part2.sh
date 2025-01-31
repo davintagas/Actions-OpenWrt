@@ -51,3 +51,4 @@ git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-part
 
 # Add
 git clone --depth 1 https://github.com/4IceG/luci-app-modemdefine.git package/luci-app-modemdefine
+
