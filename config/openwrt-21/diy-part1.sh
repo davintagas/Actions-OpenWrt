@@ -9,7 +9,6 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-sed -i 's|192.168.2.1|192.168.1.1|g' package/base-files/files/bin/config_generate
 
 echo 'src-git modemfeed https://github.com/koshev-msk/modemfeed.git' >>feeds.conf.default
 echo 'src-git 4icg https://github.com/4IceG/luci-app-3ginfo-lite.git' >>feeds.conf.default
