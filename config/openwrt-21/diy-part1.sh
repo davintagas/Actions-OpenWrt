@@ -9,6 +9,9 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
+rm -rf target/linux/rockchip/armv8/base-files/etc/init.d/resize-rootfs
+rm -rf target/linux/rockchip/armv8/base-files/etc/rc.d/S22resize-rootfs
+rm -rf target/linux/rockchip/armv8/base-files/usr/bin/resize-rootfs.sh
 
 echo 'src-git modemfeed https://github.com/koshev-msk/modemfeed.git' >>feeds.conf.default
 echo 'src-git 4icg https://github.com/4IceG/luci-app-3ginfo-lite.git' >>feeds.conf.default
