@@ -19,7 +19,6 @@ on:
 env:
   REPO_URL: https://github.com/orangepi-xunlong/openwrt.git
   REPO_BRANCH: openwrt-21.02
-  FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: config/openwrt-21/config
   DIY_P1_SH: config/openwrt-21/diy-part1.sh
   DIY_P2_SH: config/openwrt-21/diy-part2.sh
