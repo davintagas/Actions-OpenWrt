@@ -13,7 +13,7 @@
 echo 'src-git modemfeed https://github.com/koshev-msk/modemfeed.git' >>feeds.conf.default
 echo 'src-git 4icg https://github.com/4IceG/luci-app-3ginfo-lite.git' >>feeds.conf.default
 echo 'src-git internet https://github.com/gSpotx2f/luci-app-internet-detector.git' >>feeds.conf.default
-echo 'src-git 4icg-sms https://github.com/4IceG/luci-app-sms-tool-js.git' >>feeds.conf.default
+echo 'src-git sms https://github.com/4IceG/luci-app-sms-tool-js.git' >>feeds.conf.default
 echo 'src-git adh https://github.com/rufengsuixing/luci-app-adguardhome.git' >>feeds.conf.default
 
 # Add a feed source
