@@ -17,8 +17,6 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/davintagas/SourceMain.git
-  REPO_BRANCH: main
   DIY_P1_SH: config/ROOter-main/diy-part1.sh
   DIY_P2_SH: config/ROOter-main/diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -52,7 +50,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        wget https://github.com/davintagas/default/releases/download/v1.0/openwrt.tar.gz && tar -xf openwrt.tar.gz && rm -rf openwrt.tar.gz
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
