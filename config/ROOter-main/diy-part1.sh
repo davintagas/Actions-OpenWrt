@@ -26,6 +26,8 @@
 #wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/ROOter/build-main/build
 #chmod +x build
 
+rm -rf target/linux/generic/backport-5.10/791-v6.6-11-net-phy-motorcomm-Add-pad-drive-strength-cfg-support.patch
+
 #git clone --depth 1 https://github.com/davintagas/davin.git configfiles/davin
 
 # Add a feed source
