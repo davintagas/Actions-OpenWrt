@@ -24,7 +24,7 @@ rm -rf internet-detector
 # Add app
 git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git kiddin
 # Add cpufreq
-cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
+# cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 # Atinout
 cp -r kiddin/{luci-app-atinout,atinout} package/
 # Adguardhome
@@ -33,6 +33,10 @@ cp -r kiddin/luci-app-adguardhome package/
 #cp -r kiddin/adguardhome feeds/packages/net/
 # Delete
 rm -rf kiddin
+
+# Add 4lceG
+git clone --depth 1 https://github.com/4IceG/luci-app-cpu-status-mini.git package/luci-app-cpu-status-mini
+git clone --depth 1 https://github.com/4IceG/luci-app-modemdefine.git package/luci-app-modemdefine
 
 # Add passwall
 #rm -rf feeds/packages/net/{v2ray-core,v2ray-geodata}
