@@ -16,7 +16,7 @@
 sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
 
 # Add Package From Kiddin
-git clone --depth 1 https://github.com/kiddin9/openwrt-packages.git kiddin
+git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git kiddin
 # Add driver l860-GL
 cp -r kiddin/{luci-proto-xmm,xmm-modem} package/
 # Add Atinout
