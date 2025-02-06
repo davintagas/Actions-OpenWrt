@@ -21,7 +21,7 @@ echo 'src-git zapret https://github.com/remittor/zapret-openwrt.git' >>feeds.con
 echo 'src-git sms https://github.com/4IceG/luci-app-sms-tool-js.git' >>feeds.conf.default
 
 pushd target/linux/rockchip/patches-5.15
-wget -O 999-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch https://raw.githubusercontent.com/immortalwrt/immortalwrt/openwrt-23.05/target/linux/rockchip/patches-5.15/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-23.05/target/linux/rockchip/patches-5.15/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 popd
 
 # Add a feed source
