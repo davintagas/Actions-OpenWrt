@@ -17,7 +17,6 @@
 echo 'src-git modemfeed https://github.com/koshev-msk/modemfeed.git' >>feeds.conf.default
 echo 'src-git 4icg https://github.com/4IceG/luci-app-3ginfo-lite.git' >>feeds.conf.default
 echo 'src-git internet https://github.com/gSpotx2f/luci-app-internet-detector.git' >>feeds.conf.default
-echo 'src-git zapret https://github.com/remittor/zapret-openwrt.git' >>feeds.conf.default
 echo 'src-git sms https://github.com/4IceG/luci-app-sms-tool-js.git' >>feeds.conf.default
 
 pushd target/linux/rockchip/patches-5.15
