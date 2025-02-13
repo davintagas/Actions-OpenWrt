@@ -17,13 +17,15 @@ sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99
 
 # Add Custom package
 git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git kiddin
-cp -rf kiddin/luci-app-3ginfo-lite package/luci-app-3ginfo-lite
+cp -rf kiddin/luci-app-3ginfo-lite package/
 cp -rf kiddin/{luci-proto-xmm,xmm-modem} package/
 cp -rf kiddin/{luci-app-atinout,atinout} package/
-cp -rf kiddin/luci-app-sms-tool-js package/luci-app-sms-tool-js
+cp -rf kiddin/luci-app-sms-tool-js package/
 cp -rf kiddin/{luci-app-internet-detector,internet-detector} package/
 cp -rf kiddin/{luci-app-cpufreq,cpufreq} package/
 cp -rf kiddin/{luci-app-diskman,luci-app-disks-info} package/
+cp -rf kiddin/luci-app-adguardhome package/
+cp -rf kiddin/autocore package/
 
 # Add Default Setting
 mkdir -p files/etc/uci-defaults
