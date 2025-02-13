@@ -33,7 +33,7 @@ rm -rf kiddin
 # Change luci-base
 git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/luci.git mortal-luci
 rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
-cp -rf mortal-luci/{luci-base,luci-mod-status} feeds/luci/modules/
+cp -rf mortal-luci/modules/{luci-base,luci-mod-status} feeds/luci/modules/
 rm -rf mortal-luci
 
 # Add Default Setting
