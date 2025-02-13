@@ -14,10 +14,6 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 #echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git modemfeed https://github.com/koshev-msk/modemfeed.git' >>feeds.conf.default
-echo 'src-git 4icg https://github.com/4IceG/luci-app-3ginfo-lite.git' >>feeds.conf.default
-echo 'src-git internet https://github.com/gSpotx2f/luci-app-internet-detector.git' >>feeds.conf.default
-echo 'src-git sms https://github.com/4IceG/luci-app-sms-tool-js.git' >>feeds.conf.default
 
 pushd target/linux/rockchip/patches-6.6
 wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/tags/v24.10.0/target/linux/rockchip/patches-6.6/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
