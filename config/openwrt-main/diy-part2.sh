@@ -31,10 +31,7 @@ rm -rf kiddin
 # Adguardhome
 rm -rf feeds/packages/net/adguardhome
 git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/packages.git mortal-packages
-pushd mortal-packages
-git sparse-checkout set net/adguardhome
 cp -rf net/adguardhome feeds/packages/net/
-popd
 rm -rf mortal-packages
 
 # Change luci-base
