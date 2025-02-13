@@ -25,7 +25,16 @@ cp -rf kiddin/{luci-app-internet-detector,internet-detector} package/
 cp -rf kiddin/{luci-app-cpufreq,cpufreq} package/
 cp -rf kiddin/{luci-app-diskman,luci-app-disks-info} package/
 cp -rf kiddin/luci-app-adguardhome package/
+rm -rf feeds/packages/net/adguardhome
+cp -rf kiddin/adguardhome feeds/packages/net/
 cp -rf kiddin/autocore package/
+rm -rf kiddin
+
+# Change luci-base
+git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/luci.git mortal-luci
+rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
+cp -rf mortal-luci/{luci-base,luci-mod-status} feeds/luci/modules/
+rm -rf mortal-luci
 
 # Add Default Setting
 mkdir -p files/etc/uci-defaults
