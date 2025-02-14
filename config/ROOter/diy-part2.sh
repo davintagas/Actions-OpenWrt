@@ -24,32 +24,22 @@ rm -rf internet-detector
 # Add app
 git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git kiddin
 # Add cpufreq
-# cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
+cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 # Atinout
 cp -r kiddin/{luci-app-atinout,atinout} package/
 # Adguardhome
 cp -r kiddin/luci-app-adguardhome package/
-#rm -rf feeds/packages/net/adguardhome
-#cp -r kiddin/adguardhome feeds/packages/net/
 # Delete
 rm -rf kiddin
 
+# adguard
+rm -rf feeds/packages/net/adguardhome
+git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/packages.git mortal-packages
+cp -rf mortal-packages/net/adguardhome feeds/packages/net/
+rm -rf mortal-packages
+
 # Add 4lceG
-git clone --depth 1 https://github.com/4IceG/luci-app-cpu-status-mini.git package/luci-app-cpu-status-mini
 git clone --depth 1 https://github.com/4IceG/luci-app-modemdefine.git package/luci-app-modemdefine
-
-# Add passwall
-#rm -rf feeds/packages/net/{v2ray-core,v2ray-geodata}
-#git clone --depth 1 -b 4.78-4 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
-#git clone --depth 1 -b main https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
-
-# Change Golang
-#rm -rf feeds/packages/lang/golang
-#git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
-
-# ff
-#rm -rf feeds/packages/net/{microsocks,sing-box,trojan-go,xray-core}
 
 # Add partisi change
 git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
-
