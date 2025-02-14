@@ -26,13 +26,15 @@ cp -rf kiddin/{luci-app-cpufreq,cpufreq} package/
 cp -rf kiddin/{luci-app-diskman,luci-app-disks-info} package/
 cp -rf kiddin/luci-app-adguardhome package/
 cp -rf kiddin/autocore package/
+rm -rf feeds/packages/net/adguardhome
+cp -rf kiddin/adguardhome feeds/packages/net/
 rm -rf kiddin
 
 # Adguardhome
-rm -rf feeds/packages/net/adguardhome
-git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/packages.git mortal-packages
-cp -rf mortal-packages/net/adguardhome feeds/packages/net/
-rm -rf mortal-packages
+#rm -rf feeds/packages/net/adguardhome
+#git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/packages.git mortal-packages
+#cp -rf mortal-packages/net/adguardhome feeds/packages/net/
+#rm -rf mortal-packages
 
 # Change luci-base
 git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/luci.git mortal-luci
@@ -45,6 +47,10 @@ mkdir -p files/etc/uci-defaults
 pushd files/etc/uci-defaults
 wget https://raw.githubusercontent.com/davintagas/default/main/official/99-init-settings.sh
 popd
+
+# Golang
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
