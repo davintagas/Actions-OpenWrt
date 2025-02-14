@@ -43,3 +43,11 @@ git clone --depth 1 https://github.com/4IceG/luci-app-modemdefine.git package/lu
 
 # Add partisi change
 git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
+
+# Add Default Setting
+mkdir -p files/etc/uci-defaults
+pushd files/etc/uci-defaults
+wget https://raw.githubusercontent.com/davintagas/default/main/official/99-init-settings.sh
+popd
+
+
