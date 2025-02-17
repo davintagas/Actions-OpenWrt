@@ -29,20 +29,26 @@ cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 cp -r kiddin/{luci-app-atinout,atinout} package/
 # Adguardhome
 cp -r kiddin/luci-app-adguardhome package/
+rm -rf feeds/packages/net/adguardhome
+cp -r kiddin/adguardhome feeds/packages/net/
 # Delete
 rm -rf kiddin
 
 # adguard
-rm -rf feeds/packages/net/adguardhome
-git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/packages.git mortal-packages
-cp -rf mortal-packages/net/adguardhome feeds/packages/net/
-rm -rf mortal-packages
+#rm -rf feeds/packages/net/adguardhome
+#git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/packages.git mortal-packages
+#cp -rf mortal-packages/net/adguardhome feeds/packages/net/
+#rm -rf mortal-packages
 
 # Add 4lceG
 git clone --depth 1 https://github.com/4IceG/luci-app-modemdefine.git package/luci-app-modemdefine
 
 # Add partisi change
 git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
+
+# Golang
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
 # Add Default Setting
 mkdir -p files/etc/uci-defaults
