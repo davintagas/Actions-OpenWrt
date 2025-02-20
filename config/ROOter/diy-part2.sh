@@ -29,8 +29,8 @@ cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 cp -r kiddin/{luci-app-atinout,atinout} package/
 # Adguardhome
 cp -r kiddin/luci-app-adguardhome package/
-rm -rf feeds/packages/net/adguardhome
-cp -r kiddin/adguardhome feeds/packages/net/
+#rm -rf feeds/packages/net/adguardhome
+#cp -r kiddin/adguardhome feeds/packages/net/
 # Delete
 rm -rf kiddin
 
@@ -49,11 +49,3 @@ git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-part
 # Golang
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
-
-# Add Default Setting
-mkdir -p files/etc/uci-defaults
-pushd files/etc/uci-defaults
-wget https://raw.githubusercontent.com/davintagas/default/main/official/99-init-settings.sh
-popd
-
-
