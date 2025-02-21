@@ -9,3 +9,10 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
+cat <<EOT >> configfiles/template/.config_r1+lts
+CONFIG_PACKAGE_luci-app-internet-detector=y
+CONFIG_PACKAGE_luci-app-cpufreq=y
+CONFIG_PACKAGE_luci-app-atinout=y
+CONFIG_PACKAGE_luci-app-adguardhome=y
+EOT
+
