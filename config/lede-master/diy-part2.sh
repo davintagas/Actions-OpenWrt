@@ -25,5 +25,8 @@ cp -rf kiddin/{luci-app-internet-detector,internet-detector} package/
 cp -rf kiddin/luci-app-adguardhome package/
 rm -rf kiddin
 
+sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
+sed -i 's|Shanghai|Jakarta|g' package/lean/default-settings/files/zzz-default-settings
+
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
