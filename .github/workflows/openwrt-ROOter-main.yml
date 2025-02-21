@@ -50,7 +50,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        wget https://github.com/davintagas/default/releases/download/v.1.0.1/openwrt.tar.gz && tar -xf openwrt.tar.gz && rm -rf openwrt.tar.gz
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
