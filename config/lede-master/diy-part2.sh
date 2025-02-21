@@ -22,7 +22,6 @@ cp -rf kiddin/{luci-proto-xmm,xmm-modem} package/
 cp -rf kiddin/{luci-app-atinout,atinout} package/
 cp -rf kiddin/luci-app-sms-tool-js package/
 cp -rf kiddin/{luci-app-internet-detector,internet-detector} package/
-cp -rf kiddin/luci-app-adguardhome package/
 rm -rf kiddin
 
 sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
