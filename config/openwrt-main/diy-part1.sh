@@ -14,6 +14,8 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 #echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+rm -rf feeds.conf.default
+wget https://raw.githubusercontent.com/openwrt/openwrt/refs/heads/openwrt-24.10/feeds.conf.default
 
 pushd target/linux/rockchip/patches-6.6
 wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/tags/v24.10.0/target/linux/rockchip/patches-6.6/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
