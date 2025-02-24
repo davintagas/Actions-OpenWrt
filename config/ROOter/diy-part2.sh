@@ -16,35 +16,18 @@
 sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
 # sed -i 's/root::0:0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
 
-# Add internet-detector
-git clone --depth 1 https://github.com/gSpotx2f/luci-app-internet-detector.git internet-detector
-mv internet-detector/{luci-app-internet-detector,internet-detector,internet-detector-mod-modem-restart} package/
-rm -rf internet-detector
-
 # Add app
 git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git kiddin
+# Add internet-detector
+cp -r kiddin/{luci-app-internet-detector,internet-detector} package/
 # Add cpufreq
 cp -r kiddin/{luci-app-cpufreq,cpufreq} package/
 # Atinout
 cp -r kiddin/{luci-app-atinout,atinout} package/
 # Adguardhome
 cp -r kiddin/luci-app-adguardhome package/
-#rm -rf feeds/packages/net/adguardhome
-#cp -r kiddin/adguardhome feeds/packages/net/
 # Delete
 rm -rf kiddin
-
-# adguard
-#rm -rf feeds/packages/net/adguardhome
-#git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/packages.git mortal-packages
-#cp -rf mortal-packages/net/adguardhome feeds/packages/net/
-#rm -rf mortal-packages
-
-# Add 4lceG
-git clone --depth 1 https://github.com/4IceG/luci-app-modemdefine.git package/luci-app-modemdefine
-
-# Add partisi change
-git clone https://github.com/sirpdboy/luci-app-partexp.git package/luci-app-partexp
 
 # Golang
 rm -rf feeds/packages/lang/golang
