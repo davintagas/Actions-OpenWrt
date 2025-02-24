@@ -28,6 +28,12 @@ cp -rf kiddin/luci-app-adguardhome package/
 cp -rf kiddin/autocore package/
 rm -rf kiddin
 
+# status
+git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/luci.git mortal-luci
+rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
+cp -rf mortal-luci/modules/{luci-base,luci-mod-status} feeds/luci/modules/
+rm -rf mortal-luci
+
 # Add Default Setting
 mkdir -p files/etc/uci-defaults
 pushd files/etc/uci-defaults
