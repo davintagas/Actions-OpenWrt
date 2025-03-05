@@ -17,3 +17,9 @@ mkdir -p package/sms-tool
 pushd package/sms-tool
 wget https://raw.githubusercontent.com/openwrt/packages/refs/heads/openwrt-23.05/utils/sms-tool/Makefile
 popd
+
+git clone --depth 1 https://github.com/koshev-msk/modemfeed.git modemfeed
+cp -rf modemfeed/packages/net/xmm-modem package/xmm-modem
+cp -rf modemfeed/packages/telephony/atinout package/atinout
+rm -rf modemfeed
+
