@@ -22,6 +22,15 @@ cp -rf kiddin/{luci-proto-xmm,xmm-modem} package/
 cp -rf kiddin/{luci-app-atinout,atinout} package/
 cp -rf kiddin/luci-app-sms-tool-js package/
 cp -rf kiddin/{luci-app-internet-detector,internet-detector} package/
+rm -rf feeds/luci/applications/luci-app-adguardhome
+cp -rf kiddin/luci-app-adguardhome feeds/luci/applications/
+rm -rf feeds/packages/net/adguardhome/Makefile
+wget -O feeds/packages/net/adguardhome/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/Makefile
+pushd feeds/packages/net/adguardhome/files
+rm -rf *
+wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.config
+wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.init
+popd
 rm -rf kiddin
 
 sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
