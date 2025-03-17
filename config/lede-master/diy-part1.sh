@@ -14,8 +14,6 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 #echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-sed -i '/KERNEL_TESTING_PATCHVER:=6.12/d' target/linux/rockchip/Makefile
-sed -i 's|KERNEL_PATCHVER:=6.6|KERNEL_PATCHVER:=6.12|g' target/linux/rockchip/Makefile
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
