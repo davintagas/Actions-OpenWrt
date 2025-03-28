@@ -46,7 +46,7 @@ cp -rf mortal-luci/modules/{luci-base,luci-mod-status} feeds/luci/modules/
 rm -rf mortal-luci
 
 # change agh
-git clone --depth 1 -b master https://github.com/immortalwrt/immortalwrt.git mortal-package
+git clone --depth 1 -b master https://github.com/immortalwrt/packages.git mortal-package
 rm -rf feeds/packages/net/adguardhome
 cp -rf mortal-package/net/adguardhome feeds/packages/net/
 rm -rf mortal-package
