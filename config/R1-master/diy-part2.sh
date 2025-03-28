@@ -51,6 +51,10 @@ rm -rf feeds/packages/net/adguardhome
 cp -rf mortal-package/net/adguardhome feeds/packages/net/
 rm -rf mortal-package
 
+rm -rf target/linux/rockchip/armv8/base-files/etc/init.d/resize-rootfs
+rm -rf target/linux/rockchip/armv8/base-files/etc/rc.d/S22resize-rootfs
+rm -rf target/linux/rockchip/armv8/base-files/usr/bin/resize-rootfs.sh
+
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
