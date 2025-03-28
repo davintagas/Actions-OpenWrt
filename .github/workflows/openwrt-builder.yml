@@ -25,7 +25,6 @@ on:
           - openwrt-main
           - immortalwrt-master
           - lede-master
-          - R1-master
 
 env:
   FEEDS_CONF: config/${{ inputs.source_branch }}/feeds.conf.default
@@ -72,9 +71,6 @@ jobs:
           elif [[ "${{ inputs.source_branch }}" == *"lede"* ]]; then
               REPO_URL="https://github.com/coolsnowwolf/lede"
               REPO_BRANCH="master"
-          elif [[ "${{ inputs.source_branch }}" == *"R1"* ]]; then
-              REPO_URL="https://github.com/orangepi-xunlong/openwrt.git"
-              REPO_BRANCH="openwrt-21.02"
           else
               echo "Unknown source code repository."
               exit 1
