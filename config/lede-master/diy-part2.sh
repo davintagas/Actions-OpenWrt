@@ -26,6 +26,7 @@ rm -rf feeds/luci/applications/luci-app-adguardhome
 cp -rf kiddin/luci-app-adguardhome feeds/luci/applications/
 rm -rf feeds/packages/net/adguardhome/Makefile
 wget -O feeds/packages/net/adguardhome/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/Makefile
+wget -O feeds/packages/net/adguardhome/test.sh https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/net/adguardhome/test.sh
 pushd feeds/packages/net/adguardhome/files
 rm -rf *
 wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.config
