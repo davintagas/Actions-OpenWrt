@@ -23,7 +23,7 @@ cp -rf kiddin/{luci-app-atinout,atinout} package/
 cp -rf kiddin/luci-app-sms-tool-js package/
 cp -rf kiddin/{luci-app-internet-detector,internet-detector} package/
 cp -rf kiddin/{luci-app-cpufreq,cpufreq} package/
-cp -rf kiddin/{luci-app-diskman,luci-app-disks-info} package/
+cp -rf kiddin/luci-app-diskman package/
 cp -rf kiddin/luci-app-adguardhome package/
 cp -rf kiddin/autocore package/
 rm -rf kiddin
