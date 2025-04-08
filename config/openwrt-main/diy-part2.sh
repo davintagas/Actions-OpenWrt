@@ -26,6 +26,7 @@ cp -rf kiddin/{luci-app-cpufreq,cpufreq} package/
 cp -rf kiddin/luci-app-diskman package/
 cp -rf kiddin/luci-app-adguardhome package/
 cp -rf kiddin/autocore package/
+cp -rf kiddin/{luci-app-qosmate,qosmate} package/
 rm -rf kiddin
 
 # status
