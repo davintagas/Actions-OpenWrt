@@ -29,8 +29,6 @@ cp -r kiddin/luci-app-adguardhome package/luci-app-adguardhome
 cp -r kiddin/{luci-app-sms-tool-js,sms-tool} package/
 # 3ginfo
 cp -r kiddin/luci-app-3ginfo-lite package/
-# qosmate
-cp -rf kiddin/{luci-app-qosmate,qosmate} package/
 # Delete Source
 rm -rf kiddin
 
