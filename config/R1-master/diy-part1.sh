@@ -13,6 +13,9 @@
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
+rm -rf package/kernel/linux/modules/netsupport.mk
+wget -O package/kernel/linux/modules/netsupport.mk https://raw.githubusercontent.com/davintagas/default/refs/heads/main/netsupport.mk
+ 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
