@@ -32,6 +32,7 @@ rm -rf *
 wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.config
 wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.init
 popd
+cp -rf kiddin/{luci-app-qosmate,qosmate} package/
 rm -rf kiddin
 
 sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
