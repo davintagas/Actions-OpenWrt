@@ -50,7 +50,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        mkdir openwrt && cd openwrt && wget https://github.com/davintagas/default/releases/download/v.1.0/openwrt.tar.gz && tar -xf openwrt.tar.gz && rm -rf openwrt.tar.gz && cd ..
+        wget https://github.com/davintagas/default/releases/download/v.1.0/openwrt.tar.gz && tar -xf openwrt.tar.gz && rm -rf openwrt.tar.gz
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
