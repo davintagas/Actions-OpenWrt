@@ -29,8 +29,6 @@ cp -r kiddin/luci-app-adguardhome package/luci-app-adguardhome
 cp -r kiddin/{luci-app-sms-tool-js,sms-tool} package/
 # 3ginfo
 cp -r kiddin/luci-app-3ginfo-lite package/
-cp -rf kiddin/{luci-app-qosmate,qosmate} package/
-# sed -i 's|+kmod-sched-cake +kmod-sched-red|+kmod-sched-cake|g' package/qosmate/Makefile
 # Delete Source
 rm -rf kiddin
 
