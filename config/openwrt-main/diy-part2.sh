@@ -55,9 +55,9 @@ wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-2
 popd
 
 # OpenClash
-git clone --depth 1 -b v0.46.079 https://github.com/vernesong/OpenClash.git package/openclash
-cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
-rm -rf package/openclash
+# git clone --depth 1 -b v0.46.079 https://github.com/vernesong/OpenClash.git package/openclash
+# cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
+# rm -rf package/openclash
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
