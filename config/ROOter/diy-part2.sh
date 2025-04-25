@@ -29,6 +29,11 @@ cp -r kiddin/luci-app-adguardhome package/
 # Delete
 rm -rf kiddin
 
+# OpenClash
+git clone --depth 1 -b v0.46.079 https://github.com/vernesong/OpenClash.git package/openclash
+cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
+rm -rf package/openclash
+
 # Golang
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
