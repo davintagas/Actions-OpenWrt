@@ -59,5 +59,9 @@ git clone --depth 1 -b v0.46.079 https://github.com/vernesong/OpenClash.git pack
 cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
 rm -rf package/openclash
 
+pushd package/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
+
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
