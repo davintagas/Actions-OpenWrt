@@ -41,6 +41,14 @@ pushd files/etc/uci-defaults
 wget https://raw.githubusercontent.com/davintagas/default/main/official/99-init-settings.sh
 popd
 
+mkdir -p files/etc/openclash/core
+pushd files/etc/openclash/core
+wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
+tar -xf clash-linux-arm64.tar.gz
+rm -rf clash-linux-arm64.tar.gz
+mv clash clash_meta
+popd
+
 # Golang
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
