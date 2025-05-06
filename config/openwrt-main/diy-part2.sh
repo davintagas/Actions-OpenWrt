@@ -76,10 +76,13 @@ popd
 # Add passwall
 git clone --depth 1 -b 25.5.2-1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
-mv package/passwall-packages/{chinadns-ng,dns2socks,tcping} package/
+mv package/passwall-packages/{chinadns-ng,dns2socks,tcping,geoview} package/
 rm -rf feeds/packages/net/{sing-box,v2ray-geodata,xray-core,microsocks}
 mv package/passwall-packages/{sing-box,v2ray-geodata,xray-core,microsocks} feeds/packages/net/
 rm -rf package/passwall-packages
+
+# Add passwall2
+git clone --depth 1 -b 25.4.22-1 https://github.com/xiaorouji/openwrt-passwall2.git package/luci-app-passwall2
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
