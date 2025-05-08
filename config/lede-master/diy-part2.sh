@@ -32,11 +32,27 @@ rm -rf *
 wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.config
 wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.init
 popd
-cp -rf kiddin/{luci-app-qosmate,qosmate} package/
+# cp -rf kiddin/{luci-app-qosmate,qosmate} package/
 rm -rf kiddin
 
 sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
 sed -i 's|Shanghai|Jakarta|g' package/lean/default-settings/files/zzz-default-settings
+
+# OpenClash
+git clone --depth 1 -b v0.46.079 https://github.com/vernesong/OpenClash.git package/openclash
+cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
+rm -rf package/openclash
+pushd package/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
+
+mkdir -p files/etc/openclash/core
+pushd files/etc/openclash/core
+wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
+tar -xf clash-linux-arm64.tar.gz
+rm -rf clash-linux-arm64.tar.gz
+mv clash clash_meta
+popd
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
