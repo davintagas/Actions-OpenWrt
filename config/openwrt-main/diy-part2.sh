@@ -28,6 +28,7 @@ cp -rf kiddin/luci-app-adguardhome package/
 rm -rf package/luci-app-adguardhome/root/etc/adguardhome.yaml
 wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githubusercontent.com/davintagas/default/refs/heads/main/adguardhome.yaml
 cp -rf kiddin/autocore package/
+cp -rf kiddin/luci-app-lite-watchdog package/
 #cp -rf kiddin/{luci-app-qosmate,qosmate} package/
 rm -rf kiddin
 
