@@ -44,6 +44,10 @@ pushd files/etc/uci-defaults
 wget https://raw.githubusercontent.com/davintagas/default/main/official/99-init-settings.sh
 popd
 
+pushd files/etc
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atcommands.user
+popd
+
 mkdir -p files/etc/openclash/core
 pushd files/etc/openclash/core
 wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
