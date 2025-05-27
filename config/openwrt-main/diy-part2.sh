@@ -87,4 +87,4 @@ mv package/passwall-packages/{sing-box,v2ray-geodata,xray-core,microsocks} feeds
 rm -rf package/passwall-packages
 
 # Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/OrangePI-Router/g' package/base-files/files/bin/config_generate
