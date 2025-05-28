@@ -30,7 +30,7 @@
 #wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/master/target/linux/rockchip/patches-6.6/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 #popd
 
-make dirclean
+#make dirclean
 
 #git clone --depth 1 https://github.com/davintagas/davin.git configfiles/davin
 
