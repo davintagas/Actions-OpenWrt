@@ -34,6 +34,10 @@ git clone --depth 1 -b v0.46.086 https://github.com/vernesong/OpenClash.git pack
 cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
 rm -rf package/openclash
 
+pushd package/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
+
 # Golang
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
