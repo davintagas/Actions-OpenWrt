@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.2.1/192.168.1.1/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.2.1/192.168.1.1/g' package/base-files/files/bin/config_generate
 # Add the default password for the 'root' user（Change the empty password to 'password'）
 sed -i 's/root::0:0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99999:7:::/g' package/base-files/files/etc/shadow
 
@@ -22,8 +22,8 @@ cp -rf kiddin/{luci-proto-xmm,xmm-modem} package/
 cp -rf kiddin/{luci-app-atinout,atinout} package/
 cp -rf kiddin/{luci-app-sms-tool-js,sms-tool} package/
 cp -rf kiddin/{luci-app-internet-detector,internet-detector} package/
-cp -rf kiddin/{luci-app-cpufreq,cpufreq} package/
-cp -rf kiddin/luci-app-diskman package/
+#cp -rf kiddin/{luci-app-cpufreq,cpufreq} package/
+#cp -rf kiddin/luci-app-diskman package/
 #cp -rf kiddin/luci-app-adguardhome package/
 #rm -rf package/luci-app-adguardhome/root/etc/adguardhome.yaml
 #wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githubusercontent.com/davintagas/default/refs/heads/main/adguardhome.yaml
@@ -33,14 +33,14 @@ cp -rf kiddin/luci-app-lite-watchdog package/
 rm -rf kiddin
 
 # Add Default Setting
-mkdir -p files/etc/uci-defaults
-pushd files/etc/uci-defaults
-wget https://raw.githubusercontent.com/davintagas/default/main/official/99-init-settings.sh
-popd
+#mkdir -p files/etc/uci-defaults
+#pushd files/etc/uci-defaults
+#wget https://raw.githubusercontent.com/davintagas/default/main/official/99-init-settings.sh
+#popd
 
-pushd files/etc
-wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atcommands.user
-popd
+#pushd files/etc
+#wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atcommands.user
+#popd
 
 # Golang
 #rm -rf feeds/packages/lang/golang
@@ -56,4 +56,4 @@ popd
 #popd
 
 # Modify hostname
-sed -i 's/OpenWrt/OrangePI-Router/g' package/base-files/files/bin/config_generate
+#sed -i 's/OpenWrt/OrangePI-Router/g' package/base-files/files/bin/config_generate
