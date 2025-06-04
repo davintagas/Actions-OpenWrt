@@ -73,7 +73,7 @@ jobs:
               REPO_URL="https://github.com/coolsnowwolf/lede"
               REPO_BRANCH="master"
           elif [[ "${{ inputs.source_branch }}" == *"orangepi"* ]]; then
-              REPO_URL="https://github.com/orangepi-xunlong/openwrt.git"
+              REPO_URL="https://github.com/baiywt/openwrt.git"
               REPO_BRANCH="openwrt-21.02"
           else
               echo "Unknown source code repository."
