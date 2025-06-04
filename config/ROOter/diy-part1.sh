@@ -13,7 +13,7 @@
 #sed -i 's|+kmod-rt2800-usb +xxd +kmod-tcp-bbr|+kmod-rt2800-usb|g' package/rooter/ext-rooter-basic/Makefile
 
 pushd target/linux/rockchip/patches-5.15
-wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/master/target/linux/rockchip/patches-6.6/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-23.05/target/linux/rockchip/patches-5.15/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 popd
 
 # Add a feed source
