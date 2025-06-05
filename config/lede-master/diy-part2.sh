@@ -40,7 +40,7 @@ sed -i 's|Shanghai|Jakarta|g' package/lean/default-settings/files/zzz-default-se
 
 # OpenClash
 rm -rf feeds/luci/applications/luci-app-openclash
-git clone --depth 1 -b v0.46.079 https://github.com/vernesong/OpenClash.git package/openclash
+git clone --depth 1 -b v0.46.086 https://github.com/vernesong/OpenClash.git package/openclash
 cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
 rm -rf package/openclash
 pushd package/luci-app-openclash/tools/po2lmo
@@ -56,4 +56,4 @@ mv clash clash_meta
 popd
 
 # Modify hostname
-sed -i 's/OpenWrt/OrangePi-Router/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/OrangePi/g' package/base-files/files/bin/config_generate
