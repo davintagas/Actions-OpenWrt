@@ -17,8 +17,8 @@
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-rm -rf configs
-rm -rf target/linux/rockchip/armv8/base-files/usr/bin/resize-rootfs.sh
-rm -rf target/linux/rockchip/armv8/base-files/etc/rc.d/S22resize-rootfs
-rm -rf target/linux/rockchip/armv8/base-files/etc/init.d/resize-rootfs
+#rm -rf configs
+#rm -rf target/linux/rockchip/armv8/base-files/usr/bin/resize-rootfs.sh
+#rm -rf target/linux/rockchip/armv8/base-files/etc/rc.d/S22resize-rootfs
+#rm -rf target/linux/rockchip/armv8/base-files/etc/init.d/resize-rootfs
 #
