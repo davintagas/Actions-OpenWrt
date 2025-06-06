@@ -22,13 +22,13 @@ cp -rf kiddin/{luci-proto-xmm,xmm-modem} package/
 cp -rf kiddin/{luci-app-atinout,atinout} package/
 cp -rf kiddin/{luci-app-sms-tool-js,sms-tool} package/
 cp -rf kiddin/{luci-app-internet-detector,internet-detector} package/
-cp -rf kiddin/{luci-app-cpufreq,cpufreq} package/
-cp -rf kiddin/luci-app-diskman package/
+#cp -rf kiddin/{luci-app-cpufreq,cpufreq} package/
+#cp -rf kiddin/luci-app-diskman package/
 #cp -rf kiddin/luci-app-adguardhome package/
 #rm -rf package/luci-app-adguardhome/root/etc/adguardhome.yaml
 #wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githubusercontent.com/davintagas/default/refs/heads/main/adguardhome.yaml
 #cp -rf kiddin/autocore package/
-cp -rf kiddin/luci-app-lite-watchdog package/
+#cp -rf kiddin/luci-app-lite-watchdog package/
 #cp -rf kiddin/{luci-app-qosmate,qosmate} package/
 rm -rf kiddin
 
@@ -56,4 +56,4 @@ rm -rf kiddin
 #popd
 
 # Modify hostname
-sed -i 's/OpenWrt/OrangePI-Router/g' package/base-files/files/bin/config_generate
+#sed -i 's/OpenWrt/OrangePI-Router/g' package/base-files/files/bin/config_generate
