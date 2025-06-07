@@ -24,4 +24,11 @@
 pushd target/linux/rockchip/patches-5.4
 wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-21.02/target/linux/rockchip/patches-5.4/105-mmc-core-set-initial-signal-voltage-on-power-off.patch
 popd
+pushd package/boot/uboot-rockchip/patches
+rm -rf 202-rockchip-rk3328-Add-support-for-OrangePi-R1-Plus-LTS.patch
+wget -O 202-rockchip-rk3328-Add-support-for-OrangePi-R1-Plus-LTS.patch https://raw.githubusercontent.com/openwrt/openwrt/4bfc28da3584a030aa2fc313e9e25c325695d229/package/boot/uboot-rockchip/patches/104-rockchip-rk3328-Add-support-for-Orange-Pi-R1-Plus-LTS.patch
+popd
+pushd package/boot/uboot-envtools/files
+wget https://raw.githubusercontent.com/openwrt/openwrt/ad6d7143dfc0971898905d87021c1606cde96ee9/package/boot/uboot-envtools/files/rockchip
+popd
 #
