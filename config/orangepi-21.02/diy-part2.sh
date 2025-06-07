@@ -55,5 +55,10 @@ pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
 
+# add custom
+git clone --depth 1 https://github.com/davintagas/custom-packages.git package/custom-packages
+rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
+mv package/custom-packages/{luci-base,luci-mod-status} feeds/luci/modules/
+
 # Modify hostname
 #sed -i 's/OpenWrt/OrangePI-Router/g' package/base-files/files/bin/config_generate
