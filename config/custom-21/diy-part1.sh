@@ -23,5 +23,5 @@
 #rm -rf target/linux/rockchip/armv8/base-files/etc/init.d/resize-rootfs
 #pushd target/linux/rockchip/patches-5.4
 #wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-21.02/target/linux/rockchip/patches-5.4/105-mmc-core-set-initial-signal-voltage-on-power-off.patch
-popd
+#popd
 #
