@@ -26,6 +26,7 @@ on:
           - immortalwrt-master
           - lede-master
           - orangepi-21.02
+          - custom-21
 
 env:
   FEEDS_CONF: config/${{ inputs.source_branch }}/feeds.conf.default
@@ -68,6 +69,9 @@ jobs:
               REPO_BRANCH="v24.10.1"
           elif [[ "${{ inputs.source_branch }}" == *"immortalwrt"* ]]; then
               REPO_URL="https://github.com/immortalwrt/immortalwrt"
+              REPO_BRANCH="master"
+          elif [[ "${{ inputs.source_branch }}" == *"lede"* ]]; then
+              REPO_URL="https://github.com/coolsnowwolf/lede"
               REPO_BRANCH="master"
           elif [[ "${{ inputs.source_branch }}" == *"orangepi"* ]]; then
               REPO_URL="https://github.com/ohabu/openwrt.git"
