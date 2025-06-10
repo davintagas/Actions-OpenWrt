@@ -37,4 +37,18 @@ rm -rf kiddin
 
 sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
 sed -i 's|Shanghai|Jakarta|g' package/lean/default-settings/files/zzz-default-settings
+
+# OpenClash
+rm -rf feeds/luci/applications/luci-app-openclash
+git clone --depth 1 -b v0.46.086 https://github.com/vernesong/OpenClash.git package/openclash
+mv package/openclash/luci-app-openclash feeds/luci/applications/
+rm -rf package/openclash
+
+mkdir -p files/etc/openclash/core
+pushd files/etc/openclash/core
+wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
+tar -xf clash-linux-arm64.tar.gz
+rm -rf clash-linux-arm64.tar.gz
+mv clash clash_meta
+popd
 #
