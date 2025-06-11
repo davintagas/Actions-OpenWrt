@@ -44,6 +44,10 @@ git clone --depth 1 -b v0.46.086 https://github.com/vernesong/OpenClash.git pack
 mv package/openclash/luci-app-openclash feeds/luci/applications/
 rm -rf package/openclash
 
+pushd feeds/luci/applications/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
+
 mkdir -p files/etc/openclash/core
 pushd files/etc/openclash/core
 wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
