@@ -39,25 +39,25 @@ sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-setting
 sed -i 's|Shanghai|Jakarta|g' package/lean/default-settings/files/zzz-default-settings
 
 # OpenClash
-rm -rf feeds/luci/applications/luci-app-openclash
-git clone --depth 1 -b v0.46.086 https://github.com/vernesong/OpenClash.git package/openclash
-mv package/openclash/luci-app-openclash feeds/luci/applications/
-rm -rf package/openclash
+#rm -rf feeds/luci/applications/luci-app-openclash
+#git clone --depth 1 -b v0.46.086 https://github.com/vernesong/OpenClash.git package/openclash
+#mv package/openclash/luci-app-openclash feeds/luci/applications/
+#rm -rf package/openclash
 
-pushd feeds/luci/applications/luci-app-openclash/tools/po2lmo
-make && sudo make install
-popd
+#pushd feeds/luci/applications/luci-app-openclash/tools/po2lmo
+#make && sudo make install
+#popd
 
-mkdir -p files/etc/openclash/core
-pushd files/etc/openclash/core
-wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
-tar -xf clash-linux-arm64.tar.gz
-rm -rf clash-linux-arm64.tar.gz
-mv clash clash_meta
-popd
+#mkdir -p files/etc/openclash/core
+#pushd files/etc/openclash/core
+#wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
+#tar -xf clash-linux-arm64.tar.gz
+#rm -rf clash-linux-arm64.tar.gz
+#mv clash clash_meta
+#popd
 #
-rm -rf feeds/packages/lang/ruby
-git clone --depth 1 -b openwrt-24.10 https://github.com/openwrt/packages.git package/openwrt-24.10
-mv package/openwrt-24.10/lang/ruby feeds/packages/lang/
-rm -rf package/openwrt-24.10
+#rm -rf feeds/packages/lang/ruby
+#git clone --depth 1 -b openwrt-24.10 https://github.com/openwrt/packages.git package/openwrt-24.10
+#mv package/openwrt-24.10/lang/ruby feeds/packages/lang/
+#rm -rf package/openwrt-24.10
 #
