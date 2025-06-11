@@ -52,3 +52,8 @@ rm -rf clash-linux-arm64.tar.gz
 mv clash clash_meta
 popd
 #
+rm -rf feeds/packages/lang/ruby
+git clone --depth 1 -b openwrt-24.10 https://github.com/openwrt/packages.git package/openwrt-24.10
+mv package/openwrt-24.10/lang/ruby feeds/packages/lang/
+rm -rf package/openwrt-24.10
+#
