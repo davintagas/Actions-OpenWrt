@@ -17,8 +17,8 @@ on:
   workflow_dispatch:
 
 env:
-  DIY_P1_SH: config/ROOter/diy-part1.sh
-  DIY_P2_SH: config/ROOter/diy-part2.sh
+  DIY_P1_SH: config/ROOter-21/diy-part1.sh
+  DIY_P2_SH: config/ROOter-21/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
