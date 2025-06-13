@@ -12,8 +12,7 @@
 rm -rf target/linux/rockchip/armv8/base-files/etc/init.d/resize-rootfs
 rm -rf target/linux/rockchip/armv8/base-files/etc/rc.d/S22resize-rootfs
 rm -rf target/linux/rockchip/armv8/base-files/usr/bin/resize-rootfs.sh
-rm -rf target/linux/rockchip/patches-5.4/001-add-rk3328-dmc-driver.patch
-rm -rf target/linux/rockchip/patches-5.4/002-add-rk3328-usb3-driver.patch
+rm -rf target/linux/rockchip/files
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
