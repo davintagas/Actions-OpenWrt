@@ -13,6 +13,7 @@ rm -rf target/linux/rockchip/armv8/base-files/etc/init.d/resize-rootfs
 rm -rf target/linux/rockchip/armv8/base-files/etc/rc.d/S22resize-rootfs
 rm -rf target/linux/rockchip/armv8/base-files/usr/bin/resize-rootfs.sh
 rm -rf target/linux/rockchip/files
+rm -rf target/linux/rockchip/patches-5.4/804-clk-rockchip-support-setting-ddr-clock-via-SIP-Version-2-.patch
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
