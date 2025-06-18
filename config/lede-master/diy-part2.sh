@@ -31,6 +31,7 @@ pushd feeds/packages/net/adguardhome/files
 rm -rf *
 wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.config
 wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.init
+wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/net/adguardhome/files/adguardhome.sysctl
 popd
 # cp -rf kiddin/{luci-app-qosmate,qosmate} package/
 rm -rf kiddin
