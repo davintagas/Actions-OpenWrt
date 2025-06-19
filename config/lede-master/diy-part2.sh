@@ -40,10 +40,10 @@ sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-setting
 sed -i 's|Shanghai|Jakarta|g' package/lean/default-settings/files/zzz-default-settings
 
 # OpenClash
-#rm -rf feeds/luci/applications/luci-app-openclash
-#git clone --depth 1 -b v0.46.086 https://github.com/vernesong/OpenClash.git package/openclash
-#mv package/openclash/luci-app-openclash feeds/luci/applications/
-#rm -rf package/openclash
+rm -rf feeds/luci/applications/luci-app-openclash
+git clone --depth 1 -b v0.46.086 https://github.com/vernesong/OpenClash.git package/openclash
+mv package/openclash/luci-app-openclash feeds/luci/applications/
+rm -rf package/openclash
 
 #pushd feeds/luci/applications/luci-app-openclash/tools/po2lmo
 #make && sudo make install
