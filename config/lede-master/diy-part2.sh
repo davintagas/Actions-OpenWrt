@@ -57,8 +57,8 @@ rm -rf package/openclash
 #mv clash clash_meta
 #popd
 #
-rm -rf feeds/packages/lang/rust
-git clone --depth 1 -b openwrt-24.10 https://github.com/openwrt/packages.git package/openwrt-24.10
-mv package/openwrt-24.10/lang/rust feeds/packages/lang/
-rm -rf package/openwrt-24.10
+#rm -rf feeds/packages/lang/rust
+#git clone --depth 1 -b openwrt-24.10 https://github.com/openwrt/packages.git package/openwrt-24.10
+#mv package/openwrt-24.10/lang/rust feeds/packages/lang/
+#rm -rf package/openwrt-24.10
 #
