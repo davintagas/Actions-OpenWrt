@@ -57,7 +57,6 @@ rm -rf package/openclash
 #mv clash clash_meta
 #popd
 #
-sed -i 's|llvm=false|llvm=if-unchanged|g' feeds/packages/lang/rust/Makefile
 #rm -rf feeds/packages/lang/rust
 #git clone --depth 1 -b openwrt-24.10 https://github.com/openwrt/packages.git package/openwrt-24.10
 #mv package/openwrt-24.10/lang/rust feeds/packages/lang/
