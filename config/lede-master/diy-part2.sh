@@ -61,7 +61,4 @@ rm -rf package/openclash
 #git clone --depth 1 -b openwrt-24.10 https://github.com/openwrt/packages.git package/openwrt-24.10
 #mv package/openwrt-24.10/lang/rust feeds/packages/lang/
 #rm -rf package/openwrt-24.10
-
-rm -rf feeds/packages/lang/rust/Makefile
-wget -O feeds/packages/lang/rust/Makefile https://raw.githubusercontent.com/davintagas/default/refs/heads/main/Makefile
 #
