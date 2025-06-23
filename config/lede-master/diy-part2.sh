@@ -63,5 +63,5 @@ rm -rf package/openclash
 #rm -rf package/openwrt-24.10
 
 rm -rf feeds/packages/lang/rust/Makefile
-wget -O feeds/lang/rust/Makefile https://raw.githubusercontent.com/davintagas/default/refs/heads/main/Makefile
+wget -O feeds/packages/lang/rust/Makefile https://raw.githubusercontent.com/davintagas/default/refs/heads/main/Makefile
 #
