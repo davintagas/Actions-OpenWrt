@@ -8,9 +8,9 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: config/lede-master/config
-  DIY_P1_SH: config/lede-master/diy-part1.sh
-  DIY_P2_SH: config/lede-master/diy-part2.sh
+  CONFIG_FILE: config/immortalwrt-master/config
+  DIY_P1_SH: config/immortalwrt-master/diy-part1.sh
+  DIY_P2_SH: config/immortalwrt-master/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
