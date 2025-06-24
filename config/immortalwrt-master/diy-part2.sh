@@ -24,7 +24,7 @@ cp -r kiddin/{luci-app-atinout,atinout} package/
 # Add internet-detector
 cp -r kiddin/{luci-app-internet-detector,internet-detector} package/
 # adh
-cp -r kiddin/luci-app-adguardhome package/luci-app-adguardhome
+#cp -r kiddin/luci-app-adguardhome package/luci-app-adguardhome
 # Delete Source
 rm -rf kiddin
 
