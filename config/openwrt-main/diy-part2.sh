@@ -20,7 +20,6 @@ git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git kiddin
 cp -rf kiddin/luci-app-3ginfo-lite package/
 cp -rf kiddin/{luci-proto-xmm,xmm-modem} package/
 cp -rf kiddin/{luci-app-atinout,atinout} package/
-cp -rf kiddin/luci-app-sms-tool-js package/
 cp -rf kiddin/{luci-app-internet-detector,internet-detector} package/
 cp -rf kiddin/{luci-app-cpufreq,cpufreq} package/
 cp -rf kiddin/luci-app-diskman package/
@@ -31,6 +30,10 @@ cp -rf kiddin/autocore package/
 cp -rf kiddin/luci-app-lite-watchdog package/
 #cp -rf kiddin/{luci-app-qosmate,qosmate} package/
 rm -rf kiddin
+
+# Add sms-tool
+git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool.git package/luci-app-sms-tool
+rm -rf package/luci-app-sms-tool/sms-tool
 
 # status
 git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/luci.git mortal-luci
