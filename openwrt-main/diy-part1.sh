@@ -21,8 +21,6 @@ pushd target/linux/rockchip/patches-6.6
 wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/tags/v24.10.0/target/linux/rockchip/patches-6.6/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 popd
 
-echo 'src-git mrhaav https://github.com/mrhaav/openwrt-packages.git' >>feeds.conf.default
-
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
