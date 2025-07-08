@@ -74,7 +74,7 @@ wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/ne
 popd
 
 # OpenClash
-git clone --depth 1 -b v0.46.110 https://github.com/vernesong/OpenClash.git package/openclash
+git clone --depth 1 -b v0.46.120 https://github.com/vernesong/OpenClash.git package/openclash
 cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
 rm -rf package/openclash
 
@@ -89,6 +89,12 @@ mv package/passwall-packages/{chinadns-ng,dns2socks,tcping} package/
 rm -rf feeds/packages/net/{sing-box,v2ray-geodata,xray-core,microsocks}
 mv package/passwall-packages/{sing-box,v2ray-geodata,xray-core,microsocks} feeds/packages/net/
 rm -rf package/passwall-packages
+
+#
+rm -rf feeds/mrhaav/atc-fib-l850_gl/files/lib/netifd/proto/atc.sh
+pushd feeds/mrhaav/atc-fib-l850_gl/files/lib/netifd/proto
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atc.sh
+popd
 
 # Modify hostname
 sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
