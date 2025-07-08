@@ -90,9 +90,12 @@ rm -rf feeds/packages/net/{sing-box,v2ray-geodata,xray-core,microsocks}
 mv package/passwall-packages/{sing-box,v2ray-geodata,xray-core,microsocks} feeds/packages/net/
 rm -rf package/passwall-packages
 
-#
-rm -rf feeds/mrhaav/atc-fib-l850_gl/files/lib/netifd/proto/atc.sh
-pushd feeds/mrhaav/atc-fib-l850_gl/files/lib/netifd/proto
+# atc
+git clone --depth 1 https://github.com/mrhaav/openwrt-packages.git package/atc
+mv package/atc/{luci,atc-fib-l850_gl} package/
+rm -rf package/atc
+rm -rf package/atc-fib-l850_gl/files/lib/netifd/proto/atc.sh
+pushd package/atc-fib-l850_gl/files/lib/netifd/proto
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atc.sh
 popd
 
