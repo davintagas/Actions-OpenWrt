@@ -17,7 +17,7 @@
 
 sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
 sed -i 's|Shanghai|Jakarta|g' package/lean/default-settings/files/zzz-default-settings
-
+sed -i 's|openwrt-23.05|openwrt-24.10|g' feeds.conf.default
 # rm -rf target/linux/rockchip/Makefile
 # wget -O target/linux/rockchip/Makefile https://raw.githubusercontent.com/davintagas/default/refs/heads/main/lede/Makefile
 
