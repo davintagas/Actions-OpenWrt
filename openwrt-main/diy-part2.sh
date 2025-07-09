@@ -94,10 +94,11 @@ rm -rf package/passwall-packages
 git clone --depth 1 https://github.com/mrhaav/openwrt-packages.git package/atc
 mv package/atc/{luci,atc-fib-l850_gl} package/
 rm -rf package/atc
-rm -rf package/atc-fib-l850_gl/files/lib/netifd/proto/atc.sh
-pushd package/atc-fib-l850_gl/files/lib/netifd/proto
-wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atc.sh
-popd
+sed -i 's|L850|L860|g' package/atc-fib-l850_gl/files/lib/netifd/proto/atc.sh
+# rm -rf package/atc-fib-l850_gl/files/lib/netifd/proto/atc.sh
+# pushd package/atc-fib-l850_gl/files/lib/netifd/proto
+# wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atc.sh
+# popd
 
 # Modify hostname
 sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
