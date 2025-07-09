@@ -94,7 +94,7 @@ rm -rf package/passwall-packages
 git clone --depth 1 https://github.com/mrhaav/openwrt-packages.git package/atc
 mv package/atc/{luci,atc-fib-l850_gl} package/
 rm -rf package/atc
-sed -i 's|L850|L860|g' package/atc-fib-l850_gl/files/lib/netifd/proto/atc.sh
+# sed -i 's|L850|L860|g' package/atc-fib-l850_gl/files/lib/netifd/proto/atc.sh
 # rm -rf package/atc-fib-l850_gl/files/lib/netifd/proto/atc.sh
 # pushd package/atc-fib-l850_gl/files/lib/netifd/proto
 # wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atc.sh
