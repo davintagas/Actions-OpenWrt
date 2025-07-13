@@ -33,13 +33,13 @@ mv clash clash_meta
 popd
 
 # atc
-git clone --depth 1 https://github.com/mrhaav/openwrt-packages.git package/atc
-mv package/atc/{luci,atc-fib-l850_gl} package/
-rm -rf package/atc
-rm -rf package/atc-fib-l850_gl/files/lib/netifd/proto/atc.sh
-pushd package/atc-fib-l850_gl/files/lib/netifd/proto
-wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atc.sh
-popd
+#git clone --depth 1 https://github.com/mrhaav/openwrt-packages.git package/atc
+#mv package/atc/{luci,atc-fib-l850_gl} package/
+#rm -rf package/atc
+#rm -rf package/atc-fib-l850_gl/files/lib/netifd/proto/atc.sh
+#pushd package/atc-fib-l850_gl/files/lib/netifd/proto
+#wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atc.sh
+#popd
 
 # 3ginfo
 git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git package/luci-app-3ginfo-lite
