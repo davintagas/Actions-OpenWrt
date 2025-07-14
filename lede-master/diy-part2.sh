@@ -57,6 +57,9 @@ popd
 # sms-tool
 git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool.git package/luci-app-sms-tool
 
+# Add Passwall
 rm -rf feeds/luci/applications/luci-app-passwall
+git clone --depth 1 -b 25.7.6-1 https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/openwrt-passwall-packages
 #
 
