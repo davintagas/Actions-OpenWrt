@@ -26,7 +26,7 @@ cp -rf kiddin/{luci-app-internet-detector,internet-detector} package/
 
 # Add AT
 cp -rf kiddin/{luci-app-at-socat,atinout} package/
-pushd luci-app-at-socat/root/etc/modem
+pushd package/luci-app-at-socat/root/etc/modem
 rm -rf *
 wget -O atsocatcommands.user https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atcommands.user
 popd
