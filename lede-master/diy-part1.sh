@@ -15,6 +15,9 @@
 #echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
+rm -rf feeds.conf.default
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/lede/feeds.conf.default
+
 sed -i 's|CST-8|WIB-7|g' package/lean/default-settings/files/zzz-default-settings
 sed -i 's|Shanghai|Jakarta|g' package/lean/default-settings/files/zzz-default-settings
 sed -i 's|openwrt-23.05|openwrt-24.10|g' feeds.conf.default
