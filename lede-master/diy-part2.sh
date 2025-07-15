@@ -39,7 +39,7 @@ rm -rf kiddin
 
 # OpenClash
 rm -rf feeds/luci/applications/luci-app-openclash
-git clone --depth 1 -b v0.46.120 https://github.com/vernesong/OpenClash.git package/OpenClash
+git clone --depth 1 -b v0.46.133 https://github.com/vernesong/OpenClash.git package/OpenClash
 mv package/OpenClash/luci-app-openclash package/
 rm -rf package/OpenClash
 pushd package/luci-app-openclash/tools/po2lmo
