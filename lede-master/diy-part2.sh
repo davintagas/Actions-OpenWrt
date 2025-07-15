@@ -38,13 +38,13 @@ cp -rf kiddin/{luci-proto-xmm,xmm-modem} package/
 rm -rf kiddin
 
 # OpenClash
-#rm -rf feeds/luci/applications/luci-app-openclash
-#git clone --depth 1 -b v0.46.120 https://github.com/vernesong/OpenClash.git package/OpenClash
-#mv package/OpenClash/luci-app-openclash package/
-#rm -rf package/OpenClash
-#pushd package/luci-app-openclash/tools/po2lmo
-#make && sudo make install
-#popd
+rm -rf feeds/luci/applications/luci-app-openclash
+git clone --depth 1 -b v0.46.120 https://github.com/vernesong/OpenClash.git package/OpenClash
+mv package/OpenClash/luci-app-openclash package/
+rm -rf package/OpenClash
+pushd package/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
 
 mkdir -p files/etc/openclash/core
 pushd files/etc/openclash/core
