@@ -7533,5 +7533,3 @@ CONFIG_PACKAGE_usb-modeswitch=y
 # CONFIG_PACKAGE_fontconfig is not set
 # end of Font-Utils
 # end of Xorg
-
-CONFIG_OVERRIDE_PKGS="chinadns-ng dns2socks geoview microsocks shadowsocks-libev sing-box sms-tool tcping v2ray-geodata xray-core"
