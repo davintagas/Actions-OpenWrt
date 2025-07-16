@@ -17,8 +17,8 @@ on:
   workflow_dispatch:
 
 env:
-  FREE_DISK_SH: free_disk_space.sh
-  ENV_SH: environment.sh
+  FREE_DISK_SH: scripts/free_disk_space.sh
+  ENV_SH: scripts/environment.sh
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
