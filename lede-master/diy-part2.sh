@@ -54,6 +54,14 @@ rm -rf clash-linux-arm64.tar.gz
 mv clash clash_meta
 popd
 
+# Passwall
+rm -rf feeds/luci/applications/luci-app-passwall
+rm -rf feeds/packages/net/chinadns-ng
+rm -rf feeds/packages/net/sing-box
+rm -rf feeds/packages/net/xray-core
+git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
+git clone --depth 1 -b 25.7.15-1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
+
 # sms-tool
 git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool.git package/luci-app-sms-tool
 

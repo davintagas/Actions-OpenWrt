@@ -17,6 +17,8 @@ on:
   workflow_dispatch:
 
 env:
+  FREE_DISK_SH: free_disk_space.sh
+  ENV_SH: environment.sh
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
@@ -30,7 +32,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
     - name: Checkout
@@ -40,22 +42,34 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
-        sudo docker image prune --all --force
-        sudo -E apt-get -qq update
-        sudo -E apt-get -qq install ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib g++-multilib git gperf haveged help2man intltool libc6-dev-i386 libelf-dev libfuse-dev libglib2.0-dev libgmp3-dev libltdl-dev libmpc-dev libmpfr-dev libncurses5-dev libncursesw5-dev libpython3-dev libreadline-dev libssl-dev libtool lrzsz mkisofs msmtp ninja-build p7zip p7zip-full patch pkgconf python2.7 python3 python3-pyelftools python3-setuptools qemu-utils rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip vim wget xmlto xxd zlib1g-dev
-        sudo -E apt-get -qq autoremove --purge
-        sudo -E apt-get -qq clean
+        chmod +x $FREE_DISK_SH && $FREE_DISK_SH
+        sudo -E apt-get -qq update -y
+        sudo -E apt-get -qq full-upgrade -y
+        chmod +x $ENV_SH && $ENV_SH
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo timedatectl set-timezone "$TZ"
+        docker image prune -a -f
+        docker container prune -f
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
+
+    - name: Check space usage 1
+      if: (!cancelled())
+      run: df -hT
 
     - name: Clone source code
       working-directory: /workdir
       run: |
-        df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+
+    - name: Enable caching
+      uses: klever1988/cachewrtbuild@main
+      with:
+        ccache: 'true'
+        toolchain: 'true'
+        mixkey: 'r1pluslts'
+        prefix: ${{ github.workspace }}/openwrt
 
     - name: Load custom feeds
       run: |
@@ -78,29 +92,113 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
-    - name: Download package
-      id: package
+    # - name: Download package
+    #   id: package
+    #   run: |
+    #     cd openwrt
+    #     make defconfig
+    #     make download -j8
+    #     find dl -size -1024c -exec ls -l {} \;
+    #     find dl -size -1024c -exec rm -f {} \;
+
+    - name: Check space usage 2
+      if: (!cancelled())
+      run: df -hT
+
+    - name: Compilation toolchain
+      id: mtools
       run: |
         cd openwrt
         make defconfig
-        make download -j8
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
+        echo -e "$(($(nproc)+1)) thread compile"
+        make tools/compile -j$(($(nproc)+1)) || make tools/compile -j1 V=s
+        make toolchain/compile -j$(($(nproc)+1)) || make toolchain/compile -j1 V=s
+        echo "status=success" >> $GITHUB_OUTPUT
+
+    - name: Check space usage 3_1
+      if: (!cancelled())
+      run: df -hT
+
+    - name: Cleaning up toolchain compilation intermediates...
+      if: steps.mtools.outputs.status == 'success' && !cancelled()
+      run: |
+        cd openwrt
+        rm -rf dl/*
+        rm -rf build_dir/toolchain-*
+
+    - name: Check space usage 3_2
+      if: (!cancelled())
+      run: df -hT
+
+    - name: Compiling the kernel
+      id: mkernel
+      if: steps.mtools.outputs.status == 'success' && !cancelled()
+      run: |
+        cd openwrt
+        echo -e "$(($(nproc)+1)) thread compile"
+        make target/linux/compile -j$(($(nproc)+1)) || make target/linux/compile -j1 V=s
+        echo "status=success" >> $GITHUB_OUTPUT
+
+    - name: Check space usage 4
+      if: (!cancelled())
+      run: df -hT
+
+    - name: Compile plugin
+      id: mpackage
+      if: steps.mkernel.outputs.status == 'success' && !cancelled()
+      run: |
+        cd openwrt
+        echo -e "$(($(nproc)+1)) thread compile"
+        make package/compile -j$(($(nproc)+1)) || make package/compile -j1 V=s
+        make package/index
+        make package/install -j$(nproc) || make package/install -j1 V=s
+        echo "status=success" >> $GITHUB_OUTPUT
+
+    - name: Check space usage 5
+      if: (!cancelled())
+      run: df -hT
+
+    - name: Clear plugin compiled files
+      id: cpackage
+      if: steps.mpackage.outputs.status == 'success' && !cancelled()
+      run: |
+        cd openwrt
+        rm -rf build_dir/target-*/host
+        echo "status=success" >> $GITHUB_OUTPUT
+
+    - name: Check space usage 6
+      if: (!cancelled())
+      run: df -hT
 
     - name: Compile the firmware
       id: compile
+      if: steps.cpackage.outputs.status == 'success' && !cancelled()
       run: |
         cd openwrt
-        echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 || make -j1 V=s
+        echo -e "$(($(nproc)+1)) thread compile"
+        make target/install -j$(nproc) || make target/install -j1 V=s
+        make json_overview_image_info
+        make checksum
         echo "status=success" >> $GITHUB_OUTPUT
-        grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
-        [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
-        echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
 
-    - name: Check space usage
+    - name: Check space usage 7
       if: (!cancelled())
       run: df -hT
+
+    # - name: Compile the firmware
+    #   id: compile
+    #   run: |
+    #     cd openwrt
+    #     echo -e "$(nproc) thread compile"
+    #     make -j$(nproc) || make -j1 || make -j1 V=s
+    #     echo "status=success" >> $GITHUB_OUTPUT
+    #     grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
+    #     [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
+    #     echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
+
+    # - name: Check space usage
+    #   if: (!cancelled())
+    #   run: df -hT
 
     - name: Upload bin directory
       uses: actions/upload-artifact@main
@@ -114,6 +212,10 @@ jobs:
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
+        rm -rf *.bin
+        rm -rf *.buildinfo
+        rm -rf *.json
+        rm -rf *.manifest
         rm -rf packages
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
@@ -129,7 +231,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d-%H%M")" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d_r1pluslts")" >> $GITHUB_OUTPUT
         touch release.txt
         [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
