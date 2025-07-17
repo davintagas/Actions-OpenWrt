@@ -7582,5 +7582,3 @@ CONFIG_PACKAGE_usbutils=y
 # CONFIG_PACKAGE_fontconfig is not set
 # end of Font-Utils
 # end of Xorg
-
-CONFIG_OVERRIDE_PKGS="dns2socks geoview microsocks shadowsocks-libev sms-tool tcping v2ray-geodata"
