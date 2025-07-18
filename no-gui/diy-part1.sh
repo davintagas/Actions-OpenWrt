@@ -24,7 +24,7 @@ echo 'src-git l860 https://github.com/davintagas/openwrt-packages.git;l860' >>fe
 echo 'src-git obsy https://github.com/obsy/packages.git' >>feeds.conf.default
 
 sed -i '/KERNEL_TESTING_PATCHVER:=6.6/d' target/linux/rockchip/Makefile
-sed -i 's|6.12|5.4|g' target/linux/rockchip/Makefile
+sed -i 's|6.12|5.15|g' target/linux/rockchip/Makefile
 sed -i 's|+luci-base +luci +@LUCI_LANG_zh-cn|+@LUCI_LANG_zh-cn|g' package/lean/default-settings/Makefile
 
 # rm -rf target/linux/rockchip/Makefile
