@@ -21,6 +21,7 @@ cp -rf kiddin/{luci-proto-xmm,xmm-modem} package/
 cp -rf kiddin/atinout package/
 rm -rf kiddin
 
+# Add Core OpenClash
 mkdir -p files/etc/openclash/core
 pushd files/etc/openclash/core
 wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
@@ -29,8 +30,13 @@ rm -rf clash-linux-arm64.tar.gz
 mv clash clash_meta
 popd
 
+# Add Default Setting
+mkdir -p files/etc/uci-defaults
+pushd files/etc/uci-defaults
+wget https://raw.githubusercontent.com/davintagas/default/main/official/99-init-settings.sh
+popd
+
 # OpenClash
-rm -rf feeds/luci/applications/luci-app-openclash
 git clone --depth 1 -b v0.46.133 https://github.com/vernesong/OpenClash.git package/openclash
 cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
 rm -rf package/openclash
@@ -40,4 +46,4 @@ make && sudo make install
 popd
 
 # Modify hostname
-# sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate

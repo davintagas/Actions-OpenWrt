@@ -19,8 +19,8 @@ on:
 env:
   FREE_DISK_SH: scripts/free_disk_space.sh
   ENV_SH: scripts/environment.sh
-  REPO_URL: https://github.com/coolsnowwolf/lede.git
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/openwrt/openwrt.git
+  REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: no-gui/config
   DIY_P1_SH: no-gui/diy-part1.sh
@@ -231,9 +231,9 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d_r1pluslts")" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d_orangepi-r1-plus-lts")" >> $GITHUB_OUTPUT
         touch release.txt
-        echo -e "OpenWRT no GUI" >> release.txt
+        echo -e "OpenWRT OrangePi R1 PLUS LTS no GUI" >> release.txt
         [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
 
