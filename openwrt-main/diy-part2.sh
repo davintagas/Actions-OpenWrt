@@ -27,8 +27,8 @@ cp -rf kiddin/luci-app-adguardhome package/
 rm -rf package/luci-app-adguardhome/root/etc/adguardhome.yaml
 wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githubusercontent.com/davintagas/default/refs/heads/main/adguardhome.yaml
 cp -rf kiddin/autocore package/
-cp -rf kiddin/luci-app-lite-watchdog package/
-#cp -rf kiddin/{luci-app-qosmate,qosmate} package/
+# cp -rf kiddin/luci-app-lite-watchdog package/
+# cp -rf kiddin/{luci-app-qosmate,qosmate} package/
 rm -rf kiddin
 
 # Add sms-tool
@@ -89,15 +89,6 @@ mv package/passwall-packages/{chinadns-ng,dns2socks,tcping} package/
 rm -rf feeds/packages/net/{sing-box,v2ray-geodata,xray-core,microsocks}
 mv package/passwall-packages/{sing-box,v2ray-geodata,xray-core,microsocks} feeds/packages/net/
 rm -rf package/passwall-packages
-
-# atc
-# git clone --depth 1 https://github.com/mrhaav/openwrt-packages.git package/atc
-# mv package/atc/{luci,atc-fib-l850_gl} package/
-# rm -rf package/atc
-# rm -rf package/atc-fib-l850_gl/files/lib/netifd/proto/atc.sh
-# pushd package/atc-fib-l850_gl/files/lib/netifd/proto
-# wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atc.sh
-# popd
 
 # Modify hostname
 sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
