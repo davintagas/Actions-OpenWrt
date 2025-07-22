@@ -77,4 +77,11 @@ pushd files/usr/bin
 wget https://github.com/davintagas/default/raw/refs/heads/main/speedtest/speedtest
 popd
 
+# filemanager
+git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/luci-app-tinyfilemanager.git package/luci-app-tinyfilemanager
+pushd package/luci-app-tinyfilemanager
+umask 022
+git checkout
+popd
+
 #
