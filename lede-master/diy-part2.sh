@@ -65,5 +65,14 @@ git clone --depth 1 -b 25.7.15-1 https://github.com/xiaorouji/openwrt-passwall.g
 # sms-tool
 git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool.git package/luci-app-sms-tool
 
-#
+# mosdns
+rm -rf feeds/packages/net/mosdns
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 
+# speedtest
+mkdir -p files/usr/bin
+pushd files/usr/bin
+wget https://github.com/davintagas/default/raw/refs/heads/main/speedtest/speedtest
+popd
+
+#

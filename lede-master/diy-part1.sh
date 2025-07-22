@@ -27,3 +27,8 @@ echo 'src-git l860 https://github.com/davintagas/openwrt-packages.git;l860' >>fe
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+
+sed -i '/exit 0/d' package/lean/default-settings/files/zzz-default-settings
+echo "sed -i '/l860/d' /etc/opkg/distfeeds.conf" >>package/lean/default-settings/files/zzz-default-settings
+echo "chmod +x /usr/bin/speedtest" >>package/lean/default-settings/files/zzz-default-settings
+echo "exit 0" >>package/lean/default-settings/files/zzz-default-settings
