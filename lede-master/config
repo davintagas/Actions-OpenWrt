@@ -7689,4 +7689,3 @@ CONFIG_PACKAGE_v2dat=y
 # end of Font-Utils
 # end of Xorg
 
-CONFIG_OVERRIDE_PKGS="dns2socks geoview luci-app-mosdns microsocks shadowsocks-libev sms-tool tcping v2dat v2ray-geodata"

@@ -67,6 +67,8 @@ git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool.git package/luci-
 
 # mosdns
 rm -rf feeds/packages/net/mosdns
+rm -rf feeds/packages/utils/v2dat
+rm -rf feeds/luci/applications/luci-app-mosdns
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 
 # speedtest
