@@ -34,6 +34,10 @@ popd
 # Add xmm
 cp -rf kiddin/{luci-proto-xmm,xmm-modem} package/
 
+# sms-tool
+rm -rf feeds/packages/utils/sms-tool
+cp -rf kiddin/sms-tool feeds/packages/utils/
+
 # Remove
 rm -rf kiddin
 
@@ -65,6 +69,7 @@ git clone --depth 1 -b 25.7.15-1 https://github.com/xiaorouji/openwrt-passwall.g
 
 # sms-tool
 git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool.git package/luci-app-sms-tool
+rm -rf package/luci-app-sms-tool/sms-tool
 
 # mosdns
 rm -rf feeds/packages/net/mosdns
