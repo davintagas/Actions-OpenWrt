@@ -48,7 +48,8 @@ popd
 
 mkdir -p files/etc/openclash/core
 pushd files/etc/openclash/core
-wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
+# wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
+wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/smart/clash-linux-arm64.tar.gz
 tar -xf clash-linux-arm64.tar.gz
 rm -rf clash-linux-arm64.tar.gz
 mv clash clash_meta
