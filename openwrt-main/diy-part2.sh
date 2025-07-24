@@ -27,8 +27,8 @@ cp -rf kiddin/luci-app-adguardhome package/
 rm -rf package/luci-app-adguardhome/root/etc/adguardhome.yaml
 wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githubusercontent.com/davintagas/default/refs/heads/main/adguardhome.yaml
 cp -rf kiddin/autocore package/
-# cp -rf kiddin/luci-app-lite-watchdog package/
-# cp -rf kiddin/{luci-app-qosmate,qosmate} package/
+rm -rf feeds/packages/utils/sms-tool
+cp -rf kiddin/sms-tool feeds/packages/utils/
 rm -rf kiddin
 
 # Add sms-tool
@@ -53,7 +53,8 @@ popd
 
 mkdir -p files/etc/openclash/core
 pushd files/etc/openclash/core
-wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
+# wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/meta/clash-linux-arm64.tar.gz
+wget https://github.com/vernesong/OpenClash/raw/refs/heads/core/master/smart/clash-linux-arm64.tar.gz
 tar -xf clash-linux-arm64.tar.gz
 rm -rf clash-linux-arm64.tar.gz
 mv clash clash_meta
@@ -92,3 +93,4 @@ rm -rf package/passwall-packages
 
 # Modify hostname
 sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
+#
