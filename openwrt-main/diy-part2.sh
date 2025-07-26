@@ -29,6 +29,7 @@ wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githu
 cp -rf kiddin/autocore package/
 rm -rf feeds/packages/utils/sms-tool
 cp -rf kiddin/sms-tool feeds/packages/utils/
+cp- rf kiddin/luci-app-ttl package/
 rm -rf kiddin
 
 # Add sms-tool
