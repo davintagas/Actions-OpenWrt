@@ -96,6 +96,9 @@ rm -rf feeds/packages/net/{sing-box,v2ray-geodata,xray-core,microsocks}
 mv package/passwall-packages/{sing-box,v2ray-geodata,xray-core,microsocks} feeds/packages/net/
 rm -rf package/passwall-packages
 
+# mosdns
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+
 # Modify hostname
 sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
 #
