@@ -29,7 +29,6 @@ wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githu
 cp -rf kiddin/autocore package/
 rm -rf feeds/packages/utils/sms-tool
 cp -rf kiddin/sms-tool feeds/packages/utils/
-cp- rf kiddin/luci-app-ttl package/
 rm -rf kiddin
 
 # Add sms-tool
@@ -50,6 +49,11 @@ popd
 
 pushd files/etc
 wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/atcommands.user
+popd
+
+mkdir -p files/etc/nftables.d
+pushd files/etc/nftables.d
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/11-ttl.nft
 popd
 
 mkdir -p files/etc/openclash/core
