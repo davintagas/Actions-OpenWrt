@@ -5109,18 +5109,18 @@ CONFIG_PACKAGE_luci-app-internet-detector=y
 # CONFIG_PACKAGE_luci-app-ledtrig-switch is not set
 # CONFIG_PACKAGE_luci-app-ledtrig-usbport is not set
 # CONFIG_PACKAGE_luci-app-libreswan is not set
-CONFIG_PACKAGE_luci-app-lite-watchdog=y
 # CONFIG_PACKAGE_luci-app-lldpd is not set
 # CONFIG_PACKAGE_luci-app-lorawan-basicstation is not set
 # CONFIG_PACKAGE_luci-app-lxc is not set
 # CONFIG_PACKAGE_luci-app-minidlna is not set
 # CONFIG_PACKAGE_luci-app-mjpg-streamer is not set
+CONFIG_PACKAGE_luci-app-mosdns=y
 # CONFIG_PACKAGE_luci-app-mosquitto is not set
 # CONFIG_PACKAGE_luci-app-mwan3 is not set
 # CONFIG_PACKAGE_luci-app-natmap is not set
 # CONFIG_PACKAGE_luci-app-nextdns is not set
 # CONFIG_PACKAGE_luci-app-nft-qos is not set
-# CONFIG_PACKAGE_luci-app-nlbwmon is not set
+CONFIG_PACKAGE_luci-app-nlbwmon=y
 # CONFIG_PACKAGE_luci-app-nut is not set
 # CONFIG_PACKAGE_luci-app-ocserv is not set
 # CONFIG_PACKAGE_luci-app-olsr is not set
@@ -5248,7 +5248,7 @@ CONFIG_PACKAGE_luci-proto-xmm=y
 # 6. Libraries
 #
 CONFIG_PACKAGE_luci-lib-base=y
-# CONFIG_PACKAGE_luci-lib-chartjs is not set
+CONFIG_PACKAGE_luci-lib-chartjs=y
 # CONFIG_PACKAGE_luci-lib-httpclient is not set
 # CONFIG_PACKAGE_luci-lib-httpprotoutils is not set
 CONFIG_PACKAGE_luci-lib-ip=y
@@ -5394,7 +5394,42 @@ CONFIG_PACKAGE_luci-lib-uqr=y
 # CONFIG_PACKAGE_luci-i18n-firewall-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-firewall-zh-tw is not set
 # CONFIG_PACKAGE_luci-i18n-internet-detector-ru is not set
-# CONFIG_PACKAGE_luci-i18n-lite-watchdog-pl is not set
+# CONFIG_PACKAGE_luci-i18n-mosdns-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-ar is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-bg is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-bn is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-ca is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-cs is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-da is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-de is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-el is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-es is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-fi is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-fr is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-he is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-hi is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-hu is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-it is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-ja is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-ko is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-lt is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-mr is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-ms is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-nl is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-no is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-pl is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-pt is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-pt-br is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-ro is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-ru is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-sk is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-sv is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-tr is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-uk is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-vi is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-yua is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-nlbwmon-zh-tw is not set
 # CONFIG_PACKAGE_luci-i18n-openvpn-ar is not set
 # CONFIG_PACKAGE_luci-i18n-openvpn-bg is not set
 # CONFIG_PACKAGE_luci-i18n-openvpn-bn is not set
@@ -5861,6 +5896,7 @@ CONFIG_PACKAGE_knot-resolver_dnstap=y
 # CONFIG_PACKAGE_mdns-utils is not set
 # CONFIG_PACKAGE_mdnsd is not set
 # CONFIG_PACKAGE_mdnsresponder is not set
+CONFIG_PACKAGE_mosdns=y
 # CONFIG_PACKAGE_nsd is not set
 # CONFIG_PACKAGE_nsd-control is not set
 # CONFIG_PACKAGE_nsd-control-setup is not set
@@ -6251,6 +6287,7 @@ CONFIG_PACKAGE_uqmi=y
 CONFIG_PACKAGE_cgi-io=y
 # CONFIG_PACKAGE_clamav is not set
 # CONFIG_PACKAGE_cloudflared is not set
+# CONFIG_PACKAGE_dufs is not set
 # CONFIG_PACKAGE_etebase is not set
 # CONFIG_PACKAGE_freshclam is not set
 # CONFIG_PACKAGE_frpc is not set
@@ -6565,7 +6602,7 @@ CONFIG_PACKAGE_libipset=y
 # CONFIG_PACKAGE_netstinky is not set
 # CONFIG_PACKAGE_nextdns is not set
 # CONFIG_PACKAGE_nfdump is not set
-# CONFIG_PACKAGE_nlbwmon is not set
+CONFIG_PACKAGE_nlbwmon=y
 # CONFIG_PACKAGE_noping is not set
 # CONFIG_PACKAGE_nqptp is not set
 # CONFIG_PACKAGE_nut is not set
@@ -6617,6 +6654,7 @@ CONFIG_PACKAGE_ppp-mod-pppoe=y
 # CONFIG_PACKAGE_radsecproxy is not set
 # CONFIG_PACKAGE_ratched is not set
 # CONFIG_PACKAGE_ratechecker is not set
+# CONFIG_PACKAGE_ratelimit is not set
 # CONFIG_PACKAGE_realtek-poe is not set
 # CONFIG_PACKAGE_redsocks is not set
 # CONFIG_PACKAGE_remserial is not set
@@ -6723,6 +6761,7 @@ CONFIG_PACKAGE_xray-core=y
 # CONFIG_PACKAGE_lame is not set
 # CONFIG_PACKAGE_lame-lib is not set
 # CONFIG_PACKAGE_liblo-utils is not set
+# CONFIG_PACKAGE_libwavpack is not set
 # CONFIG_PACKAGE_madplay is not set
 # CONFIG_PACKAGE_moc is not set
 # CONFIG_PACKAGE_mpc is not set
@@ -6742,7 +6781,7 @@ CONFIG_PACKAGE_xray-core=y
 # CONFIG_PACKAGE_shairport-sync-mini is not set
 # CONFIG_PACKAGE_shairport-sync-openssl is not set
 # CONFIG_PACKAGE_shine is not set
-# CONFIG_PACKAGE_sox is not set
+# CONFIG_PACKAGE_sox_ng is not set
 # CONFIG_PACKAGE_squeezelite-custom is not set
 # CONFIG_PACKAGE_squeezelite-dynamic is not set
 # CONFIG_PACKAGE_squeezelite-full is not set
@@ -6869,7 +6908,7 @@ CONFIG_PACKAGE_partx-utils=y
 CONFIG_PACKAGE_nano=y
 # CONFIG_PACKAGE_nano-full is not set
 # CONFIG_PACKAGE_nano-plus is not set
-# CONFIG_PACKAGE_vim is not set
+CONFIG_PACKAGE_vim=y
 # CONFIG_PACKAGE_vim-full is not set
 # CONFIG_PACKAGE_vim-fuller is not set
 # CONFIG_PACKAGE_vim-help is not set
@@ -6890,12 +6929,14 @@ CONFIG_PACKAGE_nano=y
 # CONFIG_PACKAGE_gnutls-utils is not set
 # CONFIG_PACKAGE_gpgv is not set
 # CONFIG_PACKAGE_gpgv2 is not set
+# CONFIG_PACKAGE_integritysetup is not set
 # CONFIG_PACKAGE_keyctl is not set
 # CONFIG_PACKAGE_keyutils is not set
 # CONFIG_PACKAGE_px5g-mbedtls is not set
 # CONFIG_PACKAGE_px5g-standalone is not set
 # CONFIG_PACKAGE_px5g-wolfssl is not set
 # CONFIG_PACKAGE_stoken is not set
+# CONFIG_PACKAGE_veritysetup is not set
 # end of Encryption
 
 #
@@ -7518,7 +7559,6 @@ CONFIG_STRACE_NONE=y
 # CONFIG_STRACE_LIBDW is not set
 # CONFIG_STRACE_LIBUNWIND is not set
 # CONFIG_PACKAGE_strelaysrv is not set
-# CONFIG_PACKAGE_stress is not set
 # CONFIG_PACKAGE_stress-ng is not set
 # CONFIG_PACKAGE_sumo is not set
 # CONFIG_PACKAGE_swanmon is not set
@@ -7572,6 +7612,7 @@ CONFIG_PACKAGE_usbutils=y
 # CONFIG_PACKAGE_uuidd is not set
 CONFIG_PACKAGE_uuidgen=y
 # CONFIG_PACKAGE_uvcdynctrl is not set
+CONFIG_PACKAGE_v2dat=y
 # CONFIG_PACKAGE_v4l-utils is not set
 # CONFIG_PACKAGE_view1090 is not set
 # CONFIG_PACKAGE_viewadsb is not set
