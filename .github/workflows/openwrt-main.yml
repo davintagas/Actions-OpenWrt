@@ -45,7 +45,8 @@ jobs:
         chmod +x $FREE_DISK_SH && $FREE_DISK_SH
         sudo -E apt-get -qq update -y
         sudo -E apt-get -qq full-upgrade -y
-        chmod +x $ENV_SH && $ENV_SH
+        # chmod +x $ENV_SH && $ENV_SH
+        sudo bash -c 'bash <(curl -s https://build-scripts.immortalwrt.org/init_build_environment.sh)'
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo timedatectl set-timezone "$TZ"
         docker image prune -a -f
