@@ -68,7 +68,7 @@ jobs:
       with:
         ccache: 'true'
         toolchain: 'true'
-        mixkey: 'r1pluslts'
+        mixkey: 'openwrt'
         prefix: ${{ github.workspace }}/openwrt
 
     - name: Load custom feeds
@@ -231,7 +231,7 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d_r1pluslts")" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d_openwrt")" >> $GITHUB_OUTPUT
         touch release.txt
         echo -e "Build OpenWrt for R1 PLUS LTS" >> release.txt
         [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
