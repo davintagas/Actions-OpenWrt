@@ -84,8 +84,6 @@ git clone --depth 1 -b v0.46.137 https://github.com/vernesong/OpenClash.git pack
 cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
 rm -rf package/openclash
 
-sed -i '70,290d' package/luci-app-openclash/root/etc/config/openclash
-
 pushd package/luci-app-openclash/tools/po2lmo
 make && sudo make install
 popd
