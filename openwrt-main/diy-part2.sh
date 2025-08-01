@@ -27,6 +27,7 @@ cp -rf kiddin/luci-app-adguardhome package/
 rm -rf package/luci-app-adguardhome/root/etc/adguardhome.yaml
 wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githubusercontent.com/davintagas/default/refs/heads/main/adguardhome.yaml
 cp -rf kiddin/autocore package/
+sed -i 's|utils|userland|g' package/autocore/Makefile
 rm -rf feeds/packages/utils/sms-tool
 cp -rf kiddin/sms-tool feeds/packages/utils/
 rm -rf kiddin
