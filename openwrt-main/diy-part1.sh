@@ -14,8 +14,8 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 #echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-#rm -rf feeds.conf.default
-#wget https://raw.githubusercontent.com/openwrt/openwrt/refs/heads/openwrt-24.10/feeds.conf.default
+rm -rf feeds.conf.default
+wget https://raw.githubusercontent.com/openwrt/openwrt/refs/heads/openwrt-24.10/feeds.conf.default
 
 echo 'src-git l860 https://github.com/davintagas/openwrt-packages.git;l860' >>feeds.conf.default
 
@@ -26,4 +26,4 @@ popd
 
 # Add a feed source
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
