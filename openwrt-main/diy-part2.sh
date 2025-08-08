@@ -37,7 +37,7 @@ git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool.git package/luci-
 rm -rf package/luci-app-sms-tool/sms-tool
 
 # status
-git clone --depth 1 -b openwrt-23.05 https://github.com/immortalwrt/luci.git mortal-luci
+git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/luci.git mortal-luci
 rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
 cp -rf mortal-luci/modules/{luci-base,luci-mod-status} feeds/luci/modules/
 rm -rf mortal-luci
