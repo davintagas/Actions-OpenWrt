@@ -104,8 +104,10 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
 #
 # Rust
-git clone --depth 1 -b openwrt-23.05 https://github.com/openwrt/packages.git package/openwrt-23.05
-rm -rf feeds/packages/lang/rust
-cp -rf package/openwrt-23.05/lang/rust feeds/packages/lang/
-rm -rf package/openwrt-23.05
+#git clone --depth 1 -b openwrt-23.05 https://github.com/openwrt/packages.git package/openwrt-23.05
+#rm -rf feeds/packages/lang/rust
+#cp -rf package/openwrt-23.05/lang/rust feeds/packages/lang/
+#rm -rf package/openwrt-23.05
+#
+sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
 #
