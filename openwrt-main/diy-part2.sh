@@ -70,13 +70,16 @@ popd
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
 
+# AdguardHome
 rm -rf feeds/packages/net/adguardhome/Makefile
-wget -O feeds/packages/net/adguardhome/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/Makefile
+wget -O feeds/packages/net/adguardhome/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/net/adguardhome/Makefile
 wget -O feeds/packages/net/adguardhome/test.sh https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/net/adguardhome/test.sh
 pushd feeds/packages/net/adguardhome/files
 rm -rf *
-wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.config
-wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.init
+wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/net/adguardhome/files/adguardhome.config
+wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/net/adguardhome/files/adguardhome.defaults
+wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/net/adguardhome/files/adguardhome.init
+wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/net/adguardhome/files/adguardhome.json
 wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/master/net/adguardhome/files/adguardhome.sysctl
 popd
 
