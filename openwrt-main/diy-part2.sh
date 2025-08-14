@@ -17,20 +17,20 @@ sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99
 
 # Add Custom package
 git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git kiddin
-cp -rf kiddin/luci-app-3ginfo-lite package/
 cp -rf kiddin/{luci-proto-xmm,xmm-modem} package/
 cp -rf kiddin/{luci-app-atinout,atinout} package/
 cp -rf kiddin/{luci-app-internet-detector,internet-detector} package/
 cp -rf kiddin/{luci-app-cpufreq,cpufreq} package/
-cp -rf kiddin/luci-app-diskman package/
+# cp -rf kiddin/luci-app-diskman package/
 cp -rf kiddin/luci-app-adguardhome package/
 rm -rf package/luci-app-adguardhome/root/etc/adguardhome.yaml
 wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githubusercontent.com/davintagas/default/refs/heads/main/adguardhome.yaml
 cp -rf kiddin/autocore package/
-sed -i 's|utils|userland|g' package/autocore/Makefile
-# rm -rf feeds/packages/utils/sms-tool
-# cp -rf kiddin/sms-tool feeds/packages/utils/
 rm -rf kiddin
+
+# 3ginfo
+git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git package/luci-app-3ginfo-lite
+rm -rf package/luci-app-3ginfo-lite/sms-tool
 
 # Add sms-tool
 git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool.git package/luci-app-sms-tool
