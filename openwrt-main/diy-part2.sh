@@ -90,7 +90,7 @@ make && sudo make install
 popd
 
 # Add passwall
-git clone --depth 1 -b 25.8.1-1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
+git clone --depth 1 -b 25.8.5-2 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
 mv package/passwall-packages/{chinadns-ng,dns2socks,tcping} package/
 rm -rf feeds/packages/net/{sing-box,v2ray-geodata,xray-core,microsocks}
