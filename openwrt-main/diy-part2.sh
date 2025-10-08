@@ -80,7 +80,7 @@ wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-2
 popd
 
 # OpenClash
-git clone --depth 1 -b v0.47.010 https://github.com/vernesong/OpenClash.git package/openclash
+git clone --depth 1 -b v0.47.015 https://github.com/vernesong/OpenClash.git package/openclash
 cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
 rm -rf package/openclash
 
