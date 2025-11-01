@@ -21,7 +21,7 @@ echo 'src-git l860 https://github.com/davintagas/openwrt-packages.git;l860' >>fe
 
 # pushd target/linux/rockchip/patches-5.15
 pushd target/linux/rockchip/patches-6.6
-wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/tags/v24.10.0/target/linux/rockchip/patches-6.6/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-24.10/target/linux/rockchip/patches-6.6/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 popd
 
 # Add a feed source
