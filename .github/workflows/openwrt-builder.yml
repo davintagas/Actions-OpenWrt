@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: Build Openwrt Main
+name: Build Openwrt
 
 on:
   repository_dispatch:
@@ -18,7 +18,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt.git
-  REPO_BRANCH: v24.10.4
+  REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: openwrt-main/config
   DIY_P1_SH: openwrt-main/diy-part1.sh
