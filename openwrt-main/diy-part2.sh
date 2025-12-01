@@ -110,3 +110,7 @@ sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
 #
 sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
 #
+# Add theme
+git clone --depth 1 https://github.com/CoolLoong/luci-theme-orion.git package/luci-theme-orion
+git clone --depth 1 https://github.com/eamonxg/luci-theme-aurora.git package/luci-theme-aurora
+#
