@@ -89,7 +89,7 @@ make && sudo make install
 popd
 
 # Add passwall
-git clone --depth 1 -b 26.1.13-1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
+git clone --depth 1 -b 26.1.17-1 https://github.com/xiaorouji/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git package/passwall-packages
 mv package/passwall-packages/{chinadns-ng,dns2socks,tcping} package/
 rm -rf feeds/packages/net/{sing-box,v2ray-geodata,xray-core,microsocks}
@@ -110,6 +110,9 @@ sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
 #
 sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
 #
+# Qosmate
+git clone --depth 1 -b main https://github.com/hudra0/luci-app-qosmate.git package/luci-app-qosmate
+git clone --depth 1 -b main https://github.com/hudra0/qosmate.git package/qosmate
 # Add theme
 git clone --depth 1 https://github.com/CoolLoong/luci-theme-orion.git package/luci-theme-orion
 git clone --depth 1 https://github.com/eamonxg/luci-theme-aurora.git package/luci-theme-aurora
