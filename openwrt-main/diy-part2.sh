@@ -114,6 +114,6 @@ sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
 git clone --depth 1 -b main https://github.com/hudra0/luci-app-qosmate.git package/luci-app-qosmate
 git clone --depth 1 -b main https://github.com/hudra0/qosmate.git package/qosmate
 # Add theme
-git clone --depth 1 https://github.com/CoolLoong/luci-theme-orion.git package/luci-theme-orion
-git clone --depth 1 https://github.com/eamonxg/luci-theme-aurora.git package/luci-theme-aurora
+#git clone --depth 1 https://github.com/CoolLoong/luci-theme-orion.git package/luci-theme-orion
+#git clone --depth 1 https://github.com/eamonxg/luci-theme-aurora.git package/luci-theme-aurora
 #
