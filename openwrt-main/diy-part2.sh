@@ -68,7 +68,7 @@ popd
 
 # Golang
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 
 # AdguardHome
 rm -rf feeds/packages/net/adguardhome/Makefile
