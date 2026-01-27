@@ -33,8 +33,9 @@ git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git package/lu
 rm -rf package/luci-app-3ginfo-lite/sms-tool
 
 # Add sms-tool
-git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool.git package/luci-app-sms-tool
-rm -rf package/luci-app-sms-tool/sms-tool
+#git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool.git package/luci-app-sms-tool
+#rm -rf package/luci-app-sms-tool/sms-tool
+git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool-js.git package/luci-app-sms-tool-js
 
 # status
 git clone --depth 1 -b openwrt-24.10 https://github.com/immortalwrt/luci.git mortal-luci
