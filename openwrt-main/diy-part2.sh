@@ -21,7 +21,6 @@ cp -rf kiddin/{luci-proto-xmm,xmm-modem} package/
 cp -rf kiddin/{luci-app-atinout,atinout} package/
 cp -rf kiddin/{luci-app-internet-detector,internet-detector} package/
 cp -rf kiddin/{luci-app-cpufreq,cpufreq} package/
-# cp -rf kiddin/luci-app-diskman package/
 cp -rf kiddin/luci-app-adguardhome package/
 rm -rf package/luci-app-adguardhome/root/etc/adguardhome.yaml
 wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githubusercontent.com/davintagas/default/refs/heads/main/adguardhome.yaml
@@ -114,6 +113,9 @@ sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
 # Qosmate
 git clone --depth 1 -b main https://github.com/hudra0/luci-app-qosmate.git package/luci-app-qosmate
 git clone --depth 1 -b main https://github.com/hudra0/qosmate.git package/qosmate
+
+# mini-diskmanager
+git clone --depth 1 https://github.com/4IceG/luci-app-mini-diskmanager.git package/luci-app-mini-diskmanager
 # Add theme
 #git clone --depth 1 https://github.com/CoolLoong/luci-theme-orion.git package/luci-theme-orion
 #git clone --depth 1 https://github.com/eamonxg/luci-theme-aurora.git package/luci-theme-aurora
