@@ -63,19 +63,19 @@ git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/l
 
 # AdguardHome
 git clone --depth 1 https://github.com/kiddin9/luci-app-adguardhome.git package/luci-app-adguardhome
-wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githubusercontent.com/davintagas/default/refs/heads/main/adguardhome.yaml
-rm -rf feeds/packages/net/adguardhome/Makefile
-wget -O feeds/packages/net/adguardhome/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/Makefile
-rm -rf feeds/packages/net/adguardhome/test.sh
-wget -O feeds/packages/net/adguardhome/test.sh https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/test.sh
-pushd feeds/packages/net/adguardhome/files
-rm -rf *
-wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/files/adguardhome.config
-wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/files/adguardhome.defaults
-wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/files/adguardhome.init
-wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/files/adguardhome.init
-wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/files/adguardhome.sysctl
-popd
+#wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githubusercontent.com/davintagas/default/refs/heads/main/adguardhome.yaml
+#rm -rf feeds/packages/net/adguardhome/Makefile
+#wget -O feeds/packages/net/adguardhome/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/Makefile
+#rm -rf feeds/packages/net/adguardhome/test.sh
+#wget -O feeds/packages/net/adguardhome/test.sh https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/test.sh
+#pushd feeds/packages/net/adguardhome/files
+#rm -rf *
+#wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/files/adguardhome.config
+#wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/files/adguardhome.defaults
+#wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/files/adguardhome.init
+#wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/files/adguardhome.init
+#wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/files/adguardhome.sysctl
+#popd
 
 # OpenClash
 git clone --depth 1 -b v0.47.055 https://github.com/vernesong/OpenClash.git package/openclash
