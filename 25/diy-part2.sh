@@ -100,3 +100,5 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 # Modify hostname
 sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
 #
+sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
+#
