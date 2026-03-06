@@ -62,7 +62,7 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 
 # AdguardHome
-git clone --depth 1 https://github.com/kiddin9/luci-app-adguardhome.git package/luci-app-adguardhome
+#git clone --depth 1 https://github.com/kiddin9/luci-app-adguardhome.git package/luci-app-adguardhome
 #wget -O package/luci-app-adguardhome/root/etc/adguardhome.yaml https://raw.githubusercontent.com/davintagas/default/refs/heads/main/adguardhome.yaml
 #rm -rf feeds/packages/net/adguardhome/Makefile
 #wget -O feeds/packages/net/adguardhome/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-25.12/net/adguardhome/Makefile
