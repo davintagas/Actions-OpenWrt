@@ -11,11 +11,15 @@
 #
 
 # Uncomment a feed source
-#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
-#echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
-#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+# sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+# echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 # rm -rf feeds.conf.default
 # wget https://raw.githubusercontent.com/openwrt/openwrt/refs/heads/openwrt-24.10/feeds.conf.default
+
+pushd target/linux/rockchip/patches-6.12
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/target/linux/rockchip/patches-6.12/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
+popd
 
 echo 'src-git l860 https://github.com/davintagas/openwrt-packages.git;l860' >>feeds.conf.default
 
