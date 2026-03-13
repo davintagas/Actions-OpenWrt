@@ -63,10 +63,7 @@ git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/l
 
 # AdguardHome
 git clone --depth 1 https://github.com/kiddin9/luci-app-adguardhome.git package/luci-app-adguardhome
-rm -rf feeds/packages/net/adguardhome
-git clone --depth 1 -b openwrt-25.12 https://github.com/immortalwrt/packages.git mortal
-cp -rf mortal/net/adguardhome feeds/packages/net/
-rm -rf mortal
+rm -rf feeds/packages/net/adguardhome/files/adguardhome.init
 
 # OpenClash
 git clone --depth 1 -b v0.47.055 https://github.com/vernesong/OpenClash.git package/openclash
