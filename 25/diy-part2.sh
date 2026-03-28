@@ -89,4 +89,8 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
 #
 sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
+
+# Qosmate
+git clone --depth 1 https://github.com/hudra0/luci-app-qosmate.git package/luci-app-qosmate
+git clone --depth 1 https://github.com/hudra0/qosmate.git package/qosmate
 #
