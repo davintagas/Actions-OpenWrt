@@ -63,7 +63,7 @@ git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/l
 
 # AdguardHome
 rm -rf feeds/luci/applications/luci-app-adguardhome
-git clone --depth 1 https://github.com/kiddin9/luci-app-adguardhome.git feeds/luci/applications/
+git clone --depth 1 https://github.com/kiddin9/luci-app-adguardhome.git feeds/luci/applications/luci-app-adguardhome
 # rm -rf feeds/packages/net/adguardhome/files/adguardhome.init
 
 # OpenClash
