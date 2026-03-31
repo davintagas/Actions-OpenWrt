@@ -71,7 +71,7 @@ wget -O feeds/packages/net/adguardhome/Makefile https://raw.githubusercontent.co
 pushd feeds/packages/net/adguardhome/files
 rm -rf *
 wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.config
-wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.init
+#wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.init
 popd
 
 # OpenClash
