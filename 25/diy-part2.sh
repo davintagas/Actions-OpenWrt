@@ -62,17 +62,6 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 
 # AdguardHome
-rm -rf feeds/luci/applications/luci-app-adguardhome
-git clone --depth 1 https://github.com/kiddin9/luci-app-adguardhome.git feeds/luci/applications/luci-app-adguardhome
-# rm -rf feeds/packages/net/adguardhome/files/adguardhome.init
-rm -rf feeds/packages/net/adguardhome/Makefile
-rm -rf feeds/packages/net/adguardhome/test.sh
-wget -O feeds/packages/net/adguardhome/Makefile https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/Makefile
-pushd feeds/packages/net/adguardhome/files
-rm -rf *
-wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.config
-#wget https://raw.githubusercontent.com/immortalwrt/packages/refs/heads/openwrt-24.10/net/adguardhome/files/adguardhome.init
-popd
 
 # OpenClash
 git clone --depth 1 -b v0.47.075 https://github.com/vernesong/OpenClash.git package/openclash
