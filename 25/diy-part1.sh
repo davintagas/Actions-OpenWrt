@@ -23,4 +23,17 @@ popd
 
 echo 'src-git l860 https://github.com/davintagas/openwrt-packages.git;l860' >>feeds.conf.default
 
+# Autocore
+mkdir -p package/autocore/files
+pushd package/autocore/files
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/package/emortal/autocore/files/60-autocore-reload-rpcd
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/package/emortal/autocore/files/autocore
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/package/emortal/autocore/files/cpuinfo
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/package/emortal/autocore/files/luci-mod-status-autocore.json
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/package/emortal/autocore/files/tempinfo
+popd
+pushd package/autocore
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/package/emortal/autocore/Makefile
+popd
+
 #
