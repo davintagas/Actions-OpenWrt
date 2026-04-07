@@ -64,7 +64,7 @@ git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/l
 # AdguardHome
 
 # OpenClash
-git clone --depth 1 -b v0.47.075 https://github.com/vernesong/OpenClash.git package/openclash
+git clone --depth 1 -b v0.47.086 https://github.com/vernesong/OpenClash.git package/openclash
 cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
 rm -rf package/openclash
 
@@ -73,7 +73,7 @@ make && sudo make install
 popd
 
 # Add passwall
-git clone --depth 1 -b 26.3.6-1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
+git clone --depth 1 -b 26.4.6-1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
 mv package/passwall-packages/{chinadns-ng,dns2socks,tcping} package/
 rm -rf feeds/packages/net/{sing-box,v2ray-geodata,xray-core,microsocks}
