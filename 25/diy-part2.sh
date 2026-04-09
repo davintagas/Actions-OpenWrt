@@ -62,6 +62,9 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
 
 # AdguardHome
+sed -i '|/etc/init.d|d' feeds/packages/net/adguardhome/Makefile
+rm -rf feeds/luci/applications/luci-app-adguardhome
+git clone --depth 1 https://github.com/kiddin9/luci-app-adguardhome.git feeds/luci/applications/luci-app-adguardhome
 
 # OpenClash
 git clone --depth 1 -b v0.47.086 https://github.com/vernesong/OpenClash.git package/openclash
