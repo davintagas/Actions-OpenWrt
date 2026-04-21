@@ -92,11 +92,3 @@ sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
 git clone --depth 1 https://github.com/hudra0/luci-app-qosmate.git package/luci-app-qosmate
 git clone --depth 1 https://github.com/hudra0/qosmate.git package/qosmate
 #
-
-# status
-git clone --depth 1 -b openwrt-25.12 https://github.com/immortalwrt/luci.git mortal-luci
-rm -rf feeds/luci/modules/{luci-base,luci-mod-status}
-cp -rf mortal-luci/modules/{luci-base,luci-mod-status} feeds/luci/modules/
-rm -rf mortal-luci
-
-#
