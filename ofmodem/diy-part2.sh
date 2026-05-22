@@ -18,5 +18,7 @@ sed -i 's/root:::0:99999:7:::/root:$1$wGIpIvlO$H3XgR7517Ex7I6fQ2jHwv0:19786:0:99
 git clone --depth 1 https://github.com/hudra0/qosmate.git package/qosmate
 git clone --depth 1 https://github.com/hudra0/luci-app-qosmate.git package/luci-app-qosmate.git
 git clone --depth 1 https://github.com/kenzok78/luci-app-adguardhome.git package/luci-app-adguardhome
+git clone --depth 1 https://github.com/gSpotx2f/luci-app-internet-detector.git package/luci-app-internet-detector
+git clone --depth 1 https://github.com/gSpotx2f/luci-app-cpu-perf.git package/luci-app-cpu-perf
 
 #
