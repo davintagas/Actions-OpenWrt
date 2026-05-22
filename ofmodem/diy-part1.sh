@@ -18,7 +18,7 @@
 # wget https://raw.githubusercontent.com/openwrt/openwrt/refs/heads/openwrt-24.10/feeds.conf.default
 
 pushd target/linux/rockchip/patches-5.15
-https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-23.05/target/linux/rockchip/patches-5.15/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-23.05/target/linux/rockchip/patches-5.15/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
 popd
 
 #
