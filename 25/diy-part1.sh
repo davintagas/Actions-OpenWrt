@@ -1,0 +1,39 @@
+#!/bin/bash
+#
+# https://github.com/P3TERX/Actions-OpenWrt
+# File name: diy-part1.sh
+# Description: OpenWrt DIY script part 1 (Before Update feeds)
+#
+# Copyright (c) 2019-2024 P3TERX <https://p3terx.com>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
+
+# Uncomment a feed source
+# sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+# echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+# rm -rf feeds.conf.default
+# wget https://raw.githubusercontent.com/openwrt/openwrt/refs/heads/openwrt-24.10/feeds.conf.default
+
+pushd target/linux/rockchip/patches-6.12
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/target/linux/rockchip/patches-6.12/991-arm64-dts-rockchip-add-more-cpu-operating-points-for.patch
+popd
+
+echo 'src-git l860 https://github.com/davintagas/openwrt-packages.git;l860' >>feeds.conf.default
+
+# Autocore
+mkdir -p package/autocore/files
+pushd package/autocore/files
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/package/emortal/autocore/files/60-autocore-reload-rpcd
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/package/emortal/autocore/files/autocore
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/package/emortal/autocore/files/cpuinfo
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/package/emortal/autocore/files/luci-mod-status-autocore.json
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/package/emortal/autocore/files/tempinfo
+popd
+pushd package/autocore
+wget https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-25.12/package/emortal/autocore/Makefile
+popd
+
+#

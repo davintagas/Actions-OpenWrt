@@ -1,0 +1,27 @@
+diff --git a/router2305.json b/router2305.json
+index 19c242cf..26393840 100644
+--- a/router2305.json
++++ b/router2305.json
+@@ -1,4 +1,15 @@
+ {
++	"R1PLUS": {
++		"details": "R1 Plus LTS",
++		"type": "1",
++		"build": "2305",
++		"config": ".config_r1plus",
++		"image": "openwrt-rockchip-armv8-xunlong_orangepi-r1-plus-lts-squashfs-sysupgrade.img.gz",
++		"imagepath": "/rockchip/armv8/",
++		"mod": "R1-Plus-LTS",
++		"ext": "-upgrade.img.gz",
++		"addons": ["readme.pdf"]
++	},
+ 	"BPIR3": {
+ 		"details": "BananaPi BPi R3",
+ 		"type": "4",
+@@ -295,4 +306,4 @@
+ 		"ext2": "-factory.img",
+ 		"addons": ["readme.pdf", "readmerecovery.txt"]
+ 	}
+-}
+\ No newline at end of file
++}
