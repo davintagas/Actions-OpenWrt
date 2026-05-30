@@ -68,7 +68,7 @@ rm -rf package/luci-app-adguardhome/root/etc/init.d
 rm -rf feeds/luci/applications/luci-app-adguardhome
 
 # OpenClash
-git clone --depth 1 -b v0.47.088 https://github.com/vernesong/OpenClash.git package/openclash
+git clone --depth 1 -b v0.47.096 https://github.com/vernesong/OpenClash.git package/openclash
 cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
 rm -rf package/openclash
 
