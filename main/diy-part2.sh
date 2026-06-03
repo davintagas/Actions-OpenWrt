@@ -96,3 +96,13 @@ sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
 git clone --depth 1 https://github.com/hudra0/luci-app-qosmate.git package/luci-app-qosmate
 git clone --depth 1 https://github.com/hudra0/qosmate.git package/qosmate
 #
+mkdir -p feeds/luci/modules/luci-base/patches
+pushd feeds/luci/modules/luci-base/patches
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/official/995-luci-base-custom.patch
+popd
+
+mkdir -p feeds/luci/modules/luci-mod-status/patches
+pushd feeds/luci/modules/luci-mod-status/patches
+wget https://raw.githubusercontent.com/davintagas/default/refs/heads/main/official/996-luci-status-custom.patch
+popd
+#
