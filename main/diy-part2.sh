@@ -99,6 +99,5 @@ git clone --depth 1 https://github.com/hudra0/qosmate.git package/qosmate
 rm -rf feeds/luci/modules/luci-base/root/usr/share/rpcd/ucode/luci
 wget -O feeds/luci/modules/luci-base/root/usr/share/rpcd/ucode/luci https://raw.githubusercontent.com/immortalwrt/luci/refs/heads/openwrt-25.12/modules/luci-base/root/usr/share/rpcd/ucode/luci
 rm -rf feeds/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
-wget -O feeds/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js https://raw.githubusercontent.com/immortalwrt/luci/refs/heads/openwrt-25.12/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
-#
+wget -O feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js https://raw.githubusercontent.com/immortalwrt/luci/refs/heads/openwrt-25.12/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js
 #
