@@ -45,5 +45,6 @@ rm -rf feeds/op_packages/luci-app-adguardhome/root/etc/init.d/adguardhome
 # Modif
 sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
 rm -rf feeds/op_packages/luci-app-ddns
+rm -rf feeds/op_packages/webd
 
 #
