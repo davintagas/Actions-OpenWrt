@@ -92,6 +92,15 @@ jobs:
         sudo chown -R runner:runner /builder
         echo "status=success" >> ${GITHUB_OUTPUT}
 
+    - name: Setup Swap Space
+      run: |
+        sudo fallocate -l 8G /swapfile
+        sudo chmod 600 /swapfile
+        sudo mkswap /swapfile
+        sudo swapon /swapfile
+        echo "Memori dan Swap saat ini:"
+        free -h
+
     - name: Clone source code
       working-directory: /builder
       run: |
@@ -150,7 +159,20 @@ jobs:
         cd openwrt/
         echo -e "$(nproc) thread compile"
         make -j$(($(nproc) + 1)) || make -j1 || make -j1 V=s
+
+	echo "=== Statistik ccache ==="
+        ccache -s || true
+
         echo "status=success" >> ${GITHUB_OUTPUT}
+
+    - name: Upload configuration and logs on failure
+      uses: actions/upload-artifact@v4
+      if: failure() # Langkah ini hanya berjalan JIKA proses compile gagal
+      with:
+        name: Error_Logs_and_Config_${{ env.FILE_DATE }}
+        path: |
+          openwrt/.config
+          openwrt/logs/
 
     - name: Check space usage
       if: (!cancelled())
