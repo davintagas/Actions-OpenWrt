@@ -15,10 +15,20 @@ name: Build Openwrt Immortalwrt
 on:
   repository_dispatch:
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Pilih Branch ImmortalWrt'
+        required: true
+        default: 'v25.12.0'
+        type: choice
+        options:
+          - master
+          - v25.12.0
+          - v23.05.4
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
-  REPO_BRANCH: v25.12.0
+  REPO_BRANCH: ${{ inputs.branch || 'v25.12.0' }}
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: immortalwrt/config
   DIY_P1_SH: immortalwrt/diy-part1.sh
@@ -109,6 +119,22 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
+    - name: Cache OpenWrt dl folder
+      uses: actions/cache@v4
+      with:
+        path: /builder/openwrt/dl
+        key: ${{ runner.os }}-openwrt-dl-${{ hashFiles('openwrt/feeds.conf.default') }}
+        restore-keys: |
+          ${{ runner.os }}-openwrt-dl-
+
+    - name: Cache ccache
+      uses: actions/cache@v4
+      with:
+        path: /builder/openwrt/.ccache
+        key: ${{ runner.os }}-openwrt-ccache-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-openwrt-ccache-
+
     - name: Download package
       id: package
       run: |
@@ -161,9 +187,17 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d_openwrt")" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d-%H%M")-OpenWrt" >> $GITHUB_OUTPUT
         touch release.txt
-        echo "Build Immortalwrt for R1 PLUS LTS" >> release.txt
+        
+        TARGET_BOARD=$(grep "^CONFIG_TARGET_BOARD=" openwrt/.config | cut -d '"' -f 2 || echo "Unknown Board")
+        TARGET_SUBTARGET=$(grep "^CONFIG_TARGET_SUBTARGET=" openwrt/.config | cut -d '"' -f 2 || echo "Unknown Subtarget")
+        
+        echo "## 🚀 ImmortalWrt Firmware Release" >> release.txt
+        echo "- **Target System:** ${TARGET_BOARD} / ${TARGET_SUBTARGET}" >> release.txt
+        echo "- **Source Branch:** ${{ env.REPO_BRANCH }}" >> release.txt
+        echo "- **Build Date:** $(date +"%Y-%m-%d %H:%M:%S")" >> release.txt
+        
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware to release
