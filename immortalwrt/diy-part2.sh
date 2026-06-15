@@ -92,3 +92,5 @@ git clone --depth 1 https://github.com/hudra0/qosmate.git package/qosmate
 sed -i 's/CST-8/WIB-7/g' package/emortal/default-settings/files/99-default-settings-chinese
 sed -i 's/Shanghai/Jakarta/g' package/emortal/default-settings/files/99-default-settings-chinese
 #
+git clone --depth 1 https://github.com/ChesterGoodiny/luci-theme-proton2025.git package/luci-theme-proton2025
+#
