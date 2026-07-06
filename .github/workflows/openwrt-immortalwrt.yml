@@ -19,10 +19,11 @@ on:
       branch:
         description: 'Pilih Branch ImmortalWrt'
         required: true
-        default: 'v25.12.0'
+        default: 'v25.12.1'
         type: choice
         options:
           - master
+          - v25.12.1
           - v25.12.0
           - v23.05.4
 
