@@ -59,7 +59,7 @@ rm -rf package/luci-app-adguardhome/root/etc/init.d
 
 # OpenClash
 rm -rf feeds/luci/applications/luci-app-openclash
-git clone --depth 1 -b v0.47.096 https://github.com/vernesong/OpenClash.git package/openclash
+git clone --depth 1 -b v0.47.110 https://github.com/vernesong/OpenClash.git package/openclash
 cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
 rm -rf package/openclash
 
@@ -69,7 +69,7 @@ popd
 
 # Add passwall
 rm -rf feeds/luci/applications/luci-app-passwall
-git clone --depth 1 -b 26.6.2-1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
+git clone --depth 1 -b 26.7.1-1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
 mv package/passwall-packages/{chinadns-ng,dns2socks,tcping} package/
 rm -rf feeds/packages/net/{sing-box,v2ray-geodata,xray-core,microsocks}
