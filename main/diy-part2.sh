@@ -87,6 +87,9 @@ rm -rf package/passwall-packages
 # mosdns
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 
+# Add 5gModem
+git clone --depth 1 https://github.com/fildunsky/luci-app-5gmodem.git package/luci-app-5gmodem
+
 # Modify hostname
 sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
 #
