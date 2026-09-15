@@ -1,7 +1,7 @@
 #
 # https://github.com/P3TERX/Actions-OpenWrt
 #
-# File: .github/workflows/openwrt-bulder.yml
+# File: .github/workflows/openwrt-main.yml
 # Description: Build OpenWrt using GitHub Actions
 #
 # Copyright (c) 2019-2024 P3TERX <https://p3terx.com>
@@ -30,11 +30,11 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@v4
 
     - name: Initialization environment
       env:
@@ -42,24 +42,23 @@ jobs:
       run: |
         docker rmi -f $(docker images -q) 2>/dev/null || true
           [[ -n "${AGENT_TOOLSDIRECTORY}" ]] && sudo rm -rf "${AGENT_TOOLSDIRECTORY}"
-          sudo rm -rf /usr/share/dotnet /usr/local/lib/android 2>/dev/null
-          sudo swapoff -a
-          sudo rm -f /swapfile /mnt/swapfile
-          sudo -E apt-get -y update
-          sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
-          sudo -E apt-get -y install $(curl -fsSL https://ophub.org/ubuntu2404-make-openwrt-depends)
-          sudo -E systemctl daemon-reload
-          #sudo -E apt-get -y full-upgrade
-          sudo -E apt-get -y autoremove --purge
-          sudo -E apt-get clean
-          sudo sed -i '/NVM_DIR/d;/skel/d' /root/{.bashrc,.profile}
-          sudo rm -rf ~/{.cargo,.dotnet,.rustup}
-          sudo -E timedatectl set-timezone "${TZ:-Etc/UTC}"
-          sudo -E ntpdate ntp.ubuntu.com 0.pool.ntp.org || true
-          sudo -E timedatectl set-ntp true
-          date -u
-          timedatectl status || true
-          echo "status=success" >> ${GITHUB_OUTPUT}
+        sudo rm -rf /usr/share/dotnet /usr/local/lib/android 2>/dev/null
+        sudo swapoff -a
+        sudo rm -f /swapfile /mnt/swapfile
+        sudo -E apt-get -y update
+        sudo -E apt-get -y purge azure-cli ghc* zulu* llvm* firefox google* dotnet* powershell openjdk* mongodb* moby* || true
+        sudo -E apt-get -y install $(curl -fsSL https://ophub.org/ubuntu2404-make-openwrt-depends)
+        sudo -E systemctl daemon-reload
+        sudo -E apt-get -y autoremove --purge
+        sudo -E apt-get clean
+        sudo sed -i '/NVM_DIR/d;/skel/d' /root/{.bashrc,.profile}
+        sudo rm -rf ~/{.cargo,.dotnet,.rustup}
+        sudo -E timedatectl set-timezone "${TZ:-Etc/UTC}"
+        sudo -E ntpdate ntp.ubuntu.com 0.pool.ntp.org || true
+        sudo -E timedatectl set-ntp true
+        date -u
+        timedatectl status || true
+        echo "status=success" >> ${GITHUB_OUTPUT}
 
     - name: Create simulated physical disk
       run: |
@@ -112,7 +111,7 @@ jobs:
       run: |
           cd openwrt/
           make defconfig
-          make download -j8
+          make download -j$(nproc)
           find dl -size -1024c -exec ls -l {} \;
           find dl -size -1024c -exec rm -f {} \;
 
@@ -129,7 +128,7 @@ jobs:
       run: df -hT
 
     - name: Upload bin directory
-      uses: actions/upload-artifact@main
+      uses: actions/upload-artifact@v4
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
         name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
@@ -149,7 +148,7 @@ jobs:
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware directory
-      uses: actions/upload-artifact@main
+      uses: actions/upload-artifact@v4
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
@@ -159,30 +158,29 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "release_tag=$(date +"%Y.%m.%d_openwrt")" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d_%H%M%S")" >> $GITHUB_OUTPUT
         touch release.txt
-        echo -e "Build OpenWrt for R1 PLUS LTS" >> release.txt
-        [ ${UPLOAD_GOFILE} = true && ${{ steps.gofile.outputs.url }} ] && echo "🔗 [GoFile](${{ steps.gofile.outputs.url }})" >> release.txt
+        echo "Build OpenWrt OpenWrt v25.x" >> release.txt
+        echo "📅 Build Date: $(date '+%Y-%m-%d %H:%M:%S')" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: Upload firmware to release
-      uses: softprops/action-gh-release@master
+      uses: softprops/action-gh-release@v2
       if: steps.tag.outputs.status == 'success' && !cancelled()
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
+        token: ${{ secrets.GITHUB_TOKEN }}
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@main
+      uses: Mattraks/delete-workflow-runs@v2
       with:
         retain_days: 0
         keep_minimum_runs: 2
 
     - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@master
+      uses: dev-drprasad/delete-older-releases@v0.2.1
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         keep_latest: 3
