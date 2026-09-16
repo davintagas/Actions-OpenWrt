@@ -59,7 +59,7 @@ popd
 
 # Golang
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 27.x feeds/packages/lang/golang
 
 # AdguardHome
 git clone --depth 1 https://github.com/kiddin9/luci-app-adguardhome.git package/luci-app-adguardhome
