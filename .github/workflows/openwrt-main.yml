@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: Build Openwrt v25.x
+name: Build Openwrt 25.12
 
 on:
   repository_dispatch:
