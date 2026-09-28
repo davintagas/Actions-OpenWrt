@@ -77,7 +77,7 @@ make && sudo make install
 popd
 
 # Add passwall
-git clone --depth 1 -b 26.9.9-1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
+git clone --depth 1 -b 26.9.27-1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
 mv package/passwall-packages/{chinadns-ng,dns2socks,tcping} package/
 rm -rf feeds/packages/net/{sing-box,v2ray-geodata,xray-core,microsocks}
@@ -86,9 +86,6 @@ rm -rf package/passwall-packages
 
 # mosdns
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-
-# Add 5gModem
-# git clone --depth 1 https://github.com/fildunsky/luci-app-5gmodem.git package/luci-app-5gmodem
 
 # Modify hostname
 sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
