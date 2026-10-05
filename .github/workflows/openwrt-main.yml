@@ -160,7 +160,7 @@ jobs:
       run: |
         echo "release_tag=$(date +"%Y.%m.%d_%H%M%S")" >> $GITHUB_OUTPUT
         touch release.txt
-        echo "Build OpenWrt OpenWrt v25.x" >> release.txt
+        echo "Build OpenWrt v25.12" >> release.txt
         echo "📅 Build Date: $(date '+%Y-%m-%d %H:%M:%S')" >> release.txt
         echo "status=success" >> $GITHUB_OUTPUT
 
