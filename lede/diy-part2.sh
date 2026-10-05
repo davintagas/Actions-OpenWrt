@@ -55,8 +55,8 @@ popd
 # git clone https://github.com/sbwml/packages_lang_golang -b 27.x feeds/packages/lang/golang
 
 # AdguardHome
-rm -rf feeds/luci/applications/luci-app-adguardhome
-git clone --depth 1 https://github.com/OneNAS-space/luci-app-adguardhome.git feeds/luci/applications/luci-app-adguardhome
+# rm -rf feeds/luci/applications/luci-app-adguardhome
+# git clone --depth 1 https://github.com/OneNAS-space/luci-app-adguardhome.git feeds/luci/applications/luci-app-adguardhome
 
 # OpenClash
 rm -rf feeds/luci/applications/luci-app-openclash
