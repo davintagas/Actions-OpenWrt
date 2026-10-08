@@ -81,8 +81,10 @@ git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git feeds/luci
 
 # sms-tool
 rm -rf feeds/luci/applications/luci-app-sms-tool-js
+rm -rf feeds/packages/utils/sms-tool
 git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool-js.git package/sms
 mv package/sms/luci-app-sms-tool-js feeds/luci/applications/
+mv package/sms/sms-tool feeds/packages/utils/
 rm -rf package/sms
 
 # Modify hostname
