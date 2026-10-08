@@ -75,6 +75,10 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/packages/net/mosdns
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 
+# 3ginfo
+rm -rf feeds/luci/applications/luci-app-3ginfo-lite
+git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git feeds/luci/applications/luci-app-3ginfo-lite
+
 # Modify hostname
 # sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
 #
