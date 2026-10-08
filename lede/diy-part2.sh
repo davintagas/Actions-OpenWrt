@@ -79,6 +79,12 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 rm -rf feeds/luci/applications/luci-app-3ginfo-lite
 git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git feeds/luci/applications/luci-app-3ginfo-lite
 
+# sms-tool
+rm -rf feeds/luci/applications/luci-app-sms-tool-js
+git clone --depth 1 https://github.com/4IceG/luci-app-sms-tool-js.git package/sms
+mv package/sms/luci-app-sms-tool-js feeds/luci/applications/
+rm -rf package/sms
+
 # Modify hostname
 # sed -i 's/OpenWrt/OrangePI/g' package/base-files/files/bin/config_generate
 #
