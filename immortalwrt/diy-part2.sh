@@ -49,7 +49,7 @@ popd
 
 # Golang
 rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 27.x feeds/packages/lang/golang
 
 # AdguardHome
 rm -rf feeds/luci/applications/luci-app-adguardhome
@@ -59,7 +59,7 @@ rm -rf package/luci-app-adguardhome/root/etc/init.d
 
 # OpenClash
 rm -rf feeds/luci/applications/luci-app-openclash
-git clone --depth 1 -b v0.47.156 https://github.com/vernesong/OpenClash.git package/openclash
+git clone --depth 1 -b v0.48.002 https://github.com/vernesong/OpenClash.git package/openclash
 cp -rf package/openclash/luci-app-openclash package/luci-app-openclash
 rm -rf package/openclash
 
@@ -69,7 +69,7 @@ popd
 
 # Add passwall
 rm -rf feeds/luci/applications/luci-app-passwall
-git clone --depth 1 -b 26.8.26-1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
+git clone --depth 1 -b 26.10.4-1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
 mv package/passwall-packages/{chinadns-ng,dns2socks,tcping} package/
 rm -rf feeds/packages/net/{sing-box,v2ray-geodata,xray-core,microsocks}
@@ -86,15 +86,15 @@ sed -i 's/ImmortalWrt/OrangePI/g' package/base-files/files/bin/config_generate
 sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
 
 # Qosmate
-git clone --depth 1 https://github.com/hudra0/luci-app-qosmate.git package/luci-app-qosmate
-git clone --depth 1 https://github.com/hudra0/qosmate.git package/qosmate
+# git clone --depth 1 https://github.com/hudra0/luci-app-qosmate.git package/luci-app-qosmate
+# git clone --depth 1 https://github.com/hudra0/qosmate.git package/qosmate
 
 # Add 5gModem
-git clone --depth 1 https://github.com/fildunsky/luci-app-5gmodem.git package/luci-app-5gmodem
+# git clone --depth 1 https://github.com/fildunsky/luci-app-5gmodem.git package/luci-app-5gmodem
 
 #
 sed -i 's/CST-8/WIB-7/g' package/emortal/default-settings/files/99-default-settings-chinese
 sed -i 's/Shanghai/Jakarta/g' package/emortal/default-settings/files/99-default-settings-chinese
 #
-git clone --depth 1 https://github.com/ChesterGoodiny/luci-theme-proton2025.git package/luci-theme-proton2025
+# git clone --depth 1 https://github.com/ChesterGoodiny/luci-theme-proton2025.git package/luci-theme-proton2025
 #
