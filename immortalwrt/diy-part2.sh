@@ -72,8 +72,8 @@ rm -rf feeds/luci/applications/luci-app-passwall
 git clone --depth 1 -b 26.10.16-1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
 mv package/passwall-packages/{chinadns-ng,dns2socks,tcping} package/
-rm -rf feeds/packages/net/{sing-box,v2ray-geodata,xray-core,microsocks}
-mv package/passwall-packages/{sing-box,v2ray-geodata,xray-core,microsocks} feeds/packages/net/
+rm -rf feeds/packages/net/{v2ray-geodata,xray-core,microsocks}
+mv package/passwall-packages/{v2ray-geodata,xray-core,microsocks} feeds/packages/net/
 rm -rf package/passwall-packages
 
 # mosdns
