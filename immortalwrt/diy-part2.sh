@@ -52,10 +52,10 @@ rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 27.x feeds/packages/lang/golang
 
 # AdguardHome
-rm -rf feeds/luci/applications/luci-app-adguardhome
-git clone --depth 1 https://github.com/kiddin9/luci-app-adguardhome.git package/luci-app-adguardhome
-cp -rf package/luci-app-adguardhome/root/etc/init.d/adguardhome feeds/packages/net/adguardhome/files/adguardhome.init
-rm -rf package/luci-app-adguardhome/root/etc/init.d
+# rm -rf feeds/luci/applications/luci-app-adguardhome
+# git clone --depth 1 https://github.com/kiddin9/luci-app-adguardhome.git package/luci-app-adguardhome
+# cp -rf package/luci-app-adguardhome/root/etc/init.d/adguardhome feeds/packages/net/adguardhome/files/adguardhome.init
+# rm -rf package/luci-app-adguardhome/root/etc/init.d
 
 # OpenClash
 rm -rf feeds/luci/applications/luci-app-openclash
@@ -69,7 +69,7 @@ popd
 
 # Add passwall
 rm -rf feeds/luci/applications/luci-app-passwall
-git clone --depth 1 -b 26.10.16-1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
+git clone --depth 1 -b 26.10.29-1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/luci-app-passwall
 git clone --depth 1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
 mv package/passwall-packages/{chinadns-ng,dns2socks,tcping} package/
 rm -rf feeds/packages/net/{v2ray-geodata,xray-core,microsocks}
@@ -86,8 +86,8 @@ sed -i 's/ImmortalWrt/OrangePI/g' package/base-files/files/bin/config_generate
 sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
 
 # Qosmate
-# git clone --depth 1 https://github.com/hudra0/luci-app-qosmate.git package/luci-app-qosmate
-# git clone --depth 1 https://github.com/hudra0/qosmate.git package/qosmate
+git clone --depth 1 https://github.com/hudra0/luci-app-qosmate.git package/luci-app-qosmate
+git clone --depth 1 https://github.com/hudra0/qosmate.git package/qosmate
 
 # Add 5gModem
 # git clone --depth 1 https://github.com/fildunsky/luci-app-5gmodem.git package/luci-app-5gmodem
