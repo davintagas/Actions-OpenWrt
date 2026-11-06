@@ -131,13 +131,13 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
-    - name: Cache OpenWrt dl folder
-      uses: actions/cache@v4
-      with:
-        path: /builder/openwrt/dl
-        key: ${{ runner.os }}-openwrt-dl-${{ hashFiles('openwrt/feeds.conf.default') }}
-        restore-keys: |
-          ${{ runner.os }}-openwrt-dl-
+#    - name: Cache OpenWrt dl folder
+#      uses: actions/cache@v4
+#      with:
+#        path: /builder/openwrt/dl
+#        key: ${{ runner.os }}-openwrt-dl-${{ hashFiles('openwrt/feeds.conf.default') }}
+#        restore-keys: |
+#          ${{ runner.os }}-openwrt-dl-
 
     - name: Cache ccache
       uses: actions/cache@v4
