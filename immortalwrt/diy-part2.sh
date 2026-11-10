@@ -23,6 +23,12 @@ cp -rf modemfeed/packages/net/xmm-modem package/
 cp -rf modemfeed/packages/telephony/atinout package/
 rm -rf modemfeed
 
+# 3ginfo
+rm -rf feeds/luci/applications/luci-app-3ginfo-lite
+git clone --depth 1 https://github.com/4IceG/luci-app-3ginfo-lite.git feeds/luci/applications/luci-app-3ginfo-lite
+rm -rf feeds/packages/utils/sms-tool/Makefile
+wget -O feeds/packages/utils/sms-tool/Makefile https://raw.githubusercontent.com/4IceG/luci-app-sms-tool-js/refs/heads/main/sms-tool/Makefile
+
 # internet detector
 git clone --depth 1 https://github.com/gSpotx2f/luci-app-internet-detector.git package/luci-app-internet-detector
 
@@ -88,9 +94,6 @@ sed -i 's|llvm=true|llvm=false|g' feeds/packages/lang/rust/Makefile
 # Qosmate
 git clone --depth 1 https://github.com/hudra0/luci-app-qosmate.git package/luci-app-qosmate
 git clone --depth 1 https://github.com/hudra0/qosmate.git package/qosmate
-
-# Add 5gModem
-# git clone --depth 1 https://github.com/fildunsky/luci-app-5gmodem.git package/luci-app-5gmodem
 
 #
 sed -i 's/CST-8/WIB-7/g' package/emortal/default-settings/files/99-default-settings-chinese
